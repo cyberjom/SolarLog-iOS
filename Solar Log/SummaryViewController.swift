@@ -82,7 +82,7 @@ class SummaryViewController: UIViewController ,UICollectionViewDelegate, UIColle
         
         timer?.invalidate()
         
-        timer = NSTimer.scheduledTimerWithTimeInterval(40, target: self, selector: "ScheduleCheck", userInfo: nil, repeats: true)
+        timer = NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: "ScheduleCheck", userInfo: nil, repeats: true)
         updateData()
 
     }
