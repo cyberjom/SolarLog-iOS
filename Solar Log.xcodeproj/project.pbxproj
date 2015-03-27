@@ -1,0 +1,655 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		749870384D90A611C8DD4841 /* libPods-Solar Log.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 36E2F8A70458DE83BF3A8CB5 /* libPods-Solar Log.a */; };
+		ED11391E1ABE4907007ED3F3 /* Inverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED11391D1ABE4907007ED3F3 /* Inverter.swift */; };
+		ED1139201ABE5E9F007ED3F3 /* InverterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED11391F1ABE5E9F007ED3F3 /* InverterCell.swift */; };
+		ED1139221ABE61FF007ED3F3 /* Meteorology.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED1139211ABE61FF007ED3F3 /* Meteorology.swift */; };
+		ED1139241ABE8426007ED3F3 /* MpptCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED1139231ABE8426007ED3F3 /* MpptCell.swift */; };
+		ED1139261ABEFD2D007ED3F3 /* InverterCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = ED1139251ABEFD2D007ED3F3 /* InverterCell.xib */; };
+		ED1139281ABF04EA007ED3F3 /* MpptCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = ED1139271ABF04EA007ED3F3 /* MpptCell.xib */; };
+		ED11392A1ABF118E007ED3F3 /* InverterCelliPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = ED1139291ABF118E007ED3F3 /* InverterCelliPad.xib */; };
+		ED1380131AB68BD100462057 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED1380121AB68BD100462057 /* AppDelegate.swift */; };
+		ED1380161AB68BD100462057 /* Solar_Log.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = ED1380141AB68BD100462057 /* Solar_Log.xcdatamodeld */; };
+		ED13801B1AB68BD100462057 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ED1380191AB68BD100462057 /* Main.storyboard */; };
+		ED13801D1AB68BD100462057 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ED13801C1AB68BD100462057 /* Images.xcassets */; };
+		ED1380201AB68BD100462057 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = ED13801E1AB68BD100462057 /* LaunchScreen.xib */; };
+		ED13802C1AB68BD100462057 /* Solar_LogTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED13802B1AB68BD100462057 /* Solar_LogTests.swift */; };
+		ED14F79B1AB914410061C2CB /* SiteTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED14F79A1AB914410061C2CB /* SiteTableViewController.swift */; };
+		ED14F79D1AB9697A0061C2CB /* bg-p.jpg in Resources */ = {isa = PBXBuildFile; fileRef = ED14F79C1AB9697A0061C2CB /* bg-p.jpg */; };
+		ED14F79F1AB974B80061C2CB /* NewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED14F79E1AB974B80061C2CB /* NewsViewController.swift */; };
+		ED14F7A51ABA5E7C0061C2CB /* Summary.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED14F7A41ABA5E7C0061C2CB /* Summary.swift */; };
+		ED17FA071AB6B11300208391 /* LogManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED17FA061AB6B11300208391 /* LogManager.swift */; };
+		ED17FA091AB6B34900208391 /* summary.json in Resources */ = {isa = PBXBuildFile; fileRef = ED17FA081AB6B34900208391 /* summary.json */; };
+		ED17FA0B1AB6B88C00208391 /* day.json in Resources */ = {isa = PBXBuildFile; fileRef = ED17FA0A1AB6B88C00208391 /* day.json */; };
+		ED17FA0D1AB6C9AC00208391 /* bg.jpg in Resources */ = {isa = PBXBuildFile; fileRef = ED17FA0C1AB6C9AC00208391 /* bg.jpg */; };
+		ED17FA111AB6F76D00208391 /* sun.png in Resources */ = {isa = PBXBuildFile; fileRef = ED17FA101AB6F76D00208391 /* sun.png */; };
+		ED30AEF51AB8077C00E4C1B3 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED30AEF41AB8077C00E4C1B3 /* LoginViewController.swift */; };
+		ED30AEF71AB8078D00E4C1B3 /* SummaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED30AEF61AB8078D00E4C1B3 /* SummaryViewController.swift */; };
+		ED30AEF91AB8079800E4C1B3 /* RevenueViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED30AEF81AB8079800E4C1B3 /* RevenueViewController.swift */; };
+		ED30AEFB1AB807AB00E4C1B3 /* EnergyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED30AEFA1AB807AB00E4C1B3 /* EnergyViewController.swift */; };
+		ED30AEFD1AB807B500E4C1B3 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED30AEFC1AB807B500E4C1B3 /* SettingViewController.swift */; };
+		ED30AF0A1AB811E000E4C1B3 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ED30AF091AB811E000E4C1B3 /* SWRevealViewController.m */; };
+		ED30AF101AB85C4C00E4C1B3 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED30AF0F1AB85C4C00E4C1B3 /* MainTabBarController.swift */; };
+		ED9722131AC1151500342410 /* SiteTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED9722121AC1151500342410 /* SiteTableViewCell.swift */; };
+		ED9722151AC11F9300342410 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = ED9722141AC11F9300342410 /* Localizable.strings */; };
+		ED9722191AC12B2C00342410 /* Site.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED9722181AC12B2C00342410 /* Site.swift */; };
+		ED97221B1AC12CF300342410 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED97221A1AC12CF300342410 /* User.swift */; };
+		ED97221D1AC13A5900342410 /* EnergyDayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED97221C1AC13A5800342410 /* EnergyDayViewController.swift */; };
+		ED97221F1AC1434C00342410 /* SiteInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED97221E1AC1434C00342410 /* SiteInfoViewController.swift */; };
+		ED9722211AC147C900342410 /* EnergyMonthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED9722201AC147C900342410 /* EnergyMonthViewController.swift */; };
+		EDD53E441AB861A2004888C2 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDD53E431AB861A2004888C2 /* MenuViewController.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		ED1380261AB68BD100462057 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = ED1380051AB68BD100462057 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = ED13800C1AB68BD100462057;
+			remoteInfo = "Solar Log";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		36E2F8A70458DE83BF3A8CB5 /* libPods-Solar Log.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Solar Log.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D6646E22AB0EAA9C56695908 /* Pods-Solar Log.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Solar Log.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Solar Log/Pods-Solar Log.debug.xcconfig"; sourceTree = "<group>"; };
+		ED11391D1ABE4907007ED3F3 /* Inverter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Inverter.swift; sourceTree = "<group>"; };
+		ED11391F1ABE5E9F007ED3F3 /* InverterCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InverterCell.swift; sourceTree = "<group>"; };
+		ED1139211ABE61FF007ED3F3 /* Meteorology.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Meteorology.swift; sourceTree = "<group>"; };
+		ED1139231ABE8426007ED3F3 /* MpptCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MpptCell.swift; sourceTree = "<group>"; };
+		ED1139251ABEFD2D007ED3F3 /* InverterCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = InverterCell.xib; sourceTree = "<group>"; };
+		ED1139271ABF04EA007ED3F3 /* MpptCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MpptCell.xib; sourceTree = "<group>"; };
+		ED1139291ABF118E007ED3F3 /* InverterCelliPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = InverterCelliPad.xib; sourceTree = "<group>"; };
+		ED13800D1AB68BD100462057 /* Solar Log.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Solar Log.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		ED1380111AB68BD100462057 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		ED1380121AB68BD100462057 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		ED1380151AB68BD100462057 /* Solar_Log.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Solar_Log.xcdatamodel; sourceTree = "<group>"; };
+		ED13801A1AB68BD100462057 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		ED13801C1AB68BD100462057 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		ED13801F1AB68BD100462057 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		ED1380251AB68BD100462057 /* Solar LogTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Solar LogTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		ED13802A1AB68BD100462057 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		ED13802B1AB68BD100462057 /* Solar_LogTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Solar_LogTests.swift; sourceTree = "<group>"; };
+		ED14F79A1AB914410061C2CB /* SiteTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SiteTableViewController.swift; sourceTree = "<group>"; };
+		ED14F79C1AB9697A0061C2CB /* bg-p.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "bg-p.jpg"; sourceTree = "<group>"; };
+		ED14F79E1AB974B80061C2CB /* NewsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsViewController.swift; sourceTree = "<group>"; };
+		ED14F7A41ABA5E7C0061C2CB /* Summary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Summary.swift; sourceTree = "<group>"; };
+		ED17FA061AB6B11300208391 /* LogManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogManager.swift; sourceTree = "<group>"; };
+		ED17FA081AB6B34900208391 /* summary.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = summary.json; sourceTree = "<group>"; };
+		ED17FA0A1AB6B88C00208391 /* day.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = day.json; sourceTree = "<group>"; };
+		ED17FA0C1AB6C9AC00208391 /* bg.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = bg.jpg; sourceTree = "<group>"; };
+		ED17FA101AB6F76D00208391 /* sun.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sun.png; sourceTree = "<group>"; };
+		ED30AEF41AB8077C00E4C1B3 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		ED30AEF61AB8078D00E4C1B3 /* SummaryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SummaryViewController.swift; sourceTree = "<group>"; };
+		ED30AEF81AB8079800E4C1B3 /* RevenueViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RevenueViewController.swift; sourceTree = "<group>"; };
+		ED30AEFA1AB807AB00E4C1B3 /* EnergyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EnergyViewController.swift; sourceTree = "<group>"; };
+		ED30AEFC1AB807B500E4C1B3 /* SettingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
+		ED30AF071AB811DF00E4C1B3 /* Solar Log-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Solar Log-Bridging-Header.h"; sourceTree = "<group>"; };
+		ED30AF081AB811E000E4C1B3 /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
+		ED30AF091AB811E000E4C1B3 /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
+		ED30AF0F1AB85C4C00E4C1B3 /* MainTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
+		ED9722121AC1151500342410 /* SiteTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SiteTableViewCell.swift; sourceTree = "<group>"; };
+		ED9722141AC11F9300342410 /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
+		ED9722161AC11FE800342410 /* th */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = th; path = th.lproj/Main.strings; sourceTree = "<group>"; };
+		ED9722171AC11FE800342410 /* th */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = th; path = th.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		ED9722181AC12B2C00342410 /* Site.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Site.swift; sourceTree = "<group>"; };
+		ED97221A1AC12CF300342410 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		ED97221C1AC13A5800342410 /* EnergyDayViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EnergyDayViewController.swift; sourceTree = "<group>"; };
+		ED97221E1AC1434C00342410 /* SiteInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SiteInfoViewController.swift; sourceTree = "<group>"; };
+		ED9722201AC147C900342410 /* EnergyMonthViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EnergyMonthViewController.swift; sourceTree = "<group>"; };
+		EDD53E431AB861A2004888C2 /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
+		EF637D18D5FF909A2362183E /* Pods-Solar Log.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Solar Log.release.xcconfig"; path = "Pods/Target Support Files/Pods-Solar Log/Pods-Solar Log.release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		ED13800A1AB68BD100462057 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				749870384D90A611C8DD4841 /* libPods-Solar Log.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ED1380221AB68BD100462057 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		0E72800C12B5653EE40F6277 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				D6646E22AB0EAA9C56695908 /* Pods-Solar Log.debug.xcconfig */,
+				EF637D18D5FF909A2362183E /* Pods-Solar Log.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		366ACC92E28BA80396A10E22 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				36E2F8A70458DE83BF3A8CB5 /* libPods-Solar Log.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		ED1380041AB68BD100462057 = {
+			isa = PBXGroup;
+			children = (
+				ED13800F1AB68BD100462057 /* Solar Log */,
+				ED1380281AB68BD100462057 /* Solar LogTests */,
+				ED13800E1AB68BD100462057 /* Products */,
+				0E72800C12B5653EE40F6277 /* Pods */,
+				366ACC92E28BA80396A10E22 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		ED13800E1AB68BD100462057 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				ED13800D1AB68BD100462057 /* Solar Log.app */,
+				ED1380251AB68BD100462057 /* Solar LogTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		ED13800F1AB68BD100462057 /* Solar Log */ = {
+			isa = PBXGroup;
+			children = (
+				ED14F7A01AB9BCD00061C2CB /* Model */,
+				ED30AF061AB811D400E4C1B3 /* SWRevealViewController */,
+				ED17FA101AB6F76D00208391 /* sun.png */,
+				ED14F79C1AB9697A0061C2CB /* bg-p.jpg */,
+				ED17FA0C1AB6C9AC00208391 /* bg.jpg */,
+				ED1380121AB68BD100462057 /* AppDelegate.swift */,
+				ED1380191AB68BD100462057 /* Main.storyboard */,
+				ED13801C1AB68BD100462057 /* Images.xcassets */,
+				ED13801E1AB68BD100462057 /* LaunchScreen.xib */,
+				ED1380141AB68BD100462057 /* Solar_Log.xcdatamodeld */,
+				ED1380101AB68BD100462057 /* Supporting Files */,
+				ED17FA061AB6B11300208391 /* LogManager.swift */,
+				ED17FA081AB6B34900208391 /* summary.json */,
+				ED17FA0A1AB6B88C00208391 /* day.json */,
+				ED30AEF41AB8077C00E4C1B3 /* LoginViewController.swift */,
+				ED30AEF61AB8078D00E4C1B3 /* SummaryViewController.swift */,
+				ED30AEF81AB8079800E4C1B3 /* RevenueViewController.swift */,
+				ED30AEFA1AB807AB00E4C1B3 /* EnergyViewController.swift */,
+				ED97221C1AC13A5800342410 /* EnergyDayViewController.swift */,
+				ED9722201AC147C900342410 /* EnergyMonthViewController.swift */,
+				ED30AEFC1AB807B500E4C1B3 /* SettingViewController.swift */,
+				ED30AF0F1AB85C4C00E4C1B3 /* MainTabBarController.swift */,
+				EDD53E431AB861A2004888C2 /* MenuViewController.swift */,
+				ED14F79A1AB914410061C2CB /* SiteTableViewController.swift */,
+				ED9722121AC1151500342410 /* SiteTableViewCell.swift */,
+				ED97221E1AC1434C00342410 /* SiteInfoViewController.swift */,
+				ED14F79E1AB974B80061C2CB /* NewsViewController.swift */,
+				ED30AF071AB811DF00E4C1B3 /* Solar Log-Bridging-Header.h */,
+				ED11391F1ABE5E9F007ED3F3 /* InverterCell.swift */,
+				ED1139291ABF118E007ED3F3 /* InverterCelliPad.xib */,
+				ED1139231ABE8426007ED3F3 /* MpptCell.swift */,
+				ED1139251ABEFD2D007ED3F3 /* InverterCell.xib */,
+				ED1139271ABF04EA007ED3F3 /* MpptCell.xib */,
+				ED9722141AC11F9300342410 /* Localizable.strings */,
+			);
+			path = "Solar Log";
+			sourceTree = "<group>";
+		};
+		ED1380101AB68BD100462057 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				ED1380111AB68BD100462057 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		ED1380281AB68BD100462057 /* Solar LogTests */ = {
+			isa = PBXGroup;
+			children = (
+				ED13802B1AB68BD100462057 /* Solar_LogTests.swift */,
+				ED1380291AB68BD100462057 /* Supporting Files */,
+			);
+			path = "Solar LogTests";
+			sourceTree = "<group>";
+		};
+		ED1380291AB68BD100462057 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				ED13802A1AB68BD100462057 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		ED14F7A01AB9BCD00061C2CB /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				ED14F7A41ABA5E7C0061C2CB /* Summary.swift */,
+				ED11391D1ABE4907007ED3F3 /* Inverter.swift */,
+				ED1139211ABE61FF007ED3F3 /* Meteorology.swift */,
+				ED9722181AC12B2C00342410 /* Site.swift */,
+				ED97221A1AC12CF300342410 /* User.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		ED30AF061AB811D400E4C1B3 /* SWRevealViewController */ = {
+			isa = PBXGroup;
+			children = (
+				ED30AF081AB811E000E4C1B3 /* SWRevealViewController.h */,
+				ED30AF091AB811E000E4C1B3 /* SWRevealViewController.m */,
+			);
+			name = SWRevealViewController;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		ED13800C1AB68BD100462057 /* Solar Log */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = ED13802F1AB68BD100462057 /* Build configuration list for PBXNativeTarget "Solar Log" */;
+			buildPhases = (
+				E6E2D6A57774FBDFDFB7C153 /* Check Pods Manifest.lock */,
+				ED1380091AB68BD100462057 /* Sources */,
+				ED13800A1AB68BD100462057 /* Frameworks */,
+				ED13800B1AB68BD100462057 /* Resources */,
+				A0D15284301580424A67AC5E /* Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Solar Log";
+			productName = "Solar Log";
+			productReference = ED13800D1AB68BD100462057 /* Solar Log.app */;
+			productType = "com.apple.product-type.application";
+		};
+		ED1380241AB68BD100462057 /* Solar LogTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = ED1380321AB68BD100462057 /* Build configuration list for PBXNativeTarget "Solar LogTests" */;
+			buildPhases = (
+				ED1380211AB68BD100462057 /* Sources */,
+				ED1380221AB68BD100462057 /* Frameworks */,
+				ED1380231AB68BD100462057 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				ED1380271AB68BD100462057 /* PBXTargetDependency */,
+			);
+			name = "Solar LogTests";
+			productName = "Solar LogTests";
+			productReference = ED1380251AB68BD100462057 /* Solar LogTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		ED1380051AB68BD100462057 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0620;
+				ORGANIZATIONNAME = InterSol;
+				TargetAttributes = {
+					ED13800C1AB68BD100462057 = {
+						CreatedOnToolsVersion = 6.2;
+					};
+					ED1380241AB68BD100462057 = {
+						CreatedOnToolsVersion = 6.2;
+						TestTargetID = ED13800C1AB68BD100462057;
+					};
+				};
+			};
+			buildConfigurationList = ED1380081AB68BD100462057 /* Build configuration list for PBXProject "Solar Log" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = ED1380041AB68BD100462057;
+			productRefGroup = ED13800E1AB68BD100462057 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				ED13800C1AB68BD100462057 /* Solar Log */,
+				ED1380241AB68BD100462057 /* Solar LogTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		ED13800B1AB68BD100462057 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ED11392A1ABF118E007ED3F3 /* InverterCelliPad.xib in Resources */,
+				ED9722151AC11F9300342410 /* Localizable.strings in Resources */,
+				ED17FA0D1AB6C9AC00208391 /* bg.jpg in Resources */,
+				ED17FA111AB6F76D00208391 /* sun.png in Resources */,
+				ED13801B1AB68BD100462057 /* Main.storyboard in Resources */,
+				ED1380201AB68BD100462057 /* LaunchScreen.xib in Resources */,
+				ED17FA091AB6B34900208391 /* summary.json in Resources */,
+				ED14F79D1AB9697A0061C2CB /* bg-p.jpg in Resources */,
+				ED17FA0B1AB6B88C00208391 /* day.json in Resources */,
+				ED1139261ABEFD2D007ED3F3 /* InverterCell.xib in Resources */,
+				ED1139281ABF04EA007ED3F3 /* MpptCell.xib in Resources */,
+				ED13801D1AB68BD100462057 /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ED1380231AB68BD100462057 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		A0D15284301580424A67AC5E /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Solar Log/Pods-Solar Log-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E6E2D6A57774FBDFDFB7C153 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		ED1380091AB68BD100462057 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ED9722131AC1151500342410 /* SiteTableViewCell.swift in Sources */,
+				ED30AEF51AB8077C00E4C1B3 /* LoginViewController.swift in Sources */,
+				ED17FA071AB6B11300208391 /* LogManager.swift in Sources */,
+				ED30AF101AB85C4C00E4C1B3 /* MainTabBarController.swift in Sources */,
+				ED1380161AB68BD100462057 /* Solar_Log.xcdatamodeld in Sources */,
+				EDD53E441AB861A2004888C2 /* MenuViewController.swift in Sources */,
+				ED9722191AC12B2C00342410 /* Site.swift in Sources */,
+				ED97221D1AC13A5900342410 /* EnergyDayViewController.swift in Sources */,
+				ED1139221ABE61FF007ED3F3 /* Meteorology.swift in Sources */,
+				ED9722211AC147C900342410 /* EnergyMonthViewController.swift in Sources */,
+				ED1380131AB68BD100462057 /* AppDelegate.swift in Sources */,
+				ED11391E1ABE4907007ED3F3 /* Inverter.swift in Sources */,
+				ED14F7A51ABA5E7C0061C2CB /* Summary.swift in Sources */,
+				ED14F79F1AB974B80061C2CB /* NewsViewController.swift in Sources */,
+				ED30AEF71AB8078D00E4C1B3 /* SummaryViewController.swift in Sources */,
+				ED30AF0A1AB811E000E4C1B3 /* SWRevealViewController.m in Sources */,
+				ED30AEFB1AB807AB00E4C1B3 /* EnergyViewController.swift in Sources */,
+				ED97221F1AC1434C00342410 /* SiteInfoViewController.swift in Sources */,
+				ED1139201ABE5E9F007ED3F3 /* InverterCell.swift in Sources */,
+				ED1139241ABE8426007ED3F3 /* MpptCell.swift in Sources */,
+				ED30AEFD1AB807B500E4C1B3 /* SettingViewController.swift in Sources */,
+				ED30AEF91AB8079800E4C1B3 /* RevenueViewController.swift in Sources */,
+				ED14F79B1AB914410061C2CB /* SiteTableViewController.swift in Sources */,
+				ED97221B1AC12CF300342410 /* User.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ED1380211AB68BD100462057 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ED13802C1AB68BD100462057 /* Solar_LogTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		ED1380271AB68BD100462057 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = ED13800C1AB68BD100462057 /* Solar Log */;
+			targetProxy = ED1380261AB68BD100462057 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		ED1380191AB68BD100462057 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				ED13801A1AB68BD100462057 /* Base */,
+				ED9722161AC11FE800342410 /* th */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		ED13801E1AB68BD100462057 /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				ED13801F1AB68BD100462057 /* Base */,
+				ED9722171AC11FE800342410 /* th */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		ED13802D1AB68BD100462057 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		ED13802E1AB68BD100462057 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		ED1380301AB68BD100462057 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D6646E22AB0EAA9C56695908 /* Pods-Solar Log.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ENABLE_MODULES = YES;
+				INFOPLIST_FILE = "Solar Log/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Solar Log/Solar Log-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		ED1380311AB68BD100462057 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = EF637D18D5FF909A2362183E /* Pods-Solar Log.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ENABLE_MODULES = YES;
+				INFOPLIST_FILE = "Solar Log/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Solar Log/Solar Log-Bridging-Header.h";
+			};
+			name = Release;
+		};
+		ED1380331AB68BD100462057 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "Solar LogTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Solar Log.app/Solar Log";
+			};
+			name = Debug;
+		};
+		ED1380341AB68BD100462057 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "Solar LogTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Solar Log.app/Solar Log";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		ED1380081AB68BD100462057 /* Build configuration list for PBXProject "Solar Log" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				ED13802D1AB68BD100462057 /* Debug */,
+				ED13802E1AB68BD100462057 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		ED13802F1AB68BD100462057 /* Build configuration list for PBXNativeTarget "Solar Log" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				ED1380301AB68BD100462057 /* Debug */,
+				ED1380311AB68BD100462057 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		ED1380321AB68BD100462057 /* Build configuration list for PBXNativeTarget "Solar LogTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				ED1380331AB68BD100462057 /* Debug */,
+				ED1380341AB68BD100462057 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		ED1380141AB68BD100462057 /* Solar_Log.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				ED1380151AB68BD100462057 /* Solar_Log.xcdatamodel */,
+			);
+			currentVersion = ED1380151AB68BD100462057 /* Solar_Log.xcdatamodel */;
+			path = Solar_Log.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = ED1380051AB68BD100462057 /* Project object */;
+}
