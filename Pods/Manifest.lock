@@ -1,0 +1,23 @@
+PODS:
+  - CorePlot (99.99.99)
+  - SSKeychain (1.2.2)
+
+DEPENDENCIES:
+  - CorePlot (from `https://github.com/core-plot/core-plot.git`, branch `release-2.0`)
+  - SSKeychain
+
+EXTERNAL SOURCES:
+  CorePlot:
+    :branch: release-2.0
+    :git: https://github.com/core-plot/core-plot.git
+
+CHECKOUT OPTIONS:
+  CorePlot:
+    :commit: d8ac0e7cc26faf839ed111debbbe17ab30403775
+    :git: https://github.com/core-plot/core-plot.git
+
+SPEC CHECKSUMS:
+  CorePlot: 80c046fdb3f9f44c73a5ca5887c54ded52510105
+  SSKeychain: cc48bd3ad24fcd9125adb9e0d23dd50b8bbd08b9
+
+COCOAPODS: 0.36.1
