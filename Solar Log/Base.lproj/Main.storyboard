@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14C1514" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="oqf-T4-T0W">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14C1514" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="cCZ-nO-8zr">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
@@ -267,6 +267,9 @@
                                 <state key="normal" title="Logout">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="logout:" destination="fi6-5x-crI" eventType="touchUpInside" id="msl-VX-yR0"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="1/1 Soi 1" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gZ2-fb-rJ9">
                                 <rect key="frame" x="114" y="284" width="69" height="21"/>
@@ -277,15 +280,10 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="trailingMargin" secondItem="buQ-tE-a7o" secondAttribute="trailing" constant="-3" id="C93-Ya-FNs"/>
-                            <constraint firstItem="buQ-tE-a7o" firstAttribute="top" secondItem="Cb7-SI-slx" secondAttribute="bottom" constant="8" id="WjG-ov-2Zn"/>
-                            <constraint firstAttribute="centerX" secondItem="buQ-tE-a7o" secondAttribute="centerX" constant="-262.5" id="YdB-Vr-EEh"/>
+                            <constraint firstItem="buQ-tE-a7o" firstAttribute="top" secondItem="Cb7-SI-slx" secondAttribute="bottom" constant="8" id="IES-Kp-Mr3"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="buQ-tE-a7o" secondAttribute="trailing" constant="-3" id="fux-AL-bjS"/>
+                            <constraint firstItem="buQ-tE-a7o" firstAttribute="top" secondItem="Cb7-SI-slx" secondAttribute="bottom" constant="8" id="pzR-We-CTT"/>
                         </constraints>
-                        <variation key="heightClass=regular-widthClass=compact">
-                            <mask key="constraints">
-                                <exclude reference="C93-Ya-FNs"/>
-                            </mask>
-                        </variation>
                     </view>
                     <navigationItem key="navigationItem" id="2pT-Dc-7wN">
                         <barButtonItem key="leftBarButtonItem" image="menu" id="8Qy-5L-jrS"/>
@@ -301,7 +299,7 @@
         <!--Login View Controller-->
         <scene sceneID="HXj-xB-10z">
             <objects>
-                <viewController id="cCZ-nO-8zr" customClass="LoginViewController" customModule="Solar_Log" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LoginPage" useStoryboardIdentifierAsRestorationIdentifier="YES" id="cCZ-nO-8zr" customClass="LoginViewController" customModule="Solar_Log" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="pwg-vI-uYz"/>
                         <viewControllerLayoutGuide type="bottom" id="Uxv-8p-H21"/>
@@ -310,21 +308,24 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="username" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="VGr-p3-b20">
-                                <rect key="frame" x="16" y="57" width="568" height="30"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="username" minimumFontSize="17" background="my" disabledBackground="my" translatesAutoresizingMaskIntoConstraints="NO" id="VGr-p3-b20">
+                                <rect key="frame" x="16" y="300" width="568" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="password" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eEE-A6-bVf">
-                                <rect key="frame" x="16" y="108" width="568" height="30"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eEE-A6-bVf">
+                                <rect key="frame" x="16" y="351" width="568" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VSt-2s-sAr">
-                                <rect key="frame" x="541" y="146" width="43" height="30"/>
+                                <rect key="frame" x="541" y="381" width="43" height="30"/>
                                 <state key="normal" title="Log In">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="login:" destination="cCZ-nO-8zr" eventType="touchUpInside" id="6Gc-hn-PTO"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bQI-yo-4cK">
                                 <rect key="frame" x="16" y="550" width="102" height="30"/>
@@ -332,9 +333,17 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="oqf-T4-T0W" kind="show" id="XBw-lS-Leb"/>
+                                    <segue destination="oqf-T4-T0W" kind="show" identifier="Login" id="XBw-lS-Leb"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo.png" translatesAutoresizingMaskIntoConstraints="NO" id="ttO-gK-PXs">
+                                <rect key="frame" x="100" y="59" width="400" height="150"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gA0-iF-YOj">
+                                <fontDescription key="fontDescription" name="TrebuchetMS" family="Trebuchet MS" pointSize="12"/>
+                                <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -343,13 +352,32 @@
                             <constraint firstItem="VGr-p3-b20" firstAttribute="trailing" secondItem="F1m-g7-MWv" secondAttribute="trailingMargin" id="B7Z-VS-GDN"/>
                             <constraint firstItem="VGr-p3-b20" firstAttribute="leading" secondItem="F1m-g7-MWv" secondAttribute="leadingMargin" id="IJH-iu-PhV"/>
                             <constraint firstItem="eEE-A6-bVf" firstAttribute="top" secondItem="VGr-p3-b20" secondAttribute="bottom" constant="21" id="JFR-p8-PQr"/>
+                            <constraint firstItem="gA0-iF-YOj" firstAttribute="leading" secondItem="F1m-g7-MWv" secondAttribute="leadingMargin" id="JrL-wE-Rak"/>
+                            <constraint firstItem="ttO-gK-PXs" firstAttribute="top" secondItem="pwg-vI-uYz" secondAttribute="bottom" constant="39" id="LG9-fH-4EQ"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="ttO-gK-PXs" secondAttribute="trailing" constant="84" id="RPj-RW-fnx"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="gA0-iF-YOj" secondAttribute="trailing" id="S3c-tX-ueM"/>
                             <constraint firstItem="VSt-2s-sAr" firstAttribute="trailing" secondItem="F1m-g7-MWv" secondAttribute="trailingMargin" id="a7i-Sm-9uW"/>
                             <constraint firstItem="eEE-A6-bVf" firstAttribute="leading" secondItem="F1m-g7-MWv" secondAttribute="leadingMargin" id="aYa-9p-XsL"/>
-                            <constraint firstItem="VSt-2s-sAr" firstAttribute="top" secondItem="eEE-A6-bVf" secondAttribute="bottom" constant="8" id="fFF-Be-gv1"/>
+                            <constraint firstItem="gA0-iF-YOj" firstAttribute="top" secondItem="pwg-vI-uYz" secondAttribute="bottom" constant="240" id="dLf-kd-wgU"/>
+                            <constraint firstItem="VSt-2s-sAr" firstAttribute="top" secondItem="eEE-A6-bVf" secondAttribute="bottom" id="fFF-Be-gv1"/>
+                            <constraint firstItem="gA0-iF-YOj" firstAttribute="top" secondItem="VGr-p3-b20" secondAttribute="top" constant="-40" id="gUM-3e-dFN"/>
+                            <constraint firstItem="VGr-p3-b20" firstAttribute="top" secondItem="pwg-vI-uYz" secondAttribute="bottom" constant="280" id="lzD-8Z-o7S"/>
                             <constraint firstItem="VGr-p3-b20" firstAttribute="top" secondItem="pwg-vI-uYz" secondAttribute="bottom" constant="37" id="nWh-tV-y5y"/>
+                            <constraint firstItem="ttO-gK-PXs" firstAttribute="leading" secondItem="F1m-g7-MWv" secondAttribute="leadingMargin" constant="84" id="r50-Ef-pfd"/>
+                            <constraint firstAttribute="centerX" secondItem="ttO-gK-PXs" secondAttribute="centerX" id="tpd-9U-qaL"/>
                             <constraint firstItem="eEE-A6-bVf" firstAttribute="trailing" secondItem="F1m-g7-MWv" secondAttribute="trailingMargin" id="w7X-lw-bUA"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="nWh-tV-y5y"/>
+                            </mask>
+                        </variation>
                     </view>
+                    <connections>
+                        <outlet property="message" destination="gA0-iF-YOj" id="7UD-yB-onm"/>
+                        <outlet property="passwd" destination="eEE-A6-bVf" id="ahT-uF-GjH"/>
+                        <outlet property="user" destination="VGr-p3-b20" id="U7z-Oe-prQ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gUE-Yx-BDN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -435,6 +463,865 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="kWh" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="101-ej-NlL">
+                                <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="36" id="IQk-L0-CfZ"/>
+                                    <constraint firstAttribute="width" constant="36" id="LgS-up-eq1">
+                                        <variation key="heightClass=regular-widthClass=regular" constant="56"/>
+                                    </constraint>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="TrebuchetMS" family="Trebuchet MS" pointSize="24"/>
+                                <color key="textColor" red="1" green="0.89854629870000002" blue="0.061253424819999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="IQk-L0-CfZ"/>
+                                        <exclude reference="LgS-up-eq1"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="IQk-L0-CfZ"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=regular">
+                                    <mask key="constraints">
+                                        <include reference="LgS-up-eq1"/>
+                                    </mask>
+                                </variation>
+                            </label>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="ji5-ac-T4m">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="160" id="MMz-Ne-mhC"/>
+                                </constraints>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="d5n-cN-kyb">
+                                    <size key="itemSize" width="141" height="110"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="MMz-Ne-mhC"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=regular">
+                                    <mask key="constraints">
+                                        <include reference="MMz-Ne-mhC"/>
+                                    </mask>
+                                </variation>
+                                <connections>
+                                    <outlet property="dataSource" destination="hX3-N5-SKb" id="bDV-DZ-1Ap"/>
+                                    <outlet property="delegate" destination="hX3-N5-SKb" id="vdS-4Y-vxq"/>
+                                </connections>
+                            </collectionView>
+                            <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="252" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" image="temperature" translatesAutoresizingMaskIntoConstraints="NO" id="UgC-Qh-rrj">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="--" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Bq-Ds-Vp1">
+                                <rect key="frame" x="135" y="144" width="44" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="44" id="elw-nd-rl3"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="TrebuchetMS" family="Trebuchet MS" pointSize="20"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="elw-nd-rl3"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="elw-nd-rl3"/>
+                                    </mask>
+                                </variation>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ENERGY Total" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MCV-zm-pf5">
+                                <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="90" id="RaZ-7l-yOd">
+                                        <variation key="heightClass=regular-widthClass=compact" constant="110"/>
+                                    </constraint>
+                                    <constraint firstAttribute="width" constant="90" id="Yop-gg-As7">
+                                        <variation key="heightClass=regular-widthClass=regular" constant="200"/>
+                                    </constraint>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="TrebuchetMS" family="Trebuchet MS" pointSize="28"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="RaZ-7l-yOd"/>
+                                        <exclude reference="Yop-gg-As7"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=regular">
+                                    <mask key="constraints">
+                                        <include reference="Yop-gg-As7"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="RaZ-7l-yOd"/>
+                                        <exclude reference="Yop-gg-As7"/>
+                                    </mask>
+                                </variation>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0.000" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QUc-YM-H1e">
+                                <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="160" id="10o-cp-ipj">
+                                        <variation key="heightClass=regular-widthClass=regular" constant="260"/>
+                                    </constraint>
+                                    <constraint firstAttribute="width" constant="160" id="fXr-k2-weI"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="TrebuchetMS" family="Trebuchet MS" pointSize="44"/>
+                                <color key="textColor" red="1" green="0.89854629870000002" blue="0.061253424819999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="10o-cp-ipj"/>
+                                        <exclude reference="fXr-k2-weI"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=regular">
+                                    <mask key="constraints">
+                                        <include reference="10o-cp-ipj"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=compact">
+                                    <mask key="constraints">
+                                        <exclude reference="10o-cp-ipj"/>
+                                        <include reference="fXr-k2-weI"/>
+                                    </mask>
+                                </variation>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="252" verticalHuggingPriority="251" image="sun.png" translatesAutoresizingMaskIntoConstraints="NO" id="sC0-Ph-ypf">
+                                <rect key="frame" x="16" y="72" width="64" height="83"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="72" id="5wc-Jj-df8"/>
+                                    <constraint firstAttribute="height" constant="73" id="LNB-2R-LI9">
+                                        <variation key="heightClass=compact" constant="72"/>
+                                    </constraint>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="5wc-Jj-df8"/>
+                                        <exclude reference="LNB-2R-LI9"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="5wc-Jj-df8"/>
+                                        <include reference="LNB-2R-LI9"/>
+                                    </mask>
+                                </variation>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Revenue Today" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="44j-yz-VAN">
+                                <rect key="frame" x="313" y="253" width="67" height="51"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="120" id="1f5-6B-AMB">
+                                        <variation key="heightClass=regular-widthClass=regular" constant="200"/>
+                                    </constraint>
+                                    <constraint firstAttribute="width" constant="120" id="XET-3P-QfQ">
+                                        <variation key="heightClass=compact" constant="120"/>
+                                    </constraint>
+                                    <constraint firstAttribute="width" constant="120" id="mTV-0L-wOb">
+                                        <variation key="heightClass=regular-widthClass=compact" constant="120"/>
+                                    </constraint>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="TrebuchetMS" family="Trebuchet MS" pointSize="32"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="1f5-6B-AMB"/>
+                                        <exclude reference="XET-3P-QfQ"/>
+                                        <exclude reference="mTV-0L-wOb"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="XET-3P-QfQ"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=regular">
+                                    <mask key="constraints">
+                                        <include reference="1f5-6B-AMB"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=compact">
+                                    <mask key="constraints">
+                                        <exclude reference="1f5-6B-AMB"/>
+                                        <include reference="mTV-0L-wOb"/>
+                                    </mask>
+                                </variation>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="wind" translatesAutoresizingMaskIntoConstraints="NO" id="kyD-Lr-SYs">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="kWh" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MFh-2W-qsW">
+                                <rect key="frame" x="542" y="221" width="35" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="36" id="Dx9-Sy-9Ny"/>
+                                    <constraint firstAttribute="width" constant="49" id="G1f-Zn-MOs">
+                                        <variation key="heightClass=regular-widthClass=regular" constant="56"/>
+                                    </constraint>
+                                    <constraint firstAttribute="width" constant="36" id="hdk-59-Qiq"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="TrebuchetMS" family="Trebuchet MS" pointSize="24"/>
+                                <color key="textColor" red="1" green="0.89854629870000002" blue="0.061253424819999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="G1f-Zn-MOs"/>
+                                        <exclude reference="hdk-59-Qiq"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=compact">
+                                    <mask key="constraints">
+                                        <exclude reference="Dx9-Sy-9Ny"/>
+                                        <include reference="hdk-59-Qiq"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=regular">
+                                    <mask key="constraints">
+                                        <exclude reference="Dx9-Sy-9Ny"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=regular">
+                                    <mask key="constraints">
+                                        <include reference="G1f-Zn-MOs"/>
+                                    </mask>
+                                </variation>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="POWER" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="esc-Zk-FbN">
+                                <rect key="frame" x="313" y="168" width="63" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="120" id="1Ym-vQ-toi"/>
+                                    <constraint firstAttribute="width" constant="120" id="JB8-Ly-ERy"/>
+                                    <constraint firstAttribute="width" constant="63" id="KWe-wM-kcZ">
+                                        <variation key="heightClass=regular-widthClass=regular" constant="200"/>
+                                    </constraint>
+                                    <constraint firstAttribute="width" constant="120" id="s87-CA-wsX"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="TrebuchetMS" family="Trebuchet MS" pointSize="32"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="1Ym-vQ-toi"/>
+                                        <exclude reference="JB8-Ly-ERy"/>
+                                        <exclude reference="s87-CA-wsX"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="JB8-Ly-ERy"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=regular">
+                                    <mask key="constraints">
+                                        <include reference="s87-CA-wsX"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="1Ym-vQ-toi"/>
+                                        <exclude reference="KWe-wM-kcZ"/>
+                                        <exclude reference="s87-CA-wsX"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=regular">
+                                    <mask key="constraints">
+                                        <exclude reference="s87-CA-wsX"/>
+                                    </mask>
+                                </variation>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ENERGY This Year" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eBn-St-9HA">
+                                <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="90" id="CRS-Bl-wdS">
+                                        <variation key="heightClass=regular-widthClass=compact" constant="110"/>
+                                    </constraint>
+                                    <constraint firstAttribute="width" constant="90" id="Oho-7p-cNc">
+                                        <variation key="heightClass=regular-widthClass=regular" constant="200"/>
+                                    </constraint>
+                                    <constraint firstAttribute="height" constant="50" id="pf7-bN-l7a">
+                                        <variation key="heightClass=regular-widthClass=regular" constant="80"/>
+                                    </constraint>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="TrebuchetMS" family="Trebuchet MS" pointSize="28"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="CRS-Bl-wdS"/>
+                                        <exclude reference="Oho-7p-cNc"/>
+                                        <exclude reference="pf7-bN-l7a"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=regular">
+                                    <mask key="constraints">
+                                        <include reference="Oho-7p-cNc"/>
+                                        <include reference="pf7-bN-l7a"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="CRS-Bl-wdS"/>
+                                        <exclude reference="Oho-7p-cNc"/>
+                                        <exclude reference="pf7-bN-l7a"/>
+                                    </mask>
+                                </variation>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0.00" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ftf-WM-JXg">
+                                <rect key="frame" x="401" y="162" width="106" height="34"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="160" id="2SS-S8-rSS"/>
+                                    <constraint firstAttribute="width" constant="160" id="Tkx-tP-w4u"/>
+                                    <constraint firstAttribute="width" constant="106" id="x9f-4U-SvO">
+                                        <variation key="heightClass=regular-widthClass=regular" constant="260"/>
+                                    </constraint>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="TrebuchetMS" family="Trebuchet MS" pointSize="48"/>
+                                <color key="textColor" red="1" green="0.89854629870000002" blue="0.061253424819999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="2SS-S8-rSS"/>
+                                        <exclude reference="Tkx-tP-w4u"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="2SS-S8-rSS"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="Tkx-tP-w4u"/>
+                                        <exclude reference="x9f-4U-SvO"/>
+                                    </mask>
+                                </variation>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ENERGY This Month" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P39-Nx-vb1">
+                                <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="90" id="JhY-wE-okM">
+                                        <variation key="heightClass=regular-widthClass=compact" constant="110"/>
+                                    </constraint>
+                                    <constraint firstAttribute="width" constant="90" id="abp-6z-Psd">
+                                        <variation key="heightClass=regular-widthClass=regular" constant="200"/>
+                                    </constraint>
+                                    <constraint firstAttribute="height" constant="50" id="u3d-S5-A2r">
+                                        <variation key="heightClass=regular-widthClass=regular" constant="80"/>
+                                    </constraint>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="TrebuchetMS" family="Trebuchet MS" pointSize="28"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="JhY-wE-okM"/>
+                                        <exclude reference="abp-6z-Psd"/>
+                                        <exclude reference="u3d-S5-A2r"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=regular">
+                                    <mask key="constraints">
+                                        <include reference="abp-6z-Psd"/>
+                                        <include reference="u3d-S5-A2r"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="JhY-wE-okM"/>
+                                        <exclude reference="abp-6z-Psd"/>
+                                        <exclude reference="u3d-S5-A2r"/>
+                                    </mask>
+                                </variation>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" horizontalCompressionResistancePriority="751" text="kW" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nGz-kn-o7Y">
+                                <rect key="frame" x="542" y="172" width="25" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="25" id="Hmy-aH-eD3">
+                                        <variation key="heightClass=regular" constant="35"/>
+                                        <variation key="heightClass=regular-widthClass=regular" constant="56"/>
+                                    </constraint>
+                                    <constraint firstAttribute="width" constant="42" id="Sae-pr-ZSj">
+                                        <variation key="heightClass=compact" constant="36"/>
+                                    </constraint>
+                                    <constraint firstAttribute="width" constant="36" id="tSW-39-Vuw"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="TrebuchetMS" family="Trebuchet MS" pointSize="24"/>
+                                <color key="textColor" red="1" green="0.89854629870000002" blue="0.061253424819999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="Hmy-aH-eD3"/>
+                                        <exclude reference="Sae-pr-ZSj"/>
+                                        <exclude reference="tSW-39-Vuw"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="Sae-pr-ZSj"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=regular">
+                                    <mask key="constraints">
+                                        <include reference="Hmy-aH-eD3"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=compact">
+                                    <mask key="constraints">
+                                        <exclude reference="Hmy-aH-eD3"/>
+                                        <include reference="tSW-39-Vuw"/>
+                                    </mask>
+                                </variation>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00:00" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vHT-k1-UDF">
+                                <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="67" id="Gos-0h-UYq">
+                                        <variation key="heightClass=regular-widthClass=regular" constant="90"/>
+                                    </constraint>
+                                    <constraint firstAttribute="height" constant="21" id="oGG-jM-h3X"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="TrebuchetMS" family="Trebuchet MS" pointSize="20"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="Gos-0h-UYq"/>
+                                        <exclude reference="oGG-jM-h3X"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=regular">
+                                    <mask key="constraints">
+                                        <include reference="Gos-0h-UYq"/>
+                                        <include reference="oGG-jM-h3X"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=compact">
+                                    <mask key="constraints">
+                                        <exclude reference="Gos-0h-UYq"/>
+                                        <exclude reference="oGG-jM-h3X"/>
+                                    </mask>
+                                </variation>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="252" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" image="rain" translatesAutoresizingMaskIntoConstraints="NO" id="Biz-ZI-2ac">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="248" verticalHuggingPriority="249" text="--" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ey3-SZ-Jth">
+                                <rect key="frame" x="135" y="144" width="44" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="44" id="El6-0a-ciW"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="TrebuchetMS" family="Trebuchet MS" pointSize="20"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="El6-0a-ciW"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="El6-0a-ciW"/>
+                                    </mask>
+                                </variation>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0 w/m²" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Msd-4w-9qd">
+                                <rect key="frame" x="-104" y="144" width="305" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="120" id="9f2-9v-POh">
+                                        <variation key="heightClass=regular-widthClass=regular" constant="160"/>
+                                    </constraint>
+                                    <constraint firstAttribute="height" constant="21" id="JNP-Ys-BbF"/>
+                                    <constraint firstAttribute="width" constant="110" id="qDJ-MU-q23"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="TrebuchetMS" family="Trebuchet MS" pointSize="32"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="9f2-9v-POh"/>
+                                        <exclude reference="JNP-Ys-BbF"/>
+                                        <exclude reference="qDJ-MU-q23"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="JNP-Ys-BbF"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="qDJ-MU-q23"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=regular">
+                                    <mask key="constraints">
+                                        <include reference="9f2-9v-POh"/>
+                                    </mask>
+                                </variation>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="000" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BXQ-9C-lIB">
+                                <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="160" id="0h8-Bm-rfM">
+                                        <variation key="heightClass=regular-widthClass=regular" constant="260"/>
+                                    </constraint>
+                                    <constraint firstAttribute="width" constant="160" id="YYA-EJ-2uk"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="TrebuchetMS" family="Trebuchet MS" pointSize="44"/>
+                                <color key="textColor" red="1" green="0.89854629870000002" blue="0.061253424819999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="0h8-Bm-rfM"/>
+                                        <exclude reference="YYA-EJ-2uk"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=regular">
+                                    <mask key="constraints">
+                                        <include reference="0h8-Bm-rfM"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=compact">
+                                    <mask key="constraints">
+                                        <exclude reference="0h8-Bm-rfM"/>
+                                        <include reference="YYA-EJ-2uk"/>
+                                    </mask>
+                                </variation>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0,000" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8lk-nD-cik">
+                                <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="160" id="M6x-bg-NUB"/>
+                                    <constraint firstAttribute="width" constant="160" id="X8u-2N-4O8">
+                                        <variation key="heightClass=regular-widthClass=regular" constant="260"/>
+                                    </constraint>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="TrebuchetMS" family="Trebuchet MS" pointSize="44"/>
+                                <color key="textColor" red="1" green="0.89854629870000002" blue="0.061253424819999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="M6x-bg-NUB"/>
+                                        <exclude reference="X8u-2N-4O8"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=regular">
+                                    <mask key="constraints">
+                                        <include reference="X8u-2N-4O8"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="M6x-bg-NUB"/>
+                                        <exclude reference="X8u-2N-4O8"/>
+                                    </mask>
+                                </variation>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="212" text="00.00" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Cv-MT-NpX">
+                                <rect key="frame" x="401" y="207" width="106" height="39"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="160" id="YI0-0X-dXM"/>
+                                    <constraint firstAttribute="width" constant="160" id="fUJ-0W-1rq"/>
+                                    <constraint firstAttribute="width" constant="119" id="qrI-f6-B2m">
+                                        <variation key="heightClass=regular-widthClass=regular" constant="260"/>
+                                    </constraint>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="TrebuchetMS" family="Trebuchet MS" pointSize="48"/>
+                                <color key="textColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="YI0-0X-dXM"/>
+                                        <exclude reference="fUJ-0W-1rq"/>
+                                        <exclude reference="qrI-f6-B2m"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="fUJ-0W-1rq"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="YI0-0X-dXM"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=regular">
+                                    <mask key="constraints">
+                                        <include reference="qrI-f6-B2m"/>
+                                    </mask>
+                                </variation>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" horizontalCompressionResistancePriority="749" text="ENERGY Today" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bVV-SL-bOr">
+                                <rect key="frame" x="313" y="209" width="70" height="45"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="120" id="HiG-kN-IUf">
+                                        <variation key="heightClass=compact" constant="120"/>
+                                    </constraint>
+                                    <constraint firstAttribute="width" constant="120" id="bEX-VY-xkf"/>
+                                    <constraint firstAttribute="width" constant="120" id="drN-nX-Idx">
+                                        <variation key="heightClass=regular-widthClass=regular" constant="200"/>
+                                    </constraint>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="TrebuchetMS" family="Trebuchet MS" pointSize="32"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="HiG-kN-IUf"/>
+                                        <exclude reference="bEX-VY-xkf"/>
+                                        <exclude reference="drN-nX-Idx"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="HiG-kN-IUf"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=regular">
+                                    <mask key="constraints">
+                                        <include reference="drN-nX-Idx"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="bEX-VY-xkf"/>
+                                        <exclude reference="drN-nX-Idx"/>
+                                    </mask>
+                                </variation>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MWh" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xza-5l-Ooo">
+                                <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="41" id="QJS-Qp-qAJ">
+                                        <variation key="heightClass=regular-widthClass=regular" constant="56"/>
+                                    </constraint>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="TrebuchetMS" family="Trebuchet MS" pointSize="24"/>
+                                <color key="textColor" red="1" green="0.89854629870000002" blue="0.061253424819999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="QJS-Qp-qAJ"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=regular">
+                                    <mask key="constraints">
+                                        <include reference="QJS-Qp-qAJ"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=compact">
+                                    <mask key="constraints">
+                                        <exclude reference="QJS-Qp-qAJ"/>
+                                    </mask>
+                                </variation>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="dd MMM yyyy" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wKa-7e-BNj">
+                                <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="28" id="6Ph-6Z-new">
+                                        <variation key="heightClass=regular-widthClass=regular" constant="36"/>
+                                    </constraint>
+                                    <constraint firstAttribute="width" constant="175" id="wNV-cM-VHl">
+                                        <variation key="heightClass=regular-widthClass=regular" constant="220"/>
+                                    </constraint>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="TrebuchetMS" family="Trebuchet MS" pointSize="32"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="6Ph-6Z-new"/>
+                                        <exclude reference="wNV-cM-VHl"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=regular">
+                                    <mask key="constraints">
+                                        <include reference="6Ph-6Z-new"/>
+                                        <include reference="wNV-cM-VHl"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=compact">
+                                    <mask key="constraints">
+                                        <exclude reference="6Ph-6Z-new"/>
+                                        <exclude reference="wNV-cM-VHl"/>
+                                    </mask>
+                                </variation>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="--" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iq7-NQ-UrU">
+                                <rect key="frame" x="135" y="144" width="44" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="49" id="6sc-hX-tUc"/>
+                                    <constraint firstAttribute="width" constant="44" id="Gw0-La-JC9"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="TrebuchetMS" family="Trebuchet MS" pointSize="20"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="6sc-hX-tUc"/>
+                                        <exclude reference="Gw0-La-JC9"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="Gw0-La-JC9"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=regular">
+                                    <mask key="constraints">
+                                        <include reference="6sc-hX-tUc"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=compact">
+                                    <mask key="constraints">
+                                        <exclude reference="6sc-hX-tUc"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=regular">
+                                    <mask key="constraints">
+                                        <exclude reference="6sc-hX-tUc"/>
+                                    </mask>
+                                </variation>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="247" verticalHuggingPriority="251" text="--" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QWp-QE-IPF">
+                                <rect key="frame" x="135" y="144" width="44" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="44" id="Mjj-zc-B40"/>
+                                    <constraint firstAttribute="height" constant="15" id="Y7K-hF-6WM"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="TrebuchetMS" family="Trebuchet MS" pointSize="20"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="Mjj-zc-B40"/>
+                                        <exclude reference="Y7K-hF-6WM"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=regular">
+                                    <mask key="constraints">
+                                        <include reference="Mjj-zc-B40"/>
+                                        <exclude reference="Y7K-hF-6WM"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=compact">
+                                    <mask key="constraints">
+                                        <exclude reference="Mjj-zc-B40"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=regular">
+                                    <mask key="constraints">
+                                        <exclude reference="Mjj-zc-B40"/>
+                                    </mask>
+                                </variation>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="kWh" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="njt-MZ-tP5">
+                                <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="36" id="66H-Mf-5Gi"/>
+                                    <constraint firstAttribute="width" constant="56" id="lev-YR-Yu0"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="TrebuchetMS" family="Trebuchet MS" pointSize="24"/>
+                                <color key="textColor" red="1" green="0.89854629870000002" blue="0.061253424819999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="66H-Mf-5Gi"/>
+                                        <exclude reference="lev-YR-Yu0"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="66H-Mf-5Gi"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=regular">
+                                    <mask key="constraints">
+                                        <include reference="lev-YR-Yu0"/>
+                                    </mask>
+                                </variation>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Baht" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="62t-Cu-bP7">
+                                <rect key="frame" x="542" y="268" width="36" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="36" id="Zbe-u7-mT1"/>
+                                    <constraint firstAttribute="width" constant="44" id="n2j-iU-FGi">
+                                        <variation key="heightClass=regular-widthClass=regular" constant="56"/>
+                                    </constraint>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="TrebuchetMS" family="Trebuchet MS" pointSize="24"/>
+                                <color key="textColor" red="1" green="0.89854629870000002" blue="0.061253424819999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="Zbe-u7-mT1"/>
+                                        <exclude reference="n2j-iU-FGi"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="Zbe-u7-mT1"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=regular">
+                                    <mask key="constraints">
+                                        <include reference="n2j-iU-FGi"/>
+                                    </mask>
+                                </variation>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="humidity" translatesAutoresizingMaskIntoConstraints="NO" id="7aC-pv-8zo">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="239" verticalHuggingPriority="251" text="000.00" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="emj-Bc-XTv">
+                                <rect key="frame" x="401" y="259" width="106" height="39"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="160" id="YZA-8u-cZw"/>
+                                    <constraint firstAttribute="width" constant="160" id="wWS-dp-H60"/>
+                                    <constraint firstAttribute="width" constant="160" id="y47-ye-Cv5">
+                                        <variation key="heightClass=regular-widthClass=regular" constant="260"/>
+                                    </constraint>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="TrebuchetMS" family="Trebuchet MS" pointSize="48"/>
+                                <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="YZA-8u-cZw"/>
+                                        <exclude reference="wWS-dp-H60"/>
+                                        <exclude reference="y47-ye-Cv5"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="YZA-8u-cZw"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="wWS-dp-H60"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=regular">
+                                    <mask key="constraints">
+                                        <include reference="y47-ye-Cv5"/>
+                                    </mask>
+                                </variation>
+                            </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg-p.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="8OY-Nj-3uh">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <color key="tintColor" red="1" green="0.10181949010000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -515,7 +1402,7 @@
                                     </mask>
                                 </variation>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1,117" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mfZ-6v-EqT">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="000" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mfZ-6v-EqT">
                                 <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="160" id="e9T-Eo-znT"/>
@@ -534,7 +1421,7 @@
                                     </mask>
                                 </variation>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0.134" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mPI-Au-IXa">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0.000" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mPI-Au-IXa">
                                 <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="160" id="e7a-RI-QbD"/>
@@ -593,7 +1480,7 @@
                                     </mask>
                                 </variation>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="216" verticalHuggingPriority="251" text="19,117" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BuE-Ay-YdK">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="216" verticalHuggingPriority="251" text="0,000" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BuE-Ay-YdK">
                                 <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="160" id="s8T-ek-rTS"/>
@@ -672,7 +1559,7 @@
                                     </mask>
                                 </variation>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="75%" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ULm-rN-FsN">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="--" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ULm-rN-FsN">
                                 <rect key="frame" x="135" y="144" width="44" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="44" id="egx-Cc-AKZ"/>
@@ -691,7 +1578,7 @@
                                     </mask>
                                 </variation>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="248" verticalHuggingPriority="249" text="6m/s" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="swu-9J-d4b">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="248" verticalHuggingPriority="249" text="--" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="swu-9J-d4b">
                                 <rect key="frame" x="135" y="144" width="44" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="44" id="fck-4I-3yw"/>
@@ -710,7 +1597,7 @@
                                     </mask>
                                 </variation>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="11mm" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sgy-N9-zVh">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="--" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sgy-N9-zVh">
                                 <rect key="frame" x="135" y="144" width="44" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="44" id="TU3-Ro-sTJ"/>
@@ -952,7 +1839,7 @@
                                     </mask>
                                 </variation>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="6.50" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VwA-AP-VbV">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0.00" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VwA-AP-VbV">
                                 <rect key="frame" x="401" y="162" width="106" height="34"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="160" id="D2x-Zx-4yc"/>
@@ -978,7 +1865,7 @@
                                     </mask>
                                 </variation>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="212" text="17.25" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="duo-Ye-OcR">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="212" text="0.00" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="duo-Ye-OcR">
                                 <rect key="frame" x="401" y="207" width="106" height="39"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="160" id="1Hq-Pl-j2Y"/>
@@ -1004,7 +1891,7 @@
                                     </mask>
                                 </variation>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="239" verticalHuggingPriority="251" text="120.06" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G0D-CW-3AT">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="239" verticalHuggingPriority="251" text="000.00" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G0D-CW-3AT">
                                 <rect key="frame" x="401" y="259" width="106" height="39"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="160" id="VjR-4I-tT9"/>
@@ -1051,7 +1938,7 @@
                                     </mask>
                                 </variation>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="300 w/m²" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8o7-NS-nXa">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0 w/m²" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8o7-NS-nXa">
                                 <rect key="frame" x="-104" y="144" width="305" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="120" id="fth-VD-EX4"/>
@@ -1068,7 +1955,8 @@
                                         <exclude reference="vum-7J-YNw"/>
                                     </mask>
                                 </variation>
-                                <variation key="heightClass=compact">
+                                <variation key="heightClass=compact" misplaced="YES">
+                                    <rect key="frame" x="16" y="97" width="102" height="21"/>
                                     <mask key="constraints">
                                         <include reference="mgI-8F-Ket"/>
                                     </mask>
@@ -1084,7 +1972,7 @@
                                     </mask>
                                 </variation>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="247" verticalHuggingPriority="251" text="32 °C" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TVG-L6-xz3">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="247" verticalHuggingPriority="251" text="--" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TVG-L6-xz3">
                                 <rect key="frame" x="135" y="144" width="44" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="15" id="0We-m6-GVf"/>
@@ -1098,6 +1986,9 @@
                                         <exclude reference="0We-m6-GVf"/>
                                         <exclude reference="dHS-pt-uLM"/>
                                     </mask>
+                                </variation>
+                                <variation key="heightClass=compact" misplaced="YES">
+                                    <rect key="frame" x="56" y="138" width="25" height="12"/>
                                 </variation>
                                 <variation key="heightClass=regular">
                                     <mask key="constraints">
@@ -1218,7 +2109,7 @@
                                     </mask>
                                 </variation>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="212" text="17.25" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pek-lT-1VF">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="212" text="00.00" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pek-lT-1VF">
                                 <rect key="frame" x="401" y="207" width="106" height="39"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="160" id="FkK-n0-vqy"/>
@@ -1306,7 +2197,7 @@
                                     </mask>
                                 </variation>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="248" verticalHuggingPriority="249" text="6m/s" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LPn-tk-pGt">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="248" verticalHuggingPriority="249" text="--" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LPn-tk-pGt">
                                 <rect key="frame" x="135" y="144" width="44" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="44" id="q9S-LC-y7Y"/>
@@ -1323,6 +2214,9 @@
                                     <mask key="constraints">
                                         <include reference="q9S-LC-y7Y"/>
                                     </mask>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="186" y="124" width="23" height="12"/>
                                 </variation>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="252" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" image="rain" translatesAutoresizingMaskIntoConstraints="NO" id="gwp-4X-pXf">
@@ -1385,7 +2279,7 @@
                                     </mask>
                                 </variation>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0.038" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kMY-lZ-XnI">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0.000" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kMY-lZ-XnI">
                                 <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="160" id="2Jq-pb-kvn"/>
@@ -1496,7 +2390,7 @@
                                     </mask>
                                 </variation>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="75%" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gzT-q0-dyN">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="--" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gzT-q0-dyN">
                                 <rect key="frame" x="135" y="144" width="44" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="20" id="CA9-5V-vdQ"/>
@@ -1560,7 +2454,7 @@
                                     </mask>
                                 </variation>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="6.50" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="crs-nx-eja">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0.00" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="crs-nx-eja">
                                 <rect key="frame" x="401" y="162" width="106" height="34"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="160" id="BYQ-3w-Xr9"/>
@@ -1614,7 +2508,7 @@
                                     </mask>
                                 </variation>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="300 w/m²" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ifs-6e-LRs">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0 w/m²" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ifs-6e-LRs">
                                 <rect key="frame" x="-104" y="144" width="305" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="LEB-sh-OMf"/>
@@ -1781,7 +2675,7 @@
                             <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="wind" translatesAutoresizingMaskIntoConstraints="NO" id="hUx-PC-snq">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="247" verticalHuggingPriority="251" text="32 °C" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MGW-QJ-KwV">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="247" verticalHuggingPriority="251" text="--" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MGW-QJ-KwV">
                                 <rect key="frame" x="135" y="144" width="44" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="15" id="J9a-fc-1TO"/>
@@ -1802,7 +2696,8 @@
                                         <include reference="zK5-tZ-io1"/>
                                     </mask>
                                 </variation>
-                                <variation key="heightClass=regular-widthClass=compact">
+                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="121" y="124" width="25" height="12"/>
                                     <mask key="constraints">
                                         <exclude reference="zK5-tZ-io1"/>
                                     </mask>
@@ -1813,7 +2708,7 @@
                                     </mask>
                                 </variation>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="11mm" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bbw-kR-7ul">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="--" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bbw-kR-7ul">
                                 <rect key="frame" x="135" y="144" width="44" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="49" id="IfY-dg-N7t"/>
@@ -1838,7 +2733,8 @@
                                         <include reference="IfY-dg-N7t"/>
                                     </mask>
                                 </variation>
-                                <variation key="heightClass=regular-widthClass=compact">
+                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="214" y="124" width="27.5" height="12"/>
                                     <mask key="constraints">
                                         <exclude reference="IfY-dg-N7t"/>
                                     </mask>
@@ -1849,7 +2745,7 @@
                                     </mask>
                                 </variation>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="239" verticalHuggingPriority="251" text="120.06" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Wm-C9-2Zd">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="239" verticalHuggingPriority="251" text="000.00" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Wm-C9-2Zd">
                                 <rect key="frame" x="401" y="259" width="106" height="39"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="160" id="Pzj-Bq-bRe"/>
@@ -1878,7 +2774,7 @@
                             <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="humidity" translatesAutoresizingMaskIntoConstraints="NO" id="EGl-ZS-Ivf">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1,117" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3E7-84-5xB">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="000" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3E7-84-5xB">
                                 <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="160" id="bVF-pO-Ka5"/>
@@ -1943,7 +2839,7 @@
                                     </mask>
                                 </variation>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="13,100" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yly-pA-s87">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00,000" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yly-pA-s87">
                                 <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="160" id="I2b-QT-JLZ"/>
@@ -2007,865 +2903,6 @@
                                     <outlet property="delegate" destination="hX3-N5-SKb" id="7or-dy-dkZ"/>
                                 </connections>
                             </collectionView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="kWh" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="101-ej-NlL">
-                                <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="36" id="IQk-L0-CfZ"/>
-                                    <constraint firstAttribute="width" constant="36" id="LgS-up-eq1">
-                                        <variation key="heightClass=regular-widthClass=regular" constant="56"/>
-                                    </constraint>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="TrebuchetMS" family="Trebuchet MS" pointSize="24"/>
-                                <color key="textColor" red="1" green="0.89854629870000002" blue="0.061253424819999999" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="IQk-L0-CfZ"/>
-                                        <exclude reference="LgS-up-eq1"/>
-                                    </mask>
-                                </variation>
-                                <variation key="heightClass=regular-widthClass=compact">
-                                    <mask key="constraints">
-                                        <include reference="IQk-L0-CfZ"/>
-                                    </mask>
-                                </variation>
-                                <variation key="heightClass=regular-widthClass=regular">
-                                    <mask key="constraints">
-                                        <include reference="LgS-up-eq1"/>
-                                    </mask>
-                                </variation>
-                            </label>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="ji5-ac-T4m">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="160" id="MMz-Ne-mhC"/>
-                                </constraints>
-                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="d5n-cN-kyb">
-                                    <size key="itemSize" width="141" height="110"/>
-                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                </collectionViewFlowLayout>
-                                <cells/>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="MMz-Ne-mhC"/>
-                                    </mask>
-                                </variation>
-                                <variation key="heightClass=regular-widthClass=regular">
-                                    <mask key="constraints">
-                                        <include reference="MMz-Ne-mhC"/>
-                                    </mask>
-                                </variation>
-                                <connections>
-                                    <outlet property="dataSource" destination="hX3-N5-SKb" id="bDV-DZ-1Ap"/>
-                                    <outlet property="delegate" destination="hX3-N5-SKb" id="vdS-4Y-vxq"/>
-                                </connections>
-                            </collectionView>
-                            <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="252" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" image="temperature" translatesAutoresizingMaskIntoConstraints="NO" id="UgC-Qh-rrj">
-                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="75%" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Bq-Ds-Vp1">
-                                <rect key="frame" x="135" y="144" width="44" height="21"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="44" id="elw-nd-rl3"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="TrebuchetMS" family="Trebuchet MS" pointSize="20"/>
-                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="elw-nd-rl3"/>
-                                    </mask>
-                                </variation>
-                                <variation key="heightClass=compact">
-                                    <mask key="constraints">
-                                        <include reference="elw-nd-rl3"/>
-                                    </mask>
-                                </variation>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ENERGY Total" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MCV-zm-pf5">
-                                <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="90" id="RaZ-7l-yOd">
-                                        <variation key="heightClass=regular-widthClass=compact" constant="110"/>
-                                    </constraint>
-                                    <constraint firstAttribute="width" constant="90" id="Yop-gg-As7">
-                                        <variation key="heightClass=regular-widthClass=regular" constant="200"/>
-                                    </constraint>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="TrebuchetMS" family="Trebuchet MS" pointSize="28"/>
-                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="RaZ-7l-yOd"/>
-                                        <exclude reference="Yop-gg-As7"/>
-                                    </mask>
-                                </variation>
-                                <variation key="heightClass=regular">
-                                    <mask key="constraints">
-                                        <include reference="Yop-gg-As7"/>
-                                    </mask>
-                                </variation>
-                                <variation key="heightClass=regular-widthClass=compact">
-                                    <mask key="constraints">
-                                        <include reference="RaZ-7l-yOd"/>
-                                        <exclude reference="Yop-gg-As7"/>
-                                    </mask>
-                                </variation>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0.038" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QUc-YM-H1e">
-                                <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="160" id="10o-cp-ipj">
-                                        <variation key="heightClass=regular-widthClass=regular" constant="260"/>
-                                    </constraint>
-                                    <constraint firstAttribute="width" constant="160" id="fXr-k2-weI"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="TrebuchetMS" family="Trebuchet MS" pointSize="44"/>
-                                <color key="textColor" red="1" green="0.89854629870000002" blue="0.061253424819999999" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="10o-cp-ipj"/>
-                                        <exclude reference="fXr-k2-weI"/>
-                                    </mask>
-                                </variation>
-                                <variation key="heightClass=regular">
-                                    <mask key="constraints">
-                                        <include reference="10o-cp-ipj"/>
-                                    </mask>
-                                </variation>
-                                <variation key="heightClass=regular-widthClass=compact">
-                                    <mask key="constraints">
-                                        <exclude reference="10o-cp-ipj"/>
-                                        <include reference="fXr-k2-weI"/>
-                                    </mask>
-                                </variation>
-                            </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="252" verticalHuggingPriority="251" image="sun.png" translatesAutoresizingMaskIntoConstraints="NO" id="sC0-Ph-ypf">
-                                <rect key="frame" x="16" y="72" width="64" height="83"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="72" id="5wc-Jj-df8"/>
-                                    <constraint firstAttribute="height" constant="73" id="LNB-2R-LI9">
-                                        <variation key="heightClass=compact" constant="72"/>
-                                    </constraint>
-                                </constraints>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="5wc-Jj-df8"/>
-                                        <exclude reference="LNB-2R-LI9"/>
-                                    </mask>
-                                </variation>
-                                <variation key="heightClass=compact">
-                                    <mask key="constraints">
-                                        <include reference="5wc-Jj-df8"/>
-                                        <include reference="LNB-2R-LI9"/>
-                                    </mask>
-                                </variation>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Revenue Today" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="44j-yz-VAN">
-                                <rect key="frame" x="313" y="253" width="67" height="51"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="120" id="1f5-6B-AMB">
-                                        <variation key="heightClass=regular-widthClass=regular" constant="200"/>
-                                    </constraint>
-                                    <constraint firstAttribute="width" constant="120" id="XET-3P-QfQ">
-                                        <variation key="heightClass=compact" constant="120"/>
-                                    </constraint>
-                                    <constraint firstAttribute="width" constant="120" id="mTV-0L-wOb">
-                                        <variation key="heightClass=regular-widthClass=compact" constant="120"/>
-                                    </constraint>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="TrebuchetMS" family="Trebuchet MS" pointSize="32"/>
-                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="1f5-6B-AMB"/>
-                                        <exclude reference="XET-3P-QfQ"/>
-                                        <exclude reference="mTV-0L-wOb"/>
-                                    </mask>
-                                </variation>
-                                <variation key="heightClass=compact">
-                                    <mask key="constraints">
-                                        <include reference="XET-3P-QfQ"/>
-                                    </mask>
-                                </variation>
-                                <variation key="heightClass=regular">
-                                    <mask key="constraints">
-                                        <include reference="1f5-6B-AMB"/>
-                                    </mask>
-                                </variation>
-                                <variation key="heightClass=regular-widthClass=compact">
-                                    <mask key="constraints">
-                                        <exclude reference="1f5-6B-AMB"/>
-                                        <include reference="mTV-0L-wOb"/>
-                                    </mask>
-                                </variation>
-                            </label>
-                            <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="wind" translatesAutoresizingMaskIntoConstraints="NO" id="kyD-Lr-SYs">
-                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="kWh" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MFh-2W-qsW">
-                                <rect key="frame" x="542" y="221" width="35" height="21"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="36" id="Dx9-Sy-9Ny"/>
-                                    <constraint firstAttribute="width" constant="49" id="G1f-Zn-MOs">
-                                        <variation key="heightClass=regular-widthClass=regular" constant="56"/>
-                                    </constraint>
-                                    <constraint firstAttribute="width" constant="36" id="hdk-59-Qiq"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="TrebuchetMS" family="Trebuchet MS" pointSize="24"/>
-                                <color key="textColor" red="1" green="0.89854629870000002" blue="0.061253424819999999" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="G1f-Zn-MOs"/>
-                                        <exclude reference="hdk-59-Qiq"/>
-                                    </mask>
-                                </variation>
-                                <variation key="heightClass=compact">
-                                    <mask key="constraints">
-                                        <exclude reference="Dx9-Sy-9Ny"/>
-                                        <include reference="hdk-59-Qiq"/>
-                                    </mask>
-                                </variation>
-                                <variation key="heightClass=regular">
-                                    <mask key="constraints">
-                                        <exclude reference="Dx9-Sy-9Ny"/>
-                                    </mask>
-                                </variation>
-                                <variation key="heightClass=regular-widthClass=regular">
-                                    <mask key="constraints">
-                                        <include reference="G1f-Zn-MOs"/>
-                                    </mask>
-                                </variation>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="POWER" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="esc-Zk-FbN">
-                                <rect key="frame" x="313" y="168" width="63" height="21"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="120" id="1Ym-vQ-toi"/>
-                                    <constraint firstAttribute="width" constant="120" id="JB8-Ly-ERy"/>
-                                    <constraint firstAttribute="width" constant="63" id="KWe-wM-kcZ">
-                                        <variation key="heightClass=regular-widthClass=regular" constant="200"/>
-                                    </constraint>
-                                    <constraint firstAttribute="width" constant="120" id="s87-CA-wsX"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="TrebuchetMS" family="Trebuchet MS" pointSize="32"/>
-                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="1Ym-vQ-toi"/>
-                                        <exclude reference="JB8-Ly-ERy"/>
-                                        <exclude reference="s87-CA-wsX"/>
-                                    </mask>
-                                </variation>
-                                <variation key="heightClass=compact">
-                                    <mask key="constraints">
-                                        <include reference="JB8-Ly-ERy"/>
-                                    </mask>
-                                </variation>
-                                <variation key="heightClass=regular">
-                                    <mask key="constraints">
-                                        <include reference="s87-CA-wsX"/>
-                                    </mask>
-                                </variation>
-                                <variation key="heightClass=regular-widthClass=compact">
-                                    <mask key="constraints">
-                                        <include reference="1Ym-vQ-toi"/>
-                                        <exclude reference="KWe-wM-kcZ"/>
-                                        <exclude reference="s87-CA-wsX"/>
-                                    </mask>
-                                </variation>
-                                <variation key="heightClass=regular-widthClass=regular">
-                                    <mask key="constraints">
-                                        <exclude reference="s87-CA-wsX"/>
-                                    </mask>
-                                </variation>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ENERGY This Year" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eBn-St-9HA">
-                                <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="90" id="CRS-Bl-wdS">
-                                        <variation key="heightClass=regular-widthClass=compact" constant="110"/>
-                                    </constraint>
-                                    <constraint firstAttribute="width" constant="90" id="Oho-7p-cNc">
-                                        <variation key="heightClass=regular-widthClass=regular" constant="200"/>
-                                    </constraint>
-                                    <constraint firstAttribute="height" constant="50" id="pf7-bN-l7a">
-                                        <variation key="heightClass=regular-widthClass=regular" constant="80"/>
-                                    </constraint>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="TrebuchetMS" family="Trebuchet MS" pointSize="28"/>
-                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="CRS-Bl-wdS"/>
-                                        <exclude reference="Oho-7p-cNc"/>
-                                        <exclude reference="pf7-bN-l7a"/>
-                                    </mask>
-                                </variation>
-                                <variation key="heightClass=regular">
-                                    <mask key="constraints">
-                                        <include reference="Oho-7p-cNc"/>
-                                        <include reference="pf7-bN-l7a"/>
-                                    </mask>
-                                </variation>
-                                <variation key="heightClass=regular-widthClass=compact">
-                                    <mask key="constraints">
-                                        <include reference="CRS-Bl-wdS"/>
-                                        <exclude reference="Oho-7p-cNc"/>
-                                        <exclude reference="pf7-bN-l7a"/>
-                                    </mask>
-                                </variation>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="6.50" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ftf-WM-JXg">
-                                <rect key="frame" x="401" y="162" width="106" height="34"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="160" id="2SS-S8-rSS"/>
-                                    <constraint firstAttribute="width" constant="160" id="Tkx-tP-w4u"/>
-                                    <constraint firstAttribute="width" constant="106" id="x9f-4U-SvO">
-                                        <variation key="heightClass=regular-widthClass=regular" constant="260"/>
-                                    </constraint>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="TrebuchetMS" family="Trebuchet MS" pointSize="48"/>
-                                <color key="textColor" red="1" green="0.89854629870000002" blue="0.061253424819999999" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="2SS-S8-rSS"/>
-                                        <exclude reference="Tkx-tP-w4u"/>
-                                    </mask>
-                                </variation>
-                                <variation key="heightClass=compact">
-                                    <mask key="constraints">
-                                        <include reference="2SS-S8-rSS"/>
-                                    </mask>
-                                </variation>
-                                <variation key="heightClass=regular-widthClass=compact">
-                                    <mask key="constraints">
-                                        <include reference="Tkx-tP-w4u"/>
-                                        <exclude reference="x9f-4U-SvO"/>
-                                    </mask>
-                                </variation>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ENERGY This Month" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P39-Nx-vb1">
-                                <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="90" id="JhY-wE-okM">
-                                        <variation key="heightClass=regular-widthClass=compact" constant="110"/>
-                                    </constraint>
-                                    <constraint firstAttribute="width" constant="90" id="abp-6z-Psd">
-                                        <variation key="heightClass=regular-widthClass=regular" constant="200"/>
-                                    </constraint>
-                                    <constraint firstAttribute="height" constant="50" id="u3d-S5-A2r">
-                                        <variation key="heightClass=regular-widthClass=regular" constant="80"/>
-                                    </constraint>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="TrebuchetMS" family="Trebuchet MS" pointSize="28"/>
-                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="JhY-wE-okM"/>
-                                        <exclude reference="abp-6z-Psd"/>
-                                        <exclude reference="u3d-S5-A2r"/>
-                                    </mask>
-                                </variation>
-                                <variation key="heightClass=regular">
-                                    <mask key="constraints">
-                                        <include reference="abp-6z-Psd"/>
-                                        <include reference="u3d-S5-A2r"/>
-                                    </mask>
-                                </variation>
-                                <variation key="heightClass=regular-widthClass=compact">
-                                    <mask key="constraints">
-                                        <include reference="JhY-wE-okM"/>
-                                        <exclude reference="abp-6z-Psd"/>
-                                        <exclude reference="u3d-S5-A2r"/>
-                                    </mask>
-                                </variation>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" horizontalCompressionResistancePriority="751" text="kW" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nGz-kn-o7Y">
-                                <rect key="frame" x="542" y="172" width="25" height="21"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="25" id="Hmy-aH-eD3">
-                                        <variation key="heightClass=regular" constant="35"/>
-                                        <variation key="heightClass=regular-widthClass=regular" constant="56"/>
-                                    </constraint>
-                                    <constraint firstAttribute="width" constant="42" id="Sae-pr-ZSj">
-                                        <variation key="heightClass=compact" constant="36"/>
-                                    </constraint>
-                                    <constraint firstAttribute="width" constant="36" id="tSW-39-Vuw"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="TrebuchetMS" family="Trebuchet MS" pointSize="24"/>
-                                <color key="textColor" red="1" green="0.89854629870000002" blue="0.061253424819999999" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="Hmy-aH-eD3"/>
-                                        <exclude reference="Sae-pr-ZSj"/>
-                                        <exclude reference="tSW-39-Vuw"/>
-                                    </mask>
-                                </variation>
-                                <variation key="heightClass=compact">
-                                    <mask key="constraints">
-                                        <include reference="Sae-pr-ZSj"/>
-                                    </mask>
-                                </variation>
-                                <variation key="heightClass=regular">
-                                    <mask key="constraints">
-                                        <include reference="Hmy-aH-eD3"/>
-                                    </mask>
-                                </variation>
-                                <variation key="heightClass=regular-widthClass=compact">
-                                    <mask key="constraints">
-                                        <exclude reference="Hmy-aH-eD3"/>
-                                        <include reference="tSW-39-Vuw"/>
-                                    </mask>
-                                </variation>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00:00" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vHT-k1-UDF">
-                                <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="67" id="Gos-0h-UYq">
-                                        <variation key="heightClass=regular-widthClass=regular" constant="90"/>
-                                    </constraint>
-                                    <constraint firstAttribute="height" constant="21" id="oGG-jM-h3X"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="TrebuchetMS" family="Trebuchet MS" pointSize="20"/>
-                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="Gos-0h-UYq"/>
-                                        <exclude reference="oGG-jM-h3X"/>
-                                    </mask>
-                                </variation>
-                                <variation key="heightClass=regular">
-                                    <mask key="constraints">
-                                        <include reference="Gos-0h-UYq"/>
-                                        <include reference="oGG-jM-h3X"/>
-                                    </mask>
-                                </variation>
-                                <variation key="heightClass=regular-widthClass=compact">
-                                    <mask key="constraints">
-                                        <exclude reference="Gos-0h-UYq"/>
-                                        <exclude reference="oGG-jM-h3X"/>
-                                    </mask>
-                                </variation>
-                            </label>
-                            <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="252" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" image="rain" translatesAutoresizingMaskIntoConstraints="NO" id="Biz-ZI-2ac">
-                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="248" verticalHuggingPriority="249" text="6m/s" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ey3-SZ-Jth">
-                                <rect key="frame" x="135" y="144" width="44" height="21"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="44" id="El6-0a-ciW"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="TrebuchetMS" family="Trebuchet MS" pointSize="20"/>
-                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="El6-0a-ciW"/>
-                                    </mask>
-                                </variation>
-                                <variation key="heightClass=compact">
-                                    <mask key="constraints">
-                                        <include reference="El6-0a-ciW"/>
-                                    </mask>
-                                </variation>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="300 w/m²" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Msd-4w-9qd">
-                                <rect key="frame" x="-104" y="144" width="305" height="21"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="120" id="9f2-9v-POh">
-                                        <variation key="heightClass=regular-widthClass=regular" constant="160"/>
-                                    </constraint>
-                                    <constraint firstAttribute="height" constant="21" id="JNP-Ys-BbF"/>
-                                    <constraint firstAttribute="width" constant="110" id="qDJ-MU-q23"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="TrebuchetMS" family="Trebuchet MS" pointSize="32"/>
-                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="9f2-9v-POh"/>
-                                        <exclude reference="JNP-Ys-BbF"/>
-                                        <exclude reference="qDJ-MU-q23"/>
-                                    </mask>
-                                </variation>
-                                <variation key="heightClass=compact">
-                                    <mask key="constraints">
-                                        <include reference="JNP-Ys-BbF"/>
-                                    </mask>
-                                </variation>
-                                <variation key="heightClass=regular-widthClass=compact">
-                                    <mask key="constraints">
-                                        <include reference="qDJ-MU-q23"/>
-                                    </mask>
-                                </variation>
-                                <variation key="heightClass=regular-widthClass=regular">
-                                    <mask key="constraints">
-                                        <include reference="9f2-9v-POh"/>
-                                    </mask>
-                                </variation>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1,117" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BXQ-9C-lIB">
-                                <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="160" id="0h8-Bm-rfM">
-                                        <variation key="heightClass=regular-widthClass=regular" constant="260"/>
-                                    </constraint>
-                                    <constraint firstAttribute="width" constant="160" id="YYA-EJ-2uk"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="TrebuchetMS" family="Trebuchet MS" pointSize="44"/>
-                                <color key="textColor" red="1" green="0.89854629870000002" blue="0.061253424819999999" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="0h8-Bm-rfM"/>
-                                        <exclude reference="YYA-EJ-2uk"/>
-                                    </mask>
-                                </variation>
-                                <variation key="heightClass=regular">
-                                    <mask key="constraints">
-                                        <include reference="0h8-Bm-rfM"/>
-                                    </mask>
-                                </variation>
-                                <variation key="heightClass=regular-widthClass=compact">
-                                    <mask key="constraints">
-                                        <exclude reference="0h8-Bm-rfM"/>
-                                        <include reference="YYA-EJ-2uk"/>
-                                    </mask>
-                                </variation>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="13,100" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8lk-nD-cik">
-                                <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="160" id="M6x-bg-NUB"/>
-                                    <constraint firstAttribute="width" constant="160" id="X8u-2N-4O8">
-                                        <variation key="heightClass=regular-widthClass=regular" constant="260"/>
-                                    </constraint>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="TrebuchetMS" family="Trebuchet MS" pointSize="44"/>
-                                <color key="textColor" red="1" green="0.89854629870000002" blue="0.061253424819999999" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="M6x-bg-NUB"/>
-                                        <exclude reference="X8u-2N-4O8"/>
-                                    </mask>
-                                </variation>
-                                <variation key="heightClass=regular">
-                                    <mask key="constraints">
-                                        <include reference="X8u-2N-4O8"/>
-                                    </mask>
-                                </variation>
-                                <variation key="heightClass=regular-widthClass=compact">
-                                    <mask key="constraints">
-                                        <include reference="M6x-bg-NUB"/>
-                                        <exclude reference="X8u-2N-4O8"/>
-                                    </mask>
-                                </variation>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="212" text="17.25" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Cv-MT-NpX">
-                                <rect key="frame" x="401" y="207" width="106" height="39"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="160" id="YI0-0X-dXM"/>
-                                    <constraint firstAttribute="width" constant="160" id="fUJ-0W-1rq"/>
-                                    <constraint firstAttribute="width" constant="119" id="qrI-f6-B2m">
-                                        <variation key="heightClass=regular-widthClass=regular" constant="260"/>
-                                    </constraint>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="TrebuchetMS" family="Trebuchet MS" pointSize="48"/>
-                                <color key="textColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="YI0-0X-dXM"/>
-                                        <exclude reference="fUJ-0W-1rq"/>
-                                        <exclude reference="qrI-f6-B2m"/>
-                                    </mask>
-                                </variation>
-                                <variation key="heightClass=compact">
-                                    <mask key="constraints">
-                                        <include reference="fUJ-0W-1rq"/>
-                                    </mask>
-                                </variation>
-                                <variation key="heightClass=regular-widthClass=compact">
-                                    <mask key="constraints">
-                                        <include reference="YI0-0X-dXM"/>
-                                    </mask>
-                                </variation>
-                                <variation key="heightClass=regular-widthClass=regular">
-                                    <mask key="constraints">
-                                        <include reference="qrI-f6-B2m"/>
-                                    </mask>
-                                </variation>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" horizontalCompressionResistancePriority="749" text="ENERGY Today" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bVV-SL-bOr">
-                                <rect key="frame" x="313" y="209" width="70" height="45"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="120" id="HiG-kN-IUf">
-                                        <variation key="heightClass=compact" constant="120"/>
-                                    </constraint>
-                                    <constraint firstAttribute="width" constant="120" id="bEX-VY-xkf"/>
-                                    <constraint firstAttribute="width" constant="120" id="drN-nX-Idx">
-                                        <variation key="heightClass=regular-widthClass=regular" constant="200"/>
-                                    </constraint>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="TrebuchetMS" family="Trebuchet MS" pointSize="32"/>
-                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="HiG-kN-IUf"/>
-                                        <exclude reference="bEX-VY-xkf"/>
-                                        <exclude reference="drN-nX-Idx"/>
-                                    </mask>
-                                </variation>
-                                <variation key="heightClass=compact">
-                                    <mask key="constraints">
-                                        <include reference="HiG-kN-IUf"/>
-                                    </mask>
-                                </variation>
-                                <variation key="heightClass=regular">
-                                    <mask key="constraints">
-                                        <include reference="drN-nX-Idx"/>
-                                    </mask>
-                                </variation>
-                                <variation key="heightClass=regular-widthClass=compact">
-                                    <mask key="constraints">
-                                        <include reference="bEX-VY-xkf"/>
-                                        <exclude reference="drN-nX-Idx"/>
-                                    </mask>
-                                </variation>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MWh" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xza-5l-Ooo">
-                                <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="41" id="QJS-Qp-qAJ">
-                                        <variation key="heightClass=regular-widthClass=regular" constant="56"/>
-                                    </constraint>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="TrebuchetMS" family="Trebuchet MS" pointSize="24"/>
-                                <color key="textColor" red="1" green="0.89854629870000002" blue="0.061253424819999999" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="QJS-Qp-qAJ"/>
-                                    </mask>
-                                </variation>
-                                <variation key="heightClass=regular">
-                                    <mask key="constraints">
-                                        <include reference="QJS-Qp-qAJ"/>
-                                    </mask>
-                                </variation>
-                                <variation key="heightClass=regular-widthClass=compact">
-                                    <mask key="constraints">
-                                        <exclude reference="QJS-Qp-qAJ"/>
-                                    </mask>
-                                </variation>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="dd MMM yyyy" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wKa-7e-BNj">
-                                <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="28" id="6Ph-6Z-new">
-                                        <variation key="heightClass=regular-widthClass=regular" constant="36"/>
-                                    </constraint>
-                                    <constraint firstAttribute="width" constant="175" id="wNV-cM-VHl">
-                                        <variation key="heightClass=regular-widthClass=regular" constant="220"/>
-                                    </constraint>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="TrebuchetMS" family="Trebuchet MS" pointSize="32"/>
-                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="6Ph-6Z-new"/>
-                                        <exclude reference="wNV-cM-VHl"/>
-                                    </mask>
-                                </variation>
-                                <variation key="heightClass=regular">
-                                    <mask key="constraints">
-                                        <include reference="6Ph-6Z-new"/>
-                                        <include reference="wNV-cM-VHl"/>
-                                    </mask>
-                                </variation>
-                                <variation key="heightClass=regular-widthClass=compact">
-                                    <mask key="constraints">
-                                        <exclude reference="6Ph-6Z-new"/>
-                                        <exclude reference="wNV-cM-VHl"/>
-                                    </mask>
-                                </variation>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="11mm" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iq7-NQ-UrU">
-                                <rect key="frame" x="135" y="144" width="44" height="21"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="49" id="6sc-hX-tUc"/>
-                                    <constraint firstAttribute="width" constant="44" id="Gw0-La-JC9"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="TrebuchetMS" family="Trebuchet MS" pointSize="20"/>
-                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="6sc-hX-tUc"/>
-                                        <exclude reference="Gw0-La-JC9"/>
-                                    </mask>
-                                </variation>
-                                <variation key="heightClass=compact">
-                                    <mask key="constraints">
-                                        <include reference="Gw0-La-JC9"/>
-                                    </mask>
-                                </variation>
-                                <variation key="heightClass=regular">
-                                    <mask key="constraints">
-                                        <include reference="6sc-hX-tUc"/>
-                                    </mask>
-                                </variation>
-                                <variation key="heightClass=regular-widthClass=compact">
-                                    <mask key="constraints">
-                                        <exclude reference="6sc-hX-tUc"/>
-                                    </mask>
-                                </variation>
-                                <variation key="heightClass=regular-widthClass=regular">
-                                    <mask key="constraints">
-                                        <exclude reference="6sc-hX-tUc"/>
-                                    </mask>
-                                </variation>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="247" verticalHuggingPriority="251" text="32 °C" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QWp-QE-IPF">
-                                <rect key="frame" x="135" y="144" width="44" height="21"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="44" id="Mjj-zc-B40"/>
-                                    <constraint firstAttribute="height" constant="15" id="Y7K-hF-6WM"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="TrebuchetMS" family="Trebuchet MS" pointSize="20"/>
-                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="Mjj-zc-B40"/>
-                                        <exclude reference="Y7K-hF-6WM"/>
-                                    </mask>
-                                </variation>
-                                <variation key="heightClass=regular">
-                                    <mask key="constraints">
-                                        <include reference="Mjj-zc-B40"/>
-                                        <exclude reference="Y7K-hF-6WM"/>
-                                    </mask>
-                                </variation>
-                                <variation key="heightClass=regular-widthClass=compact">
-                                    <mask key="constraints">
-                                        <exclude reference="Mjj-zc-B40"/>
-                                    </mask>
-                                </variation>
-                                <variation key="heightClass=regular-widthClass=regular">
-                                    <mask key="constraints">
-                                        <exclude reference="Mjj-zc-B40"/>
-                                    </mask>
-                                </variation>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="kWh" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="njt-MZ-tP5">
-                                <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="36" id="66H-Mf-5Gi"/>
-                                    <constraint firstAttribute="width" constant="56" id="lev-YR-Yu0"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="TrebuchetMS" family="Trebuchet MS" pointSize="24"/>
-                                <color key="textColor" red="1" green="0.89854629870000002" blue="0.061253424819999999" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="66H-Mf-5Gi"/>
-                                        <exclude reference="lev-YR-Yu0"/>
-                                    </mask>
-                                </variation>
-                                <variation key="heightClass=regular-widthClass=compact">
-                                    <mask key="constraints">
-                                        <include reference="66H-Mf-5Gi"/>
-                                    </mask>
-                                </variation>
-                                <variation key="heightClass=regular-widthClass=regular">
-                                    <mask key="constraints">
-                                        <include reference="lev-YR-Yu0"/>
-                                    </mask>
-                                </variation>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Baht" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="62t-Cu-bP7">
-                                <rect key="frame" x="542" y="268" width="36" height="21"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="36" id="Zbe-u7-mT1"/>
-                                    <constraint firstAttribute="width" constant="44" id="n2j-iU-FGi">
-                                        <variation key="heightClass=regular-widthClass=regular" constant="56"/>
-                                    </constraint>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="TrebuchetMS" family="Trebuchet MS" pointSize="24"/>
-                                <color key="textColor" red="1" green="0.89854629870000002" blue="0.061253424819999999" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="Zbe-u7-mT1"/>
-                                        <exclude reference="n2j-iU-FGi"/>
-                                    </mask>
-                                </variation>
-                                <variation key="heightClass=regular-widthClass=compact">
-                                    <mask key="constraints">
-                                        <include reference="Zbe-u7-mT1"/>
-                                    </mask>
-                                </variation>
-                                <variation key="heightClass=regular-widthClass=regular">
-                                    <mask key="constraints">
-                                        <include reference="n2j-iU-FGi"/>
-                                    </mask>
-                                </variation>
-                            </label>
-                            <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="humidity" translatesAutoresizingMaskIntoConstraints="NO" id="7aC-pv-8zo">
-                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="239" verticalHuggingPriority="251" text="120.06" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="emj-Bc-XTv">
-                                <rect key="frame" x="401" y="259" width="106" height="39"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="160" id="YZA-8u-cZw"/>
-                                    <constraint firstAttribute="width" constant="160" id="wWS-dp-H60"/>
-                                    <constraint firstAttribute="width" constant="160" id="y47-ye-Cv5">
-                                        <variation key="heightClass=regular-widthClass=regular" constant="260"/>
-                                    </constraint>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="TrebuchetMS" family="Trebuchet MS" pointSize="48"/>
-                                <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="YZA-8u-cZw"/>
-                                        <exclude reference="wWS-dp-H60"/>
-                                        <exclude reference="y47-ye-Cv5"/>
-                                    </mask>
-                                </variation>
-                                <variation key="heightClass=compact">
-                                    <mask key="constraints">
-                                        <include reference="YZA-8u-cZw"/>
-                                    </mask>
-                                </variation>
-                                <variation key="heightClass=regular-widthClass=compact">
-                                    <mask key="constraints">
-                                        <include reference="wWS-dp-H60"/>
-                                    </mask>
-                                </variation>
-                                <variation key="heightClass=regular-widthClass=regular">
-                                    <mask key="constraints">
-                                        <include reference="y47-ye-Cv5"/>
-                                    </mask>
-                                </variation>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -3304,6 +3341,37 @@
                         </constraints>
                         <variation key="default">
                             <mask key="subviews">
+                                <exclude reference="101-ej-NlL"/>
+                                <exclude reference="ji5-ac-T4m"/>
+                                <exclude reference="UgC-Qh-rrj"/>
+                                <exclude reference="8Bq-Ds-Vp1"/>
+                                <exclude reference="MCV-zm-pf5"/>
+                                <exclude reference="QUc-YM-H1e"/>
+                                <exclude reference="sC0-Ph-ypf"/>
+                                <exclude reference="44j-yz-VAN"/>
+                                <exclude reference="kyD-Lr-SYs"/>
+                                <exclude reference="MFh-2W-qsW"/>
+                                <exclude reference="esc-Zk-FbN"/>
+                                <exclude reference="eBn-St-9HA"/>
+                                <exclude reference="ftf-WM-JXg"/>
+                                <exclude reference="P39-Nx-vb1"/>
+                                <exclude reference="nGz-kn-o7Y"/>
+                                <exclude reference="vHT-k1-UDF"/>
+                                <exclude reference="Biz-ZI-2ac"/>
+                                <exclude reference="Ey3-SZ-Jth"/>
+                                <exclude reference="Msd-4w-9qd"/>
+                                <exclude reference="BXQ-9C-lIB"/>
+                                <exclude reference="8lk-nD-cik"/>
+                                <exclude reference="8Cv-MT-NpX"/>
+                                <exclude reference="bVV-SL-bOr"/>
+                                <exclude reference="Xza-5l-Ooo"/>
+                                <exclude reference="wKa-7e-BNj"/>
+                                <exclude reference="iq7-NQ-UrU"/>
+                                <exclude reference="QWp-QE-IPF"/>
+                                <exclude reference="njt-MZ-tP5"/>
+                                <exclude reference="62t-Cu-bP7"/>
+                                <exclude reference="7aC-pv-8zo"/>
+                                <exclude reference="emj-Bc-XTv"/>
                                 <exclude reference="8OY-Nj-3uh"/>
                                 <exclude reference="wyx-Xw-Utq"/>
                                 <exclude reference="mvh-oB-3KP"/>
@@ -3369,37 +3437,6 @@
                                 <exclude reference="N7l-QR-hXn"/>
                                 <exclude reference="Yly-pA-s87"/>
                                 <exclude reference="Cun-or-fec"/>
-                                <exclude reference="101-ej-NlL"/>
-                                <exclude reference="ji5-ac-T4m"/>
-                                <exclude reference="UgC-Qh-rrj"/>
-                                <exclude reference="8Bq-Ds-Vp1"/>
-                                <exclude reference="MCV-zm-pf5"/>
-                                <exclude reference="QUc-YM-H1e"/>
-                                <exclude reference="sC0-Ph-ypf"/>
-                                <exclude reference="44j-yz-VAN"/>
-                                <exclude reference="kyD-Lr-SYs"/>
-                                <exclude reference="MFh-2W-qsW"/>
-                                <exclude reference="esc-Zk-FbN"/>
-                                <exclude reference="eBn-St-9HA"/>
-                                <exclude reference="ftf-WM-JXg"/>
-                                <exclude reference="P39-Nx-vb1"/>
-                                <exclude reference="nGz-kn-o7Y"/>
-                                <exclude reference="vHT-k1-UDF"/>
-                                <exclude reference="Biz-ZI-2ac"/>
-                                <exclude reference="Ey3-SZ-Jth"/>
-                                <exclude reference="Msd-4w-9qd"/>
-                                <exclude reference="BXQ-9C-lIB"/>
-                                <exclude reference="8lk-nD-cik"/>
-                                <exclude reference="8Cv-MT-NpX"/>
-                                <exclude reference="bVV-SL-bOr"/>
-                                <exclude reference="Xza-5l-Ooo"/>
-                                <exclude reference="wKa-7e-BNj"/>
-                                <exclude reference="iq7-NQ-UrU"/>
-                                <exclude reference="QWp-QE-IPF"/>
-                                <exclude reference="njt-MZ-tP5"/>
-                                <exclude reference="62t-Cu-bP7"/>
-                                <exclude reference="7aC-pv-8zo"/>
-                                <exclude reference="emj-Bc-XTv"/>
                             </mask>
                             <mask key="constraints">
                                 <exclude reference="cwc-fT-fht"/>
@@ -3850,7 +3887,6 @@
                         </variation>
                         <variation key="heightClass=regular-widthClass=regular">
                             <mask key="subviews">
-                                <include reference="6wq-qr-mtF"/>
                                 <include reference="101-ej-NlL"/>
                                 <include reference="ji5-ac-T4m"/>
                                 <include reference="UgC-Qh-rrj"/>
@@ -3882,6 +3918,7 @@
                                 <include reference="62t-Cu-bP7"/>
                                 <include reference="7aC-pv-8zo"/>
                                 <include reference="emj-Bc-XTv"/>
+                                <include reference="6wq-qr-mtF"/>
                             </mask>
                             <mask key="constraints">
                                 <include reference="cwc-fT-fht"/>
@@ -3979,9 +4016,9 @@
                         <outlet property="humidity" destination="gzT-q0-dyN" id="lkB-jb-sMj"/>
                         <outlet property="humidity1" destination="ULm-rN-FsN" id="G2t-9a-oaf"/>
                         <outlet property="humidity2" destination="8Bq-Ds-Vp1" id="uX7-xG-BcE"/>
-                        <outlet property="inverterCollection" destination="Cun-or-fec" id="n7R-xh-2h9"/>
-                        <outlet property="inverterCollection1" destination="Bh4-4q-Flh" id="VuH-EA-Gu0"/>
-                        <outlet property="inverterCollection2" destination="ji5-ac-T4m" id="cwY-N6-55m"/>
+                        <outlet property="inverterCollection" destination="Cun-or-fec" id="CXN-iV-Rdi"/>
+                        <outlet property="inverterCollection1" destination="Bh4-4q-Flh" id="daE-9h-4vJ"/>
+                        <outlet property="inverterCollection2" destination="ji5-ac-T4m" id="D53-ax-fdU"/>
                         <outlet property="irradiance" destination="Ifs-6e-LRs" id="1ci-vX-bVj"/>
                         <outlet property="irradiance1" destination="8o7-NS-nXa" id="LIC-k3-ML2"/>
                         <outlet property="irradiance2" destination="Msd-4w-9qd" id="7Ih-th-iig"/>
@@ -4084,6 +4121,9 @@
                                                 </label>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="solar" translatesAutoresizingMaskIntoConstraints="NO" id="XmM-nE-Wad">
                                                     <rect key="frame" x="21" y="6" width="32" height="32"/>
+                                                    <variation key="heightClass=regular-widthClass=regular" misplaced="YES">
+                                                        <rect key="frame" x="-200" y="-105" width="250" height="250"/>
+                                                    </variation>
                                                 </imageView>
                                             </subviews>
                                             <constraints>
@@ -4589,6 +4629,7 @@
         <image name="bg.jpg" width="1600" height="1067"/>
         <image name="graph" width="32" height="32"/>
         <image name="humidity" width="24" height="24"/>
+        <image name="logo.png" width="400" height="150"/>
         <image name="menu" width="28" height="20"/>
         <image name="monitor" width="32" height="32"/>
         <image name="my" width="32" height="32"/>
@@ -4601,6 +4642,6 @@
         <image name="wind" width="24" height="24"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="qQi-eA-Mba"/>
+        <segue reference="dUS-HQ-2fk"/>
     </inferredMetricsTieBreakers>
 </document>

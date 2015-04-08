@@ -13,16 +13,32 @@ let MANAGER = LogManager();
 let URLS:[String] = ["http://solarlog.intersol.co.th/","http://solarlog.intersol.co.th/","http://nuangjamnong.com/"]
 
 let appDelegate = UIApplication.sharedApplication().delegate as AppDelegate
+
+
 class LogManager{
     var ACCESS_TOKEN:String = ""
     var CUR_URL:String = URLS[0]
-    var CUR_SITE:Site = Site(id: 101, name: "Demo 1")
+    var CUR_SITE:Site = Site(id: 100, name: "Demo 1")
     var IS_DEMO:Bool = true
+    var cookies:NSArray = NSArray()
     
-    func login(user:String,passwd:String,completion: (success:Bool,result : User) ->()){
+    func sso(completion: (success:Bool,message:String,result : User) ->()){
+        let defaults = NSUserDefaults.standardUserDefaults()
+        if let user = defaults.stringForKey("user"){
+            var error:NSError
+            
+            var password = Keychain.load(user)
+            login(user, passwd: password!){ success, message, result in
+                completion(success: success,message : message, result: result)
+            }
+            println(user)
+        }
+    }
+    
+    func login(user:String,passwd:String,completion: (success:Bool,message:String,result : User) ->()){
         
         var ts = NSDate().timeIntervalSince1970
-        let url = "\(CUR_URL)/login?user=\(user)&passwd=\(passwd)"
+        let url = "\(CUR_URL)/sign_in.json?username=\(user)&password=\(passwd)"
         var configuration = NSURLSessionConfiguration.defaultSessionConfiguration()
         configuration.requestCachePolicy = .ReloadIgnoringLocalCacheData;
         
@@ -31,6 +47,81 @@ class LogManager{
         
         
         session.dataTaskWithURL(NSURL(string: url)!) { data, response, error in
+            
+            //println(response)
+            var parseError: NSError?
+            let jsonResult: AnyObject? = NSJSONSerialization.JSONObjectWithData(data,
+                options: NSJSONReadingOptions.AllowFragments,
+                error:&parseError)
+            if(parseError != nil){
+               // println(parseError?.localizedDescription)
+                var msg = parseError?.localizedDescription
+                completion(success: false,message : msg!, result:  User(id: 0))
+                return
+            }
+            if (jsonResult != nil) {
+                println(jsonResult)
+                var result = jsonResult as NSDictionary
+                if let status =  result["status"] as? String {
+                    if status == "success" {
+                        let defaults = NSUserDefaults.standardUserDefaults()
+                        defaults.setObject(user, forKey: "user")
+                        defaults.synchronize()
+                        Keychain.save(passwd, forKey: user)
+                        
+                        //Extract token from Session id maintain in cookie
+                        var httpResp:NSHTTPURLResponse = response as NSHTTPURLResponse
+                        self.cookies = NSHTTPCookie.cookiesWithResponseHeaderFields(httpResp.allHeaderFields, forURL: httpResp.URL!)
+                        
+                        //[[NSHTTPCookieStorage sharedHTTPCookieStorage] setCookies:cookies forURL:////[response URL] mainDocumentURL:nil];
+                        //if let t =  result["access_token"] as? String {
+                            //self.ACCESS_TOKEN = t
+                       // }
+                        if let u =  result["user"] as? NSDictionary {
+                            if let id =  u["id"] as? Int {
+                               
+                                var user = User(id: id)
+                                if let name =  u["name"] as? String {
+                                        user.name = name
+                                }
+                                completion(success: true, message : status,  result: user)
+                                return
+                             
+                            }
+                        }
+                        
+                    }else{
+                        var message = ""
+                        if let m =  result["message"] as? String {
+                            message = m
+                        }
+                        completion(success: false, message :message , result: User(id: 0))
+                        return
+                    }
+                   
+                }
+                
+                completion(success: false,message : "Internal server error, Please try again later!", result:  User(id: 0))
+            } else {
+                completion(success: false,message : "Internal server error, Please try again later!", result:  User(id: 0))
+            }
+            }.resume()
+    }
+    
+    func logout(completion: (success:Bool) ->()){
+        let url = "\(CUR_URL)/sign_out.json?access_token=\(ACCESS_TOKEN)"
+        var configuration = NSURLSessionConfiguration.defaultSessionConfiguration()
+        configuration.requestCachePolicy = .ReloadIgnoringLocalCacheData;
+        
+        
+        var session = NSURLSession(configuration: configuration)
+        //  var headers = NSHTTPCookie.requestHeaderFieldsWithCookies(cookies)
+        // [request setAllHTTPHeaderFields:headers];
+        
+        
+        session.dataTaskWithURL(NSURL(string: url)!) { data, response, error in
+            var httpResp:NSHTTPURLResponse = response as NSHTTPURLResponse
+            NSHTTPCookieStorage.sharedHTTPCookieStorage().setCookies(self.cookies, forURL: httpResp.URL, mainDocumentURL: nil)
             
             var parseError: NSError?
             let jsonResult: AnyObject? = NSJSONSerialization.JSONObjectWithData(data,
@@ -45,32 +136,25 @@ class LogManager{
                 var result = jsonResult as NSDictionary
                 if let status =  result["status"] as? String {
                     if status == "success" {
-                        if let t =  result["access_token"] as? String {
-                            self.ACCESS_TOKEN = t
+                        let defaults = NSUserDefaults.standardUserDefaults()
+                        if let user = defaults.stringForKey("user"){
+                            Keychain.delete(user)
                         }
-                        if let u =  result["user"] as? NSDictionary {
-                            if let id =  result["id"] as? String {
-                                if let id =  result["id"] as? String {
-                                    var user = User(id: id)
-                                    if let name =  result["name"] as? String {
-                                        user.name = name
-                                    }
-                                    completion(success: true, result: user)
-                                    return
-                                }
-                            }
-                        }
+                        defaults.removeObjectForKey("user")
+                        defaults.synchronize()
                         
+                        completion(success: true)
+                    }else{
+                        completion(success: false)
                     }
-                   
+                } else {
+                    // couldn't load JSON, look at error
+                    completion(success: false)
                 }
-                
-               completion(success: false, result:  User(id: ""))
-            } else {
-                completion(success: false, result:  User(id: ""))
             }
             }.resume()
-    }
+            
+        }
     
     func sites(completion: (result : [Site]) ->()){
         var ts = NSDate().timeIntervalSince1970
@@ -83,6 +167,9 @@ class LogManager{
         
         
         session.dataTaskWithURL(NSURL(string: url)!) { data, response, error in
+            
+            var httpResp:NSHTTPURLResponse = response as NSHTTPURLResponse
+            NSHTTPCookieStorage.sharedHTTPCookieStorage().setCookies(self.cookies, forURL: httpResp.URL, mainDocumentURL: nil)
             
             var parseError: NSError?
             let jsonResult: AnyObject? = NSJSONSerialization.JSONObjectWithData(data,
@@ -119,7 +206,7 @@ class LogManager{
     
     func summary(completion: (result : Summary) ->()){
         var ts = NSDate().timeIntervalSince1970
-        println("site=\(CUR_SITE.id)")
+      //  println("site=\(CUR_SITE.id)")
         let url = "\(CUR_URL)/meter_reads/json/\(CUR_SITE.id)?access_token=\(ACCESS_TOKEN)&ts=\(ts)"
         var configuration = NSURLSessionConfiguration.defaultSessionConfiguration()
         configuration.requestCachePolicy = .ReloadIgnoringLocalCacheData;

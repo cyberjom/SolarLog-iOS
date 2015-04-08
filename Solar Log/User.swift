@@ -8,11 +8,11 @@
 
 import Foundation
 class User{
-    var id:String
+    var id:Int
     var name:String! = ""
     var passwd:String! = ""
     
-    init(id:String){
+    init(id:Int){
         self.id = id
     }
 

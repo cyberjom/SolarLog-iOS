@@ -14,7 +14,7 @@
                 <rect key="frame" x="0.0" y="0.0" width="114" height="112"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="221 V" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cGB-6N-6hb">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="221 V" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cGB-6N-6hb">
                         <rect key="frame" x="80" y="29" width="30" height="14"/>
                         <fontDescription key="fontDescription" name="TrebuchetMS" family="Trebuchet MS" pointSize="16"/>
                         <color key="textColor" red="1" green="0.89854629870000002" blue="0.061253424819999999" alpha="1" colorSpace="calibratedRGB"/>
@@ -37,7 +37,7 @@
                             <outlet property="delegate" destination="5bO-KP-t8c" id="9Pw-w6-SuX"/>
                         </connections>
                     </collectionView>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="inverterOk" translatesAutoresizingMaskIntoConstraints="NO" id="Ucc-58-3FT">
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="inverterOk" translatesAutoresizingMaskIntoConstraints="NO" id="Ucc-58-3FT">
                         <rect key="frame" x="45" y="44" width="24" height="24"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -45,7 +45,7 @@
                             <constraint firstAttribute="height" constant="48" id="pkf-D7-ois"/>
                         </constraints>
                     </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="46.1 A" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eaw-QN-taU">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="46.1 A" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eaw-QN-taU">
                         <rect key="frame" x="76" y="66" width="34" height="14"/>
                         <fontDescription key="fontDescription" name="TrebuchetMS" family="Trebuchet MS" pointSize="16"/>
                         <color key="textColor" red="1" green="0.89854629870000002" blue="0.061253424819999999" alpha="1" colorSpace="calibratedRGB"/>

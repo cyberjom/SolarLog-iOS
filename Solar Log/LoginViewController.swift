@@ -10,8 +10,30 @@ import UIKit
 
 class LoginViewController: UIViewController {
 
+    @IBOutlet var user: UITextField!
+    
+    @IBOutlet var passwd: UITextField!
+    
+    @IBOutlet var message: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        MANAGER.sso() { success, message, result in
+            dispatch_async(dispatch_get_main_queue(), {() in
+                if success {
+                    
+                    self.performSegueWithIdentifier("Login", sender: nil)
+                    
+                    
+                }else{
+                    
+                    self.message.text = message
+                    
+                    
+                }
+            })
+        }
+
         // Do any additional setup after loading the view.
     }
 
@@ -30,5 +52,22 @@ class LoginViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
-
+    
+    @IBAction func login(sender: UIButton) {
+        MANAGER.login(user.text, passwd: passwd.text) { success, message, result in
+            dispatch_async(dispatch_get_main_queue(), {() in
+                if success {
+                    
+                    self.performSegueWithIdentifier("Login", sender: nil)
+                    
+                    
+                }else{
+                    
+                    self.message.text = message
+                    
+                    
+                }
+            })
+        }
+    }
 }

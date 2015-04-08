@@ -41,5 +41,25 @@ class SettingViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    
+    
+    @IBAction func logout(sender: UIButton) {
+        println("Logout")
+        MANAGER.logout() { success in
+            dispatch_async(dispatch_get_main_queue(), {() in
+                if success {
+                    let appDelegate = UIApplication.sharedApplication().delegate as AppDelegate
+                    appDelegate.resetAppToFirstController()
+                    
+                }else{
+   
+                    
+                    
+                }
+            })
+        }
+      
+        
+    }
 
 }

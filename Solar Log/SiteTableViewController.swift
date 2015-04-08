@@ -22,13 +22,13 @@ class SiteTableViewController: UITableViewController {
         }
         
         //Mock Site
-        var site = Site(id: 101, name: "Demo 1")
+        var site = Site(id: 100, name: "Demo 1")
         site.size = 3
         sites.append(site)
-        site = Site(id: 102, name: "Demo 2")
+        site = Site(id: 101, name: "Demo 2")
         site.size = 3
         sites.append(site)
-        site = Site(id: 103, name: "Demo 3")
+        site = Site(id: 102, name: "Demo 3")
         site.size = 5
         sites.append(site)
 
@@ -80,7 +80,7 @@ class SiteTableViewController: UITableViewController {
 
             if let idx = index {
                 var site:Site = sites[idx.row]
-                println("idx = \(idx.row) site= \(site.id)")
+               // println("idx = \(idx.row) site= \(site.id)")
                 MANAGER.CUR_SITE = site
             }
             

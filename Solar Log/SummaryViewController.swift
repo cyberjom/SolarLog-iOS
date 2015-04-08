@@ -76,13 +76,14 @@ class SummaryViewController: UIViewController ,UICollectionViewDelegate, UIColle
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.inverterCollection!.registerNib(UINib(nibName: "InverterCell", bundle: nil), forCellWithReuseIdentifier: "cell")
-        self.inverterCollection1!.registerNib(UINib(nibName: "InverterCell", bundle: nil), forCellWithReuseIdentifier: "cell")
-        self.inverterCollection2!.registerNib(UINib(nibName: "InverterCelliPad", bundle: nil), forCellWithReuseIdentifier: "cell")
+        
+        self.inverterCollection?.registerNib(UINib(nibName: "InverterCell", bundle: nil), forCellWithReuseIdentifier: "cell")
+        self.inverterCollection1?.registerNib(UINib(nibName: "InverterCell", bundle: nil), forCellWithReuseIdentifier: "cell")
+        self.inverterCollection2?.registerNib(UINib(nibName: "InverterCelliPad", bundle: nil), forCellWithReuseIdentifier: "cell")
         
         timer?.invalidate()
         
-        timer = NSTimer.scheduledTimerWithTimeInterval(40, target: self, selector: "ScheduleCheck", userInfo: nil, repeats: true)
+        timer = NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: "ScheduleCheck", userInfo: nil, repeats: true)
         updateData()
 
     }
@@ -157,53 +158,53 @@ class SummaryViewController: UIViewController ,UICollectionViewDelegate, UIColle
             self.yearUnit.text = yearUnit
                 
             //iphone landscape
-            self.inverterCollection1.reloadData()
-            self.date1.text = fmt1.stringFromDate(result.datetime)
-            self.time1.text = fmt2.stringFromDate(result.datetime)
+            self.inverterCollection1?.reloadData()
+            self.date1?.text = fmt1.stringFromDate(result.datetime)
+            self.time1?.text = fmt2.stringFromDate(result.datetime)
                 
-            self.power1.text = formatter.stringFromNumber(result.power)
-            self.energytoday1.text = formatter.stringFromNumber(result.energy.today)
-            self.revenuetoday1.text = formatter.stringFromNumber(result.energy.revenuetoday)
-            self.energytotal1.text = formatter.stringFromNumber(result.energy.total)
-            self.energythismonth1.text = monthValue
-            self.monthUnit1.text = monthUnit
-            self.energythisyear1.text = yearValue
-            self.yearUnit1.text = yearUnit
+            self.power1?.text = formatter.stringFromNumber(result.power)
+            self.energytoday1?.text = formatter.stringFromNumber(result.energy.today)
+            self.revenuetoday1?.text = formatter.stringFromNumber(result.energy.revenuetoday)
+            self.energytotal1?.text = formatter.stringFromNumber(result.energy.total)
+            self.energythismonth1?.text = monthValue
+            self.monthUnit1?.text = monthUnit
+            self.energythisyear1?.text = yearValue
+            self.yearUnit1?.text = yearUnit
                
                 
                 //ipad
-                self.inverterCollection2.reloadData()
-                self.date2.text = fmt1.stringFromDate(result.datetime)
-                self.time2.text = fmt2.stringFromDate(result.datetime)
+                self.inverterCollection2?.reloadData()
+                self.date2?.text = fmt1.stringFromDate(result.datetime)
+                self.time2?.text = fmt2.stringFromDate(result.datetime)
                 
-                self.power2.text = formatter.stringFromNumber(result.power)
-                self.energytoday2.text = formatter.stringFromNumber(result.energy.today)
-                self.revenuetoday2.text = formatter.stringFromNumber(result.energy.revenuetoday)
-                self.energytotal2.text = formatter.stringFromNumber(result.energy.total)
-                self.energythismonth2.text = monthValue
-                self.monthUnit2.text = monthUnit
-                self.energythisyear2.text = yearValue
-                self.yearUnit2.text = yearUnit
+                self.power2?.text = formatter.stringFromNumber(result.power)
+                self.energytoday2?.text = formatter.stringFromNumber(result.energy.today)
+                self.revenuetoday2?.text = formatter.stringFromNumber(result.energy.revenuetoday)
+                self.energytotal2?.text = formatter.stringFromNumber(result.energy.total)
+                self.energythismonth2?.text = monthValue
+                self.monthUnit2?.text = monthUnit
+                self.energythisyear2?.text = yearValue
+                self.yearUnit2?.text = yearUnit
                 
             if !result.meteorologies.isEmpty {
                 //iphone portrait
-                self.temperature.text = String(format: "%.0f°C", result.meteorologies[0].temperature)
-                self.humidity.text = String(format: "%.0f%%", result.meteorologies[0].humidity)
-                self.windspeed.text = String(format: "%.0fm/s", result.meteorologies[0].windspeed)
-                self.precipitation.text = String(format: "%.0fmm", result.meteorologies[0].precipitation)
-                self.irradiance.text = String(format: "%.0fw/m²", result.meteorologies[0].irradiance)
+                self.temperature?.text = String(format: "%.0f°C", result.meteorologies[0].temperature)
+                self.humidity?.text = String(format: "%.0f%%", result.meteorologies[0].humidity)
+                self.windspeed?.text = String(format: "%.0fm/s", result.meteorologies[0].windspeed)
+                self.precipitation?.text = String(format: "%.0fmm", result.meteorologies[0].precipitation)
+                self.irradiance?.text = String(format: "%.0fw/m²", result.meteorologies[0].irradiance)
                 //iphone landscape
-                self.temperature1.text = String(format: "%.0f°C", result.meteorologies[0].temperature)
-                self.humidity1.text = String(format: "%.0f%%", result.meteorologies[0].humidity)
-                self.windspeed1.text = String(format: "%.0fm/s", result.meteorologies[0].windspeed)
-                self.precipitation1.text = String(format: "%.0fmm", result.meteorologies[0].precipitation)
-                self.irradiance1.text = String(format: "%.0fw/m²", result.meteorologies[0].irradiance)
+                self.temperature1?.text = String(format: "%.0f°C", result.meteorologies[0].temperature)
+                self.humidity1?.text = String(format: "%.0f%%", result.meteorologies[0].humidity)
+                self.windspeed1?.text = String(format: "%.0fm/s", result.meteorologies[0].windspeed)
+                self.precipitation1?.text = String(format: "%.0fmm", result.meteorologies[0].precipitation)
+                self.irradiance1?.text = String(format: "%.0fw/m²", result.meteorologies[0].irradiance)
                 //ipad
-                self.temperature2.text = String(format: "%.0f°C", result.meteorologies[0].temperature)
-                self.humidity2.text = String(format: "%.0f%%", result.meteorologies[0].humidity)
-                self.windspeed2.text = String(format: "%.0fm/s", result.meteorologies[0].windspeed)
-                self.precipitation2.text = String(format: "%.0fmm", result.meteorologies[0].precipitation)
-                self.irradiance2.text = String(format: "%.0fw/m²", result.meteorologies[0].irradiance)
+                self.temperature2?.text = String(format: "%.0f°C", result.meteorologies[0].temperature)
+                self.humidity2?.text = String(format: "%.0f%%", result.meteorologies[0].humidity)
+                self.windspeed2?.text = String(format: "%.0fm/s", result.meteorologies[0].windspeed)
+                self.precipitation2?.text = String(format: "%.0fmm", result.meteorologies[0].precipitation)
+                self.irradiance2?.text = String(format: "%.0fw/m²", result.meteorologies[0].irradiance)
             }else{
             //should hide component
                 
