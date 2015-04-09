@@ -24,3 +24,37 @@ DerivedData
 # http://guides.cocoapods.org/using/using-cocoapods.html#should-i-ignore-the-pods-directory-in-source-control
 #
 # Pods/
+
+Pods/Target Support Files/Pods-Solar Log/Pods-Solar Log.debug.xcconfig
+
+Podfile.lock
+
+Pods/CorePlot/framework/CorePlot-CocoaTouch.h
+
+*.h
+
+*.m
+
+*.txt
+
+*.md
+
+Pods/SSKeychain/LICENSE
+
+*.lock
+
+*.xcconfig
+
+*.podspec
+
+*.pbxproj
+
+*.markdown
+
+*.pch
+
+*.plist
+
+*.sh
+
+*.xcworkspacedata

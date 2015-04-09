@@ -12,6 +12,11 @@ class SettingViewController: UIViewController {
 
     @IBOutlet weak var menuButton:UIBarButtonItem!
     
+    @IBOutlet var name: UILabel!
+    
+    @IBOutlet var location: UILabel!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         if self.revealViewController() != nil {
@@ -19,6 +24,7 @@ class SettingViewController: UIViewController {
             menuButton.action = "revealToggle:"
             self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
         }
+        name.text = MANAGER.user.name
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
         

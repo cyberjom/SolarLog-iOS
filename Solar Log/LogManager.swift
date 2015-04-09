@@ -13,29 +13,32 @@ let MANAGER = LogManager();
 let URLS:[String] = ["http://solarlog.intersol.co.th/","http://solarlog.intersol.co.th/","http://nuangjamnong.com/"]
 
 let appDelegate = UIApplication.sharedApplication().delegate as AppDelegate
-
+let demoUser: User! = User(id: 0)
 
 class LogManager{
     var ACCESS_TOKEN:String = ""
     var CUR_URL:String = URLS[0]
-    var CUR_SITE:Site = Site(id: 100, name: "Demo 1")
+    var CUR_PROJECT:Project = Project(id: 100, name: "Demo")
     var IS_DEMO:Bool = true
     var cookies:NSArray = NSArray()
+    //Default demo user
+
+    var user : User = demoUser
     
-    func sso(completion: (success:Bool,message:String,result : User) ->()){
+    func sso(completion: (success:Bool,message:String,user : User) ->()){
         let defaults = NSUserDefaults.standardUserDefaults()
         if let user = defaults.stringForKey("user"){
             var error:NSError
             
             var password = Keychain.load(user)
-            login(user, passwd: password!){ success, message, result in
-                completion(success: success,message : message, result: result)
+            login(user, passwd: password!){ success, message, user in
+                completion(success: success,message : message, user: user)
             }
             println(user)
         }
     }
     
-    func login(user:String,passwd:String,completion: (success:Bool,message:String,result : User) ->()){
+    func login(user:String,passwd:String,completion: (success:Bool,message:String,user : User) ->()){
         
         var ts = NSDate().timeIntervalSince1970
         let url = "\(CUR_URL)/sign_in.json?username=\(user)&password=\(passwd)"
@@ -56,7 +59,7 @@ class LogManager{
             if(parseError != nil){
                // println(parseError?.localizedDescription)
                 var msg = parseError?.localizedDescription
-                completion(success: false,message : msg!, result:  User(id: 0))
+                completion(success: false,message : msg!, user:  demoUser)
                 return
             }
             if (jsonResult != nil) {
@@ -84,7 +87,8 @@ class LogManager{
                                 if let name =  u["name"] as? String {
                                         user.name = name
                                 }
-                                completion(success: true, message : status,  result: user)
+                                self.user = user
+                                completion(success: true, message : status,  user: user)
                                 return
                              
                             }
@@ -95,15 +99,16 @@ class LogManager{
                         if let m =  result["message"] as? String {
                             message = m
                         }
-                        completion(success: false, message :message , result: User(id: 0))
+                        completion(success: false, message :message , user: demoUser)
                         return
                     }
                    
                 }
                 
-                completion(success: false,message : "Internal server error, Please try again later!", result:  User(id: 0))
+                completion(success: false,message : "Internal server error, Please try again later!", user:  demoUser)
             } else {
-                completion(success: false,message : "Internal server error, Please try again later!", result:  User(id: 0))
+
+                completion(success: false,message : "Internal server error, Please try again later!", user:  demoUser)
             }
             }.resume()
     }
@@ -120,17 +125,20 @@ class LogManager{
         
         
         session.dataTaskWithURL(NSURL(string: url)!) { data, response, error in
-            var httpResp:NSHTTPURLResponse = response as NSHTTPURLResponse
-            NSHTTPCookieStorage.sharedHTTPCookieStorage().setCookies(self.cookies, forURL: httpResp.URL, mainDocumentURL: nil)
+           
             
             var parseError: NSError?
             let jsonResult: AnyObject? = NSJSONSerialization.JSONObjectWithData(data,
                 options: NSJSONReadingOptions.AllowFragments,
                 error:&parseError)
+
+            
             if(parseError != nil){
                 println(parseError?.localizedDescription)
                 return
             }
+            var httpResp:NSHTTPURLResponse = response as NSHTTPURLResponse
+            NSHTTPCookieStorage.sharedHTTPCookieStorage().setCookies(self.cookies, forURL: httpResp.URL, mainDocumentURL: nil)
             if (jsonResult != nil) {
                 println(jsonResult)
                 var result = jsonResult as NSDictionary
@@ -142,7 +150,7 @@ class LogManager{
                         }
                         defaults.removeObjectForKey("user")
                         defaults.synchronize()
-                        
+                        self.user = demoUser
                         completion(success: true)
                     }else{
                         completion(success: false)
@@ -156,9 +164,9 @@ class LogManager{
             
         }
     
-    func sites(completion: (result : [Site]) ->()){
+    func projects(completion: (projects : [Project]) ->()){
         var ts = NSDate().timeIntervalSince1970
-        let url = "\(CUR_URL)/sites?access_token=\(ACCESS_TOKEN)"
+        let url = "\(CUR_URL)/projects.json"
         var configuration = NSURLSessionConfiguration.defaultSessionConfiguration()
         configuration.requestCachePolicy = .ReloadIgnoringLocalCacheData;
         
@@ -167,9 +175,7 @@ class LogManager{
         
         
         session.dataTaskWithURL(NSURL(string: url)!) { data, response, error in
-            
-            var httpResp:NSHTTPURLResponse = response as NSHTTPURLResponse
-            NSHTTPCookieStorage.sharedHTTPCookieStorage().setCookies(self.cookies, forURL: httpResp.URL, mainDocumentURL: nil)
+
             
             var parseError: NSError?
             let jsonResult: AnyObject? = NSJSONSerialization.JSONObjectWithData(data,
@@ -181,14 +187,22 @@ class LogManager{
             }
             if (jsonResult != nil) {
                 println(jsonResult)
-                var sites:[Site] = []
+                var projects:[Project] = []
                 if let ss =  jsonResult as? NSArray {
                     for s in ss   {
-                        var site:Site!
+                        var project:Project!
                         if let id =  s["id"] as? Int {
                             if let name =  s["name"] as? String {
-                                site = Site(id: id, name: name)
-                                sites.append(site)
+                                project = Project(id: id, name: name)
+                                if let location_name =  s["location_name"] as? String {
+                                    project.location = location_name
+                                }
+                                if let province_name =  s["province_name"] as? String {
+                                    project.province = province_name
+                                }
+
+                                
+                                projects.append(project)
                             }
                         }
                         
@@ -196,7 +210,7 @@ class LogManager{
                     }
                 }
                 
-                completion(result: sites)
+                completion(projects: projects)
             } else {
                 // couldn't load JSON, look at error
             }
@@ -204,10 +218,10 @@ class LogManager{
 
     }
     
-    func summary(completion: (result : Summary) ->()){
+    func summary(completion: (summary : Summary) ->()){
         var ts = NSDate().timeIntervalSince1970
       //  println("site=\(CUR_SITE.id)")
-        let url = "\(CUR_URL)/meter_reads/json/\(CUR_SITE.id)?access_token=\(ACCESS_TOKEN)&ts=\(ts)"
+        let url = "\(CUR_URL)/meter_reads/json/\(CUR_PROJECT.id)&ts=\(ts)"
         var configuration = NSURLSessionConfiguration.defaultSessionConfiguration()
         configuration.requestCachePolicy = .ReloadIgnoringLocalCacheData;
        
@@ -337,7 +351,7 @@ class LogManager{
                         summary.inverters.append(inverter)
                     }
                 }
-                completion(result: summary)
+                completion(summary: summary)
             } else {
                 // couldn't load JSON, look at error
             }

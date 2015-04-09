@@ -7,9 +7,11 @@
 //
 
 import Foundation
-class Site {
+class Project {
     var id:Int
     var name:String
+    var location:String = ""
+    var province:String = ""
     var size:Int = 0
     
     init(id:Int,name:String){

@@ -8,28 +8,33 @@
 
 import UIKit
 
-class SiteInfoViewController: UIViewController {
+class ProjectInfoViewController: UIViewController {
 
-    @IBOutlet var siteid: UILabel!
+    @IBOutlet var projectid: UILabel!
     
-    @IBOutlet var sitename: UILabel!
+    @IBOutlet var projectname: UILabel!
     
-    @IBOutlet var size: UILabel!
+    @IBOutlet var location: UILabel!
+
+    @IBOutlet var province: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        var site = MANAGER.CUR_SITE
+        var project = MANAGER.CUR_PROJECT
         
-        siteid.text = "\(site.id)"
-        sitename.text = site.name
-        size.text = "\(site.size) MW"
+        projectid.text = "\(project.id)"
+        projectname.text = project.name
+        location.text = "\(project.location)"
+        province.text = "\(project.province)"
         // Do any additional setup after loading the view.
     }
     override func viewDidAppear(animated: Bool) {
-         var site = MANAGER.CUR_SITE
-        siteid.text = "\(site.id)"
-        sitename.text = site.name
-        size.text = "\(site.size) MW"
+         var project = MANAGER.CUR_PROJECT
+        
+        projectid.text = "\(project.id)"
+        projectname.text = project.name
+        location.text = "\(project.location)"
+        province.text = "\(project.province)"
     }
 
     override func didReceiveMemoryWarning() {

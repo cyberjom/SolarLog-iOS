@@ -18,20 +18,32 @@ class LoginViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        var indicator:UIActivityIndicatorView = UIActivityIndicatorView(activityIndicatorStyle: UIActivityIndicatorViewStyle.Gray)
+        indicator.frame = CGRectMake(0.0, 0.0, 40.0, 40.0);
+        indicator.center = self.view.center;
+        self.view.addSubview(indicator)
+        indicator.bringSubviewToFront(self.view)
+        UIApplication.sharedApplication().networkActivityIndicatorVisible = true;
+        indicator.startAnimating()
         MANAGER.sso() { success, message, result in
-            dispatch_async(dispatch_get_main_queue(), {() in
-                if success {
-                    
-                    self.performSegueWithIdentifier("Login", sender: nil)
-                    
-                    
-                }else{
+            if success {
+                MANAGER.projects(){ projects in
+                    if projects.count > 0 {
+                        MANAGER.CUR_PROJECT = projects[0]
+                        dispatch_async(dispatch_get_main_queue(), {() in
+                            self.performSegueWithIdentifier("Login", sender: nil)
+                        })
+                    }
+                    indicator.stopAnimating()
+                }
+            }else{
+                dispatch_async(dispatch_get_main_queue(), {() in
                     
                     self.message.text = message
-                    
-                    
-                }
-            })
+                })
+                indicator.stopAnimating()
+            }
+            
         }
 
         // Do any additional setup after loading the view.
@@ -55,19 +67,23 @@ class LoginViewController: UIViewController {
     
     @IBAction func login(sender: UIButton) {
         MANAGER.login(user.text, passwd: passwd.text) { success, message, result in
-            dispatch_async(dispatch_get_main_queue(), {() in
-                if success {
-                    
-                    self.performSegueWithIdentifier("Login", sender: nil)
-                    
-                    
-                }else{
+            if success {
+                MANAGER.projects(){ projects in
+                    if projects.count > 0 {
+                        MANAGER.CUR_PROJECT = projects[0]
+                        dispatch_async(dispatch_get_main_queue(), {() in
+                            self.performSegueWithIdentifier("Login", sender: nil)
+                        })
+                    }
+                }
+
+            }else{
+                dispatch_async(dispatch_get_main_queue(), {() in
                     
                     self.message.text = message
-                    
-                    
-                }
-            })
+                })
+                
+            }
         }
     }
 }

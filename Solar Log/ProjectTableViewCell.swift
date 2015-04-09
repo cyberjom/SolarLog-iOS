@@ -8,17 +8,22 @@
 
 import UIKit
 
-class SiteTableViewCell: UITableViewCell {
+class ProjectTableViewCell: UITableViewCell {
 
-    var site:Site!
+    var project:Project!
     
-    @IBOutlet var siteImage: UIImageView!
+    @IBOutlet var projectImage: UIImageView!
     
-    @IBOutlet var siteName: UILabel!
+    @IBOutlet var projectName: UILabel!
     
-    @IBOutlet var siteId: UILabel!
+    @IBOutlet var projectId: UILabel!
     
     @IBOutlet var size: UILabel!
+    
+    @IBOutlet var location: UILabel!
+    
+    
+    @IBOutlet var province: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()

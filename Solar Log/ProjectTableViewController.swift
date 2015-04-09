@@ -8,10 +8,10 @@
 
 import UIKit
 
-class SiteTableViewController: UITableViewController {
+class ProjectTableViewController: UITableViewController {
 
     @IBOutlet weak var menuButton:UIBarButtonItem!
-    var sites:[Site] = []
+    var projects:[Project] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,17 +21,26 @@ class SiteTableViewController: UITableViewController {
             self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
         }
         
-        //Mock Site
-        var site = Site(id: 100, name: "Demo 1")
-        site.size = 3
-        sites.append(site)
-        site = Site(id: 101, name: "Demo 2")
-        site.size = 3
-        sites.append(site)
-        site = Site(id: 102, name: "Demo 3")
-        site.size = 5
-        sites.append(site)
-
+        MANAGER.projects(){ projects in
+            for p in projects{
+                self.projects.append(p)
+            }
+            dispatch_async(dispatch_get_main_queue(), {() in
+                self.tableView.reloadData()
+            })
+        }
+/*
+        //Mock project
+        var project = Project(id: 100, name: "Demo 1")
+        project.size = 3
+        projects.append(project)
+        project = Project(id: 101, name: "Demo 2")
+        project.size = 3
+        projects.append(project)
+        project = Project(id: 102, name: "Demo 3")
+        project.size = 5
+        projects.append(project)
+*/
     }
 
     override func didReceiveMemoryWarning() {
@@ -47,18 +56,21 @@ class SiteTableViewController: UITableViewController {
     }
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return sites.count
+        return projects.count
     }
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath) as SiteTableViewCell
-        var site = sites[indexPath.row]
-        cell.site = site
+        let cell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath) as ProjectTableViewCell
+        var project = projects[indexPath.row]
+        cell.project = project
         
         //cell.image.image = UIImage(named: "watchkit-intro")
-        cell.siteName.text = "\(site.name)"
-        cell.siteId.text = "\(site.id)"
-        cell.size.text = "\(site.size) MW"
+        cell.projectName.text = "\(project.name)"
+        cell.projectId.text = "\(project.id)"
+        cell.location.text = "\(project.location)"
+        cell.province.text = "\(project.province)"
+        
+        //cell.size.text = "\(project.size) MW"
         
         return cell
     }
@@ -76,12 +88,12 @@ class SiteTableViewController: UITableViewController {
             println("idx = \(idx.row) site= \(site.id)")
             MANAGER.CUR_SITE = site
         }*/
-        if segue.identifier == "siteSeque" {
+        if segue.identifier == "projectSeque" {
 
             if let idx = index {
-                var site:Site = sites[idx.row]
-               // println("idx = \(idx.row) site= \(site.id)")
-                MANAGER.CUR_SITE = site
+                var project:Project = projects[idx.row]
+               println("idx = \(idx.row) site= \(project.id)")
+                MANAGER.CUR_PROJECT = project
             }
             
             

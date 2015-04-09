@@ -210,13 +210,6 @@ class SummaryViewController: UIViewController ,UICollectionViewDelegate, UIColle
                 
             }
 
-                
-
-                
-            
-                
-           
-             
             
             })
         }

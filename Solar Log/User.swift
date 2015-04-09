@@ -9,8 +9,9 @@
 import Foundation
 class User{
     var id:Int
-    var name:String! = ""
+    var uname:String! = ""
     var passwd:String! = ""
+    var name:String! = ""
     
     init(id:Int){
         self.id = id
