@@ -54,7 +54,6 @@
 		ED97221F1AC1434C00342410 /* ProjectInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED97221E1AC1434C00342410 /* ProjectInfoViewController.swift */; };
 		ED9722211AC147C900342410 /* EnergyMonthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED9722201AC147C900342410 /* EnergyMonthViewController.swift */; };
 		ED97F1981AE5217900A75DF3 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED97F1971AE5217900A75DF3 /* AVFoundation.framework */; };
-		ED97F19A1AE5221D00A75DF3 /* coindrop.wav in Resources */ = {isa = PBXBuildFile; fileRef = ED97F1991AE5221D00A75DF3 /* coindrop.wav */; };
 		EDD53E441AB861A2004888C2 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDD53E431AB861A2004888C2 /* MenuViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -125,7 +124,6 @@
 		ED97221E1AC1434C00342410 /* ProjectInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectInfoViewController.swift; sourceTree = "<group>"; };
 		ED9722201AC147C900342410 /* EnergyMonthViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EnergyMonthViewController.swift; sourceTree = "<group>"; };
 		ED97F1971AE5217900A75DF3 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
-		ED97F1991AE5221D00A75DF3 /* coindrop.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = coindrop.wav; sourceTree = "<group>"; };
 		EDD53E431AB861A2004888C2 /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		EF637D18D5FF909A2362183E /* Pods-Solar Log.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Solar Log.release.xcconfig"; path = "Pods/Target Support Files/Pods-Solar Log/Pods-Solar Log.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -194,7 +192,6 @@
 			isa = PBXGroup;
 			children = (
 				ED3BE69C1AE618C000281735 /* coindrop.mp3 */,
-				ED97F1991AE5221D00A75DF3 /* coindrop.wav */,
 				ED1AD9291AD50B2A0069AC9D /* solarlog200.png */,
 				ED14F7A01AB9BCD00061C2CB /* Model */,
 				ED30AF061AB811D400E4C1B3 /* SWRevealViewController */,
@@ -382,7 +379,6 @@
 				ED1139281ABF04EA007ED3F3 /* MpptCell.xib in Resources */,
 				ED13801D1AB68BD100462057 /* Images.xcassets in Resources */,
 				ED3BE69D1AE618C000281735 /* coindrop.mp3 in Resources */,
-				ED97F19A1AE5221D00A75DF3 /* coindrop.wav in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
