@@ -12,29 +12,39 @@ import UIKit
 let MANAGER = LogManager();
 let URLS:[String] = ["http://solarlog.intersol.co.th/","http://solarlog.intersol.co.th/","http://nuangjamnong.com/"]
 
-let appDelegate = UIApplication.sharedApplication().delegate as AppDelegate
-let demoUser: User! = User(id: 0)
+let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+let demoUser: User! = User(id: 0, name: "Demo")
 
 class LogManager{
     var ACCESS_TOKEN:String = ""
     var CUR_URL:String = URLS[0]
-    var CUR_PROJECT:Project = Project(id: 100, name: "Demo")
+    var CUR_PROJECT:Project = Project(id: 0, name: "Demo")
     var IS_DEMO:Bool = true
     var cookies:NSArray = NSArray()
+    var projects:[Project] = []
+    var powers:[GraphData] = []
     //Default demo user
 
     var user : User = demoUser
     
+    func changeProject(project:Project){
+        if project.id != CUR_PROJECT.id {
+            projects = []
+        }
+        CUR_PROJECT = project
+    }
     func sso(completion: (success:Bool,message:String,user : User) ->()){
         let defaults = NSUserDefaults.standardUserDefaults()
         if let user = defaults.stringForKey("user"){
             var error:NSError
             
             var password = Keychain.load(user)
-            login(user, passwd: password!){ success, message, user in
+            login(user, passwd: password! as String){ success, message, user in
                 completion(success: success,message : message, user: user)
             }
             println(user)
+        }else{
+            completion(success: false,message : "Please enter username and password", user: demoUser)
         }
     }
     
@@ -57,23 +67,24 @@ class LogManager{
                 options: NSJSONReadingOptions.AllowFragments,
                 error:&parseError)
             if(parseError != nil){
-               // println(parseError?.localizedDescription)
+               println("login \(parseError?.localizedDescription)")
                 var msg = parseError?.localizedDescription
                 completion(success: false,message : msg!, user:  demoUser)
                 return
             }
             if (jsonResult != nil) {
                 println(jsonResult)
-                var result = jsonResult as NSDictionary
+                var result = jsonResult as! NSDictionary
                 if let status =  result["status"] as? String {
                     if status == "success" {
+                        if user != "demo" {
                         let defaults = NSUserDefaults.standardUserDefaults()
                         defaults.setObject(user, forKey: "user")
                         defaults.synchronize()
                         Keychain.save(passwd, forKey: user)
-                        
+                        }
                         //Extract token from Session id maintain in cookie
-                        var httpResp:NSHTTPURLResponse = response as NSHTTPURLResponse
+                        var httpResp:NSHTTPURLResponse = response as! NSHTTPURLResponse
                         self.cookies = NSHTTPCookie.cookiesWithResponseHeaderFields(httpResp.allHeaderFields, forURL: httpResp.URL!)
                         
                         //[[NSHTTPCookieStorage sharedHTTPCookieStorage] setCookies:cookies forURL:////[response URL] mainDocumentURL:nil];
@@ -134,14 +145,14 @@ class LogManager{
 
             
             if(parseError != nil){
-                println(parseError?.localizedDescription)
+                println("logout \(parseError?.localizedDescription)")
                 return
             }
-            var httpResp:NSHTTPURLResponse = response as NSHTTPURLResponse
-            NSHTTPCookieStorage.sharedHTTPCookieStorage().setCookies(self.cookies, forURL: httpResp.URL, mainDocumentURL: nil)
+            var httpResp:NSHTTPURLResponse = response as! NSHTTPURLResponse
+            NSHTTPCookieStorage.sharedHTTPCookieStorage().setCookies(self.cookies as [AnyObject], forURL: httpResp.URL, mainDocumentURL: nil)
             if (jsonResult != nil) {
                 println(jsonResult)
-                var result = jsonResult as NSDictionary
+                var result = jsonResult as! NSDictionary
                 if let status =  result["status"] as? String {
                     if status == "success" {
                         let defaults = NSUserDefaults.standardUserDefaults()
@@ -162,9 +173,26 @@ class LogManager{
             }
             }.resume()
             
-        }
+    }
     
     func projects(completion: (projects : [Project]) ->()){
+        if(!self.projects.isEmpty){
+            completion(projects: self.projects)
+        }else{
+            
+            MANAGER.syncProjects(){ projects in
+                self.projects = []
+                for p in projects{
+                    self.projects.append(p)
+                }
+                 
+                completion(projects: self.projects)
+            }
+        }
+        
+    }
+    
+    func syncProjects(completion: (projects : [Project]) ->()){
         var ts = NSDate().timeIntervalSince1970
         let url = "\(CUR_URL)/projects.json"
         var configuration = NSURLSessionConfiguration.defaultSessionConfiguration()
@@ -176,18 +204,18 @@ class LogManager{
         
         session.dataTaskWithURL(NSURL(string: url)!) { data, response, error in
 
-            
+          
             var parseError: NSError?
             let jsonResult: AnyObject? = NSJSONSerialization.JSONObjectWithData(data,
                 options: NSJSONReadingOptions.AllowFragments,
                 error:&parseError)
             if(parseError != nil){
-                println(parseError?.localizedDescription)
+                println("projects \(parseError?.localizedDescription)")
                 return
             }
             if (jsonResult != nil) {
-                println(jsonResult)
-                var projects:[Project] = []
+                println("syncProjects \(jsonResult)")
+                self.projects = []
                 if let ss =  jsonResult as? NSArray {
                     for s in ss   {
                         var project:Project!
@@ -201,16 +229,18 @@ class LogManager{
                                     project.province = province_name
                                 }
 
-                                
-                                projects.append(project)
+                                if let capacity =  s["capacity"] as? Int {
+                                    project.capacity = capacity
+                                }
+                                self.projects.append(project)
                             }
                         }
                         
                         
                     }
                 }
-                
-                completion(projects: projects)
+               
+                completion(projects: self.projects)
             } else {
                 // couldn't load JSON, look at error
             }
@@ -220,8 +250,11 @@ class LogManager{
     
     func summary(completion: (summary : Summary) ->()){
         var ts = NSDate().timeIntervalSince1970
-      //  println("site=\(CUR_SITE.id)")
-        let url = "\(CUR_URL)/meter_reads/json/\(CUR_PROJECT.id)&ts=\(ts)"
+        if CUR_PROJECT.id == 0 {
+            return
+        }
+        let url = "\(CUR_URL)meter_reads/json/\(CUR_PROJECT.id)" //&ts=\(ts)"
+        //println("url = \(url)")
         var configuration = NSURLSessionConfiguration.defaultSessionConfiguration()
         configuration.requestCachePolicy = .ReloadIgnoringLocalCacheData;
        
@@ -236,12 +269,12 @@ class LogManager{
                 options: NSJSONReadingOptions.AllowFragments,
                 error:&parseError)
             if(parseError != nil){
-                println(parseError?.localizedDescription)
+                println("summary \(parseError?.localizedDescription)")
                 return
             }
             if (jsonResult != nil) {
-                //println(jsonResult)
-                var result = jsonResult as NSDictionary
+              //  println(jsonResult)
+                var result = jsonResult as! NSDictionary
                 var summary = Summary()
             
                 if let site_id =  result["site_id"] as? String {
@@ -254,6 +287,13 @@ class LogManager{
                 }
                 if let power =  result["power"] as? Double {
                     summary.power = power
+                    
+                    if ( self.powers.count >= 500 ) {
+                        self.powers.removeAtIndex(0)
+   
+                    }
+                    self.powers.append(GraphData(x: summary.datetime, y: power))
+                    
                 }
 
                 if let energy =  result["energy"] as? NSDictionary {
@@ -359,6 +399,198 @@ class LogManager{
         
     }
     
-    //
-
+    func energyDay(completion: (data : [GraphData]) ->()){
+        var ts = NSDate().timeIntervalSince1970
+        let url = "\(CUR_URL)/reports/energy/\(CUR_PROJECT.id)/day"
+        var configuration = NSURLSessionConfiguration.defaultSessionConfiguration()
+        configuration.requestCachePolicy = .ReloadIgnoringLocalCacheData;
+        
+        
+        var session = NSURLSession(configuration: configuration)
+        
+        
+        session.dataTaskWithURL(NSURL(string: url)!) { data, response, error in
+            
+            
+            var parseError: NSError?
+            let jsonResult: AnyObject? = NSJSONSerialization.JSONObjectWithData(data,
+                options: NSJSONReadingOptions.AllowFragments,
+                error:&parseError)
+            if(parseError != nil){
+                println("energyDay \(parseError?.localizedDescription)")
+                return
+            }
+            if (jsonResult != nil) {
+                //println(jsonResult)
+                var data : [GraphData] = []
+                var result = jsonResult as! NSDictionary
+                if let ss =  result["data"] as? NSArray {
+                    for s in ss   {
+                        var d:GraphData!
+                        if let x =  s["x"] as? Int {
+                            if let y =  s["y"] as? Double {
+                                d = GraphData(x: x,y: y)
+                                
+                                data.append(d)
+                            }
+                        }
+                        
+                        
+                    }
+                }
+                
+                completion(data: data)
+            } else {
+               completion(data: [])
+            }
+            }.resume()
+        
+    }
+    
+    func revenueDay(completion: (data : [GraphData]) ->()){
+        var ts = NSDate().timeIntervalSince1970
+        let url = "\(CUR_URL)/reports/revenue/\(CUR_PROJECT.id)/day"
+        var configuration = NSURLSessionConfiguration.defaultSessionConfiguration()
+        configuration.requestCachePolicy = .ReloadIgnoringLocalCacheData;
+        
+        
+        var session = NSURLSession(configuration: configuration)
+        
+        
+        session.dataTaskWithURL(NSURL(string: url)!) { data, response, error in
+            
+            
+            var parseError: NSError?
+            let jsonResult: AnyObject? = NSJSONSerialization.JSONObjectWithData(data,
+                options: NSJSONReadingOptions.AllowFragments,
+                error:&parseError)
+            if(parseError != nil){
+                println("energyDay \(parseError?.localizedDescription)")
+                return
+            }
+            if (jsonResult != nil) {
+                //println(jsonResult)
+                var data : [GraphData] = []
+                var result = jsonResult as! NSDictionary
+                if let ss =  result["data"] as? NSArray {
+                    for s in ss   {
+                        var d:GraphData!
+                        if let x =  s["x"] as? Int {
+                            if let y =  s["y"] as? Double {
+                                d = GraphData(x: x,y: y)
+                                
+                                data.append(d)
+                            }
+                        }
+                        
+                        
+                    }
+                }
+                
+                completion(data: data)
+            } else {
+                completion(data: [])
+            }
+            }.resume()
+        
+    }
+    
+    func energyMonth(completion: (data : [GraphData]) ->()){
+        var ts = NSDate().timeIntervalSince1970
+        let url = "\(CUR_URL)/reports/energy/\(CUR_PROJECT.id)/month"
+        var configuration = NSURLSessionConfiguration.defaultSessionConfiguration()
+        configuration.requestCachePolicy = .ReloadIgnoringLocalCacheData;
+        
+        
+        var session = NSURLSession(configuration: configuration)
+        
+        
+        session.dataTaskWithURL(NSURL(string: url)!) { data, response, error in
+            
+            
+            var parseError: NSError?
+            let jsonResult: AnyObject? = NSJSONSerialization.JSONObjectWithData(data,
+                options: NSJSONReadingOptions.AllowFragments,
+                error:&parseError)
+            if(parseError != nil){
+                println(parseError?.localizedDescription)
+                return
+            }
+            if (jsonResult != nil) {
+                println(jsonResult)
+                var data : [GraphData] = []
+                var result = jsonResult as! NSDictionary
+                if let ss =  result["data"] as? NSArray {
+                    for s in ss   {
+                        var d:GraphData!
+                        if let x =  s["x"] as? String {
+                            if let y =  s["y"] as? Double {
+                                d = GraphData(x: x,y: y)
+                                
+                                data.append(d)
+                            }
+                        }
+                        
+                        
+                    }
+                }
+                
+                
+                completion(data: data)
+            } else {
+                completion(data: [])
+            }
+            }.resume()
+        
+    }
+    
+    func revenueMonth(completion: (data : [GraphData]) ->()){
+        
+        var ts = NSDate().timeIntervalSince1970
+        let url = "\(CUR_URL)/reports/revenue/\(CUR_PROJECT.id)/month"
+        var configuration = NSURLSessionConfiguration.defaultSessionConfiguration()
+        configuration.requestCachePolicy = .ReloadIgnoringLocalCacheData;
+        
+        
+        var session = NSURLSession(configuration: configuration)
+        
+        
+        session.dataTaskWithURL(NSURL(string: url)!) { data, response, error in
+            
+            
+            var parseError: NSError?
+            let jsonResult: AnyObject? = NSJSONSerialization.JSONObjectWithData(data,
+                options: NSJSONReadingOptions.AllowFragments,
+                error:&parseError)
+            if(parseError != nil){
+                println(parseError?.localizedDescription)
+                return
+            }
+            if (jsonResult != nil) {
+                println(jsonResult)
+                var data : [GraphData] = []
+                var result = jsonResult as! NSDictionary
+                if let ss =  result["data"] as? NSArray {
+                    for s in ss   {
+                        var d:GraphData!
+                        if let x =  s["x"] as? String {
+                            if let y =  s["y"] as? Double {
+                                d = GraphData(x: x,y: y)
+                                
+                                data.append(d)
+                            }
+                        }
+                        
+                        
+                    }
+                }
+                
+                
+                completion(data: data)
+            } else {
+                completion(data: [])
+            }
+            }.resume()
+        
+    }
 }

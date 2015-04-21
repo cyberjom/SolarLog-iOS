@@ -54,7 +54,7 @@ class SettingViewController: UIViewController {
         MANAGER.logout() { success in
             dispatch_async(dispatch_get_main_queue(), {() in
                 if success {
-                    let appDelegate = UIApplication.sharedApplication().delegate as AppDelegate
+                    let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
                     appDelegate.resetAppToFirstController()
                     
                 }else{

@@ -20,7 +20,7 @@ public class Keychain {
 		return status == noErr
 	}
 
-	public class func load(key: String) -> String? {
+	public class func load(key: String) -> NSString? {
 		let query = [
 			kSecClass as String: kSecClassGenericPassword,
 			kSecAttrAccount as String: key,
@@ -33,9 +33,9 @@ public class Keychain {
 		let status: OSStatus = SecItemCopyMatching(query, &dataTypeRef)
 		let opaque = dataTypeRef?.toOpaque()
 
-		if let op = opaque? {
+		if let op = opaque {
 			let retrievedData = Unmanaged<NSData>.fromOpaque(op).takeUnretainedValue()
-			return NSString(data: retrievedData, encoding: NSUTF8StringEncoding)
+			return  NSString(data: retrievedData, encoding: NSUTF8StringEncoding)
 		}
 		return nil
 	}

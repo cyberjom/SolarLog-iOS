@@ -19,17 +19,17 @@ class EnergyViewController: UIViewController ,UITabBarDelegate {
         super.viewDidLoad()
         self.tabBar.delegate = self
         if (dayView == nil) {
-            dayView = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("DayView") as? UIViewController
+            dayView = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("EnergyDayView") as? UIViewController
         }
-        if let v = dayView?.view {
-           // self.view.insertSubview(v, belowSubview: self.tabBar)
-        }
-       // tabBar.select(<#sender: AnyObject?#>)
+        
+       
     }
     override func viewDidAppear(animated: Bool) {
         if let v = dayView?.view {
            self.view.insertSubview(v, belowSubview: self.tabBar)
+           self.tabBar.selectedItem = (self.tabBar.items as! [UITabBarItem])[0]
         }
+        
     }
 
     
@@ -37,7 +37,7 @@ class EnergyViewController: UIViewController ,UITabBarDelegate {
         switch (item.tag) {
         case 1:
             if (dayView == nil) {
-                dayView = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("DayView") as? UIViewController
+                dayView = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("EnergyDayView") as? UIViewController
              }
             if let v = dayView?.view {
                 self.view.insertSubview(v, belowSubview: self.tabBar)
@@ -45,7 +45,7 @@ class EnergyViewController: UIViewController ,UITabBarDelegate {
             break;
         case 2:
             if (monthView == nil) {
-                monthView = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("MonthView") as? UIViewController
+                monthView = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("EnergyMonthView") as? UIViewController
             }
             if let v = monthView?.view {
                 self.view.insertSubview(v, belowSubview: self.tabBar)

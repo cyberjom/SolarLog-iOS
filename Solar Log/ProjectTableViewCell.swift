@@ -18,7 +18,7 @@ class ProjectTableViewCell: UITableViewCell {
     
     @IBOutlet var projectId: UILabel!
     
-    @IBOutlet var size: UILabel!
+    @IBOutlet var capacity: UILabel!
     
     @IBOutlet var location: UILabel!
     

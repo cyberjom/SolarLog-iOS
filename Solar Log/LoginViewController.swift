@@ -28,20 +28,30 @@ class LoginViewController: UIViewController {
         MANAGER.sso() { success, message, result in
             if success {
                 MANAGER.projects(){ projects in
+                    
                     if projects.count > 0 {
                         MANAGER.CUR_PROJECT = projects[0]
+                        
                         dispatch_async(dispatch_get_main_queue(), {() in
                             self.performSegueWithIdentifier("Login", sender: nil)
                         })
+                    }else{
+                        dispatch_async(dispatch_get_main_queue(), {() in
+                            var alert = UIAlertController(title: "Alert", message: "No project available", preferredStyle: UIAlertControllerStyle.Alert)
+                            alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil))
+                            self.presentViewController(alert, animated: true, completion: nil)
+                            indicator.stopAnimating()
+                        })
+                        
                     }
-                    indicator.stopAnimating()
+                    
                 }
             }else{
                 dispatch_async(dispatch_get_main_queue(), {() in
-                    
                     self.message.text = message
+                    indicator.stopAnimating()
                 })
-                indicator.stopAnimating()
+                
             }
             
         }
@@ -74,6 +84,8 @@ class LoginViewController: UIViewController {
                         dispatch_async(dispatch_get_main_queue(), {() in
                             self.performSegueWithIdentifier("Login", sender: nil)
                         })
+                    }else{
+                        
                     }
                 }
 
@@ -86,4 +98,29 @@ class LoginViewController: UIViewController {
             }
         }
     }
+    
+    @IBAction func demoLogin(sender: UIButton) {
+        MANAGER.login("demo", passwd: "demodemo") { success, message, result in
+            if success {
+                MANAGER.projects(){ projects in
+                    if projects.count > 0 {
+                        MANAGER.CUR_PROJECT = projects[0]
+                        dispatch_async(dispatch_get_main_queue(), {() in
+                            self.performSegueWithIdentifier("Login", sender: nil)
+                        })
+                    }else{
+                        
+                    }
+                }
+                
+            }else{
+                dispatch_async(dispatch_get_main_queue(), {() in
+                    
+                    self.message.text = message
+                })
+                
+            }
+        }
+    }
+    
 }

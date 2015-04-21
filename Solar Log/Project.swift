@@ -12,7 +12,7 @@ class Project {
     var name:String
     var location:String = ""
     var province:String = ""
-    var size:Int = 0
+    var capacity:Int = 0
     
     init(id:Int,name:String){
         self.id = id

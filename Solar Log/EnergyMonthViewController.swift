@@ -10,7 +10,6 @@ import UIKit
 
 class EnergyMonthViewController: UIViewController ,CPTBarPlotDataSource,CPTBarPlotDelegate,CPTPlotSpaceDelegate {
     
-
     
     var items :[NSNumber] =  []
 
@@ -20,17 +19,19 @@ class EnergyMonthViewController: UIViewController ,CPTBarPlotDataSource,CPTBarPl
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        var i = 0
-        for i = 0 ; i < 31 ; i++ {
-            var val = 10+Int(arc4random_uniform(50))
-            items.append(val)
-        }
+
+
+    }
+    override func viewDidAppear(animated: Bool) {
+        let fmt = NSDateFormatter()
+        fmt.dateFormat = "yyyy-MM-dd"
+        
         var CPDBarWidth:CGFloat = 0.25
         var CPDBarInitialX:CGFloat = 0.25
         
         var graph = CPTXYGraph(frame: CGRectZero)
         graph.plotAreaFrame.masksToBorder = false
-        graph.paddingBottom = 50.0
+        graph.paddingBottom = 80.0
         graph.paddingLeft  = 50.0
         graph.paddingTop    = 50.0
         graph.paddingRight  = 50.0
@@ -40,8 +41,11 @@ class EnergyMonthViewController: UIViewController ,CPTBarPlotDataSource,CPTBarPl
         titleStyle.color = CPTColor.blackColor()
         titleStyle.fontName = "Helvetica-Bold"
         titleStyle.fontSize = 16.0
+        let fmt1 = NSDateFormatter()
+        fmt1.dateFormat = "MMMM yyyy"
         
-        var title : NSString = "January, 2015"
+        var title : String! = fmt1.stringFromDate(NSDate())
+        
         graph.title = title
         graph.titleTextStyle = titleStyle
         graph.titlePlotAreaFrameAnchor =  CPTRectAnchor.Top
@@ -52,113 +56,113 @@ class EnergyMonthViewController: UIViewController ,CPTBarPlotDataSource,CPTBarPl
         var yMin : Double = 0
         var yMax : Double = maxItemsValue(items).doubleValue + 5
         
-        //var plotSpace = graph.defaultPlotSpace as CPTXYPlotSpace
-        //var xRange = plotSpace.yRange.mutableCopy() as CPTMutablePlotRange
-        //var yRange = plotSpace.yRange.mutableCopy() as CPTMutablePlotRange
         
-     
-       // xRange.locationDouble.advancedBy(xMin)
-//xRange.lengthDouble.distanceTo(xMax)
         
-        //yRange.locationDouble.advancedBy(yMin)
-       // yRange.lengthDouble.advancedBy(yMax)
-      
-
         
-        var aaplPlot = CPTBarPlot(frame:self.view.frame)
-        aaplPlot.barsAreHorizontal = false
+        var barPlot = CPTBarPlot(frame:self.view.frame)
+        barPlot.barsAreHorizontal = false
         
         var barLineStyle = CPTMutableLineStyle()
         
         barLineStyle.lineColor = CPTColor.lightGrayColor()
         barLineStyle.lineWidth = 1
+        barPlot.identifier = "Bar"
+        barPlot.dataSource = self
+        barPlot.delegate = self
+        //barPlot.barWidthScale = 1
+        //barPlot.barOffsetScale = 1
+        barPlot.lineStyle = barLineStyle
         
-        aaplPlot.dataSource = self
-        aaplPlot.delegate = self
-        //aaplPlot.barWidthScale = 1
-        //aaplPlot.barOffsetScale = 1
-        aaplPlot.lineStyle = barLineStyle
         
-        graph.addPlot(aaplPlot)
         
         // Add plot space for horizontal bar charts
-        var plotSpace =  graph.defaultPlotSpace as CPTXYPlotSpace
+        var plotSpace =  graph.defaultPlotSpace as! CPTXYPlotSpace
         plotSpace.xRange = CPTPlotRange(location: xMin, length: xMax)
         plotSpace.yRange = CPTPlotRange(location: yMin, length: yMax)
-        var axisSet = graph.axisSet as CPTXYAxisSet
-        var x          = axisSet.xAxis
-        x.axisLineStyle               = nil
-        x.majorTickLineStyle          = nil
-        x.minorTickLineStyle          = nil
-        x.majorIntervalLength         = 5.0
+        
+        graph.addPlot(barPlot, toPlotSpace: plotSpace)
+        var axisSet = graph.axisSet as! CPTXYAxisSet
+        
+        var x  = axisSet.xAxis
+        
+        x.majorTickLineStyle  = nil
+        x.minorTickLineStyle  = nil
+        x.majorIntervalLength  = 5.0
         x.orthogonalPosition = 0.0
-        x.title                       = "Date";
-        x.titleLocation               = self.items.count/2
-        x.titleOffset                 = 25.0
+        x.title  = "Date";
         
-        
+        x.titleOffset = 60.0
         var axisTitleStyle = CPTMutableTextStyle()
-        axisTitleStyle.color = CPTColor.redColor()
+        axisTitleStyle.color = CPTColor.blackColor()
         axisTitleStyle.fontName = "Helvetica-Bold"
         axisTitleStyle.fontSize = 9.0
         
         var axisLineStyle = CPTMutableLineStyle()
         axisLineStyle.lineWidth = 1.0
-        axisLineStyle.lineColor = CPTColor.redColor()
+        axisLineStyle.lineColor = CPTColor.blackColor()
         
         // Define some custom labels for the data elements
         //x.labelRotation  = M_PI_4
         x.labelingPolicy = CPTAxisLabelingPolicy.None;
         x.axisLineStyle  = axisLineStyle
-        //var customTickLocations = [0, 0, 0, 0 ,1 ,2 ,4,8,10,16,20,26,30,31];
-        
-        var labelLocation     = 0;
-        var customLabels:NSMutableSet = NSMutableSet (capacity: items.count)
-        var cnt = 0
-        for cnt=0; cnt < items.count ; cnt++ {
-            var newLabel = CPTAxisLabel(text: "\(cnt+1)" , textStyle: x.labelTextStyle)
-            newLabel.tickLocation = cnt+1
-            newLabel.offset       = x.labelOffset + x.majorTickLength;
-            newLabel.rotation = CGFloat(M_PI_2)
-            customLabels.addObject(newLabel)
-        }
-        
-        x.axisLabels = customLabels;
-
         
         var y = axisSet.yAxis
-        y.axisLineStyle               = nil;
-        y.majorTickLineStyle          = nil;
-        y.minorTickLineStyle          = nil;
-        y.majorIntervalLength         = 10.0
+        
+        y.majorTickLineStyle  = nil;
+        y.minorTickLineStyle = nil;
+        y.majorIntervalLength = 10.0
         y.orthogonalPosition = 0.0
-        y.title                       = "POWER (kW)"
-        y.titleLocation               = yMax/2
-        y.titleOffset                 = 35.0
-      
-        y.axisLineStyle  = axisLineStyle
-        y.labelingPolicy    = .Automatic
-        
-        
-        /*
-        // Add legend
-        var theLegend = CPTLegend(graph: graph)
-        theLegend.fill            = CPTFill(color: CPTColor(genericGray: 0.15))
-        theLegend.borderLineStyle = barLineStyle;
-        theLegend.cornerRadius    = 10.0;
-        var whiteTextStyle: CPTMutableTextStyle! = CPTMutableTextStyle() as CPTMutableTextStyle
-        whiteTextStyle.color   = CPTColor.whiteColor()
-        theLegend.textStyle    = whiteTextStyle;
-        theLegend.numberOfRows = 1;
-        
-        graph.legend             = theLegend;
-        graph.legendAnchor       = CPTRectAnchor.Top;
-        //graph.legendDisplacement = CGPointMake( 0.0, self.titleSize * CPTFloat(-2.625) );
-        */
-        
+        y.title = "Energy (kWh)"
+        y.axisConstraints = CPTConstraints.constraintWithLowerOffset(0)
         self.graphView.hostedGraph = graph
-
+        y.titleOffset  = 35.0
+        
+        y.axisLineStyle  = axisLineStyle
+        y.labelingPolicy = .Automatic
+        MANAGER.energyMonth { (data) -> () in
+            var i = 0
+            var labelLocation  = 0;
+            dispatch_async(dispatch_get_main_queue(), {() in
+                var customLabels:NSMutableSet = NSMutableSet (capacity: self.items.count)
+                
+                for  i = 0 ; i < data.count ; i++ {
+                    var data = data[i]
+                    
+                    self.items.append(data.y as! Double)
+                    var newLabel = CPTAxisLabel(text: "\(data.x as! String)" , textStyle: x.labelTextStyle)
+                    var date:NSDate = fmt.dateFromString(data.x as! String)!
+                    let calendar = NSCalendar.currentCalendar()
+                    let components = calendar.components(.CalendarUnitDay , fromDate: date)
+                    let currentDay = components.day
+                    newLabel.tickLocation = currentDay
+                    newLabel.offset = x.labelOffset + x.majorTickLength;
+                    newLabel.rotation = CGFloat(M_PI_4)
+                    customLabels.addObject(newLabel)
+                    //println("tickLocation  = \(currentDay) --- \(data.x)")
+                }
+                x.axisLabels = customLabels as Set<NSObject>;
+                
+                var xMin : Double = 0
+                var xMax : Double = Double(self.items.count + 1)
+                var yMin : Double = 0
+                var yMax : Double = self.maxItemsValue(self.items).doubleValue + 5
+                
+                
+                // Add plot space for horizontal bar charts
+                var plotSpace =  graph.defaultPlotSpace as! CPTXYPlotSpace
+                plotSpace.xRange = CPTPlotRange(location: xMin, length: xMax)
+                plotSpace.yRange = CPTPlotRange(location: yMin, length: yMax)
+                
+                plotSpace.scaleToFitPlots(graph.allPlots())
+                var plot   = graph.plotWithIdentifier("Bar")
+                plot.reloadData()
+            })
+            
+        }
+        
+        
     }
+    
     
     func maxItemsValue(items :[NSNumber])-> NSNumber{
         var max : NSNumber=0
@@ -175,8 +179,9 @@ class EnergyMonthViewController: UIViewController ,CPTBarPlotDataSource,CPTBarPl
     func numberOfRecordsForPlot(plot: CPTPlot!) -> UInt {
         return UInt(items.count)
     }
+
     
-    func numberForPlot(plot: CPTPlot!, field fieldEnum: UInt, recordIndex index: UInt) -> NSNumber! {
+    func numberForPlot(plot: CPTPlot!, field fieldEnum: UInt, recordIndex index: UInt) -> AnyObject! {
 
         switch (fieldEnum) {
         case 0:
@@ -187,7 +192,7 @@ class EnergyMonthViewController: UIViewController ,CPTBarPlotDataSource,CPTBarPl
             
         case 1:
             var ret = items[Int(index)]
-             println("ret=\(ret)")
+
             return ret
         default:
             println("default")
@@ -235,7 +240,7 @@ class EnergyMonthViewController: UIViewController ,CPTBarPlotDataSource,CPTBarPl
     
    
     
-    func legendTitleForBarPlot(barPlot:CPTBarPlot,recordIndex index:Int) -> NSString{
+    func legendTitleForBarPlot(barPlot:CPTBarPlot!,recordIndex index:UInt) -> String{
         return "bar \(index)"
     }
     

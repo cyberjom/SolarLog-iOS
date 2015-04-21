@@ -11,6 +11,8 @@ import UIKit
 class ProjectTableViewController: UITableViewController {
 
     @IBOutlet weak var menuButton:UIBarButtonItem!
+    
+   
     var projects:[Project] = []
     
     override func viewDidLoad() {
@@ -22,6 +24,7 @@ class ProjectTableViewController: UITableViewController {
         }
         
         MANAGER.projects(){ projects in
+            self.projects = []
             for p in projects{
                 self.projects.append(p)
             }
@@ -29,20 +32,31 @@ class ProjectTableViewController: UITableViewController {
                 self.tableView.reloadData()
             })
         }
-/*
-        //Mock project
-        var project = Project(id: 100, name: "Demo 1")
-        project.size = 3
-        projects.append(project)
-        project = Project(id: 101, name: "Demo 2")
-        project.size = 3
-        projects.append(project)
-        project = Project(id: 102, name: "Demo 3")
-        project.size = 5
-        projects.append(project)
-*/
+        self.refreshControl = UIRefreshControl()
+        self.refreshControl!.attributedTitle = NSAttributedString(string: "Pull to refersh")
+        self.refreshControl!.addTarget(self, action: "refresh:", forControlEvents: UIControlEvents.ValueChanged)
+        self.tableView.addSubview(refreshControl!)
+        self.tableView.alwaysBounceVertical = true;
     }
-
+    
+    
+    func refresh(sender:AnyObject){
+        // Updating your data here...
+        println("refresh")
+        MANAGER.syncProjects(){ projects in
+            self.projects = []
+            for p in projects{
+                self.projects.append(p)
+            }
+            dispatch_async(dispatch_get_main_queue(), {() in
+                self.tableView.reloadData()
+            })
+        }
+        self.refreshControl?.endRefreshing()
+        
+    }
+    
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -60,7 +74,7 @@ class ProjectTableViewController: UITableViewController {
     }
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath) as ProjectTableViewCell
+        let cell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath) as! ProjectTableViewCell
         var project = projects[indexPath.row]
         cell.project = project
         
@@ -70,7 +84,7 @@ class ProjectTableViewController: UITableViewController {
         cell.location.text = "\(project.location)"
         cell.province.text = "\(project.province)"
         
-        //cell.size.text = "\(project.size) MW"
+        cell.capacity.text = "\(project.capacity) w"
         
         return cell
     }
@@ -92,8 +106,8 @@ class ProjectTableViewController: UITableViewController {
 
             if let idx = index {
                 var project:Project = projects[idx.row]
-               println("idx = \(idx.row) site= \(project.id)")
-                MANAGER.CUR_PROJECT = project
+               println("idx = \(idx.row) project= \(project.id)")
+                MANAGER.changeProject(project)
             }
             
             

@@ -26,14 +26,15 @@
 		ED14F79F1AB974B80061C2CB /* NewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED14F79E1AB974B80061C2CB /* NewsViewController.swift */; };
 		ED14F7A51ABA5E7C0061C2CB /* Summary.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED14F7A41ABA5E7C0061C2CB /* Summary.swift */; };
 		ED17FA071AB6B11300208391 /* LogManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED17FA061AB6B11300208391 /* LogManager.swift */; };
-		ED17FA091AB6B34900208391 /* summary.json in Resources */ = {isa = PBXBuildFile; fileRef = ED17FA081AB6B34900208391 /* summary.json */; };
-		ED17FA0B1AB6B88C00208391 /* day.json in Resources */ = {isa = PBXBuildFile; fileRef = ED17FA0A1AB6B88C00208391 /* day.json */; };
 		ED17FA0D1AB6C9AC00208391 /* bg.jpg in Resources */ = {isa = PBXBuildFile; fileRef = ED17FA0C1AB6C9AC00208391 /* bg.jpg */; };
 		ED17FA111AB6F76D00208391 /* sun.png in Resources */ = {isa = PBXBuildFile; fileRef = ED17FA101AB6F76D00208391 /* sun.png */; };
 		ED1AD9281AD507610069AC9D /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = ED1AD9271AD507610069AC9D /* logo.png */; };
 		ED1AD92A1AD50B2A0069AC9D /* solarlog200.png in Resources */ = {isa = PBXBuildFile; fileRef = ED1AD9291AD50B2A0069AC9D /* solarlog200.png */; };
 		ED1AD92C1AD568F40069AC9D /* Keychain.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED1AD92B1AD568F40069AC9D /* Keychain.swift */; };
 		ED1AD92E1AD569390069AC9D /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED1AD92D1AD569390069AC9D /* Security.framework */; };
+		ED2E88391AE0E34D0077826A /* PowerGaugeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED2E88381AE0E34D0077826A /* PowerGaugeViewController.swift */; };
+		ED2E883B1AE0FFE00077826A /* RevenueDayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED2E883A1AE0FFE00077826A /* RevenueDayViewController.swift */; };
+		ED2E883D1AE0FFEC0077826A /* RevenueMonthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED2E883C1AE0FFEC0077826A /* RevenueMonthViewController.swift */; };
 		ED30AEF51AB8077C00E4C1B3 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED30AEF41AB8077C00E4C1B3 /* LoginViewController.swift */; };
 		ED30AEF71AB8078D00E4C1B3 /* SummaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED30AEF61AB8078D00E4C1B3 /* SummaryViewController.swift */; };
 		ED30AEF91AB8079800E4C1B3 /* RevenueViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED30AEF81AB8079800E4C1B3 /* RevenueViewController.swift */; };
@@ -41,6 +42,10 @@
 		ED30AEFD1AB807B500E4C1B3 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED30AEFC1AB807B500E4C1B3 /* SettingViewController.swift */; };
 		ED30AF0A1AB811E000E4C1B3 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ED30AF091AB811E000E4C1B3 /* SWRevealViewController.m */; };
 		ED30AF101AB85C4C00E4C1B3 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED30AF0F1AB85C4C00E4C1B3 /* MainTabBarController.swift */; };
+		ED38FD011ADFB225008677A5 /* ReportTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED38FD001ADFB225008677A5 /* ReportTabBarController.swift */; };
+		ED3979F21AE09915007572A5 /* PowerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED3979F11AE09915007572A5 /* PowerViewController.swift */; };
+		ED3979F41AE0C010007572A5 /* GraphData.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED3979F31AE0C010007572A5 /* GraphData.swift */; };
+		ED3BE69D1AE618C000281735 /* coindrop.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = ED3BE69C1AE618C000281735 /* coindrop.mp3 */; };
 		ED9722131AC1151500342410 /* ProjectTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED9722121AC1151500342410 /* ProjectTableViewCell.swift */; };
 		ED9722151AC11F9300342410 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = ED9722141AC11F9300342410 /* Localizable.strings */; };
 		ED9722191AC12B2C00342410 /* Project.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED9722181AC12B2C00342410 /* Project.swift */; };
@@ -48,6 +53,8 @@
 		ED97221D1AC13A5900342410 /* EnergyDayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED97221C1AC13A5800342410 /* EnergyDayViewController.swift */; };
 		ED97221F1AC1434C00342410 /* ProjectInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED97221E1AC1434C00342410 /* ProjectInfoViewController.swift */; };
 		ED9722211AC147C900342410 /* EnergyMonthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED9722201AC147C900342410 /* EnergyMonthViewController.swift */; };
+		ED97F1981AE5217900A75DF3 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED97F1971AE5217900A75DF3 /* AVFoundation.framework */; };
+		ED97F19A1AE5221D00A75DF3 /* coindrop.wav in Resources */ = {isa = PBXBuildFile; fileRef = ED97F1991AE5221D00A75DF3 /* coindrop.wav */; };
 		EDD53E441AB861A2004888C2 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDD53E431AB861A2004888C2 /* MenuViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -86,14 +93,15 @@
 		ED14F79E1AB974B80061C2CB /* NewsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsViewController.swift; sourceTree = "<group>"; };
 		ED14F7A41ABA5E7C0061C2CB /* Summary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Summary.swift; sourceTree = "<group>"; };
 		ED17FA061AB6B11300208391 /* LogManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogManager.swift; sourceTree = "<group>"; };
-		ED17FA081AB6B34900208391 /* summary.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = summary.json; sourceTree = "<group>"; };
-		ED17FA0A1AB6B88C00208391 /* day.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = day.json; sourceTree = "<group>"; };
 		ED17FA0C1AB6C9AC00208391 /* bg.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = bg.jpg; sourceTree = "<group>"; };
 		ED17FA101AB6F76D00208391 /* sun.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sun.png; sourceTree = "<group>"; };
 		ED1AD9271AD507610069AC9D /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo.png; sourceTree = "<group>"; };
 		ED1AD9291AD50B2A0069AC9D /* solarlog200.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = solarlog200.png; sourceTree = "<group>"; };
 		ED1AD92B1AD568F40069AC9D /* Keychain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Keychain.swift; sourceTree = "<group>"; };
 		ED1AD92D1AD569390069AC9D /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		ED2E88381AE0E34D0077826A /* PowerGaugeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PowerGaugeViewController.swift; sourceTree = "<group>"; };
+		ED2E883A1AE0FFE00077826A /* RevenueDayViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RevenueDayViewController.swift; sourceTree = "<group>"; };
+		ED2E883C1AE0FFEC0077826A /* RevenueMonthViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RevenueMonthViewController.swift; sourceTree = "<group>"; };
 		ED30AEF41AB8077C00E4C1B3 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		ED30AEF61AB8078D00E4C1B3 /* SummaryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SummaryViewController.swift; sourceTree = "<group>"; };
 		ED30AEF81AB8079800E4C1B3 /* RevenueViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RevenueViewController.swift; sourceTree = "<group>"; };
@@ -103,6 +111,10 @@
 		ED30AF081AB811E000E4C1B3 /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
 		ED30AF091AB811E000E4C1B3 /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
 		ED30AF0F1AB85C4C00E4C1B3 /* MainTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
+		ED38FD001ADFB225008677A5 /* ReportTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReportTabBarController.swift; sourceTree = "<group>"; };
+		ED3979F11AE09915007572A5 /* PowerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PowerViewController.swift; sourceTree = "<group>"; };
+		ED3979F31AE0C010007572A5 /* GraphData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GraphData.swift; sourceTree = "<group>"; };
+		ED3BE69C1AE618C000281735 /* coindrop.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = coindrop.mp3; sourceTree = "<group>"; };
 		ED9722121AC1151500342410 /* ProjectTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectTableViewCell.swift; sourceTree = "<group>"; };
 		ED9722141AC11F9300342410 /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		ED9722161AC11FE800342410 /* th */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = th; path = th.lproj/Main.strings; sourceTree = "<group>"; };
@@ -112,6 +124,8 @@
 		ED97221C1AC13A5800342410 /* EnergyDayViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EnergyDayViewController.swift; sourceTree = "<group>"; };
 		ED97221E1AC1434C00342410 /* ProjectInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectInfoViewController.swift; sourceTree = "<group>"; };
 		ED9722201AC147C900342410 /* EnergyMonthViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EnergyMonthViewController.swift; sourceTree = "<group>"; };
+		ED97F1971AE5217900A75DF3 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		ED97F1991AE5221D00A75DF3 /* coindrop.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = coindrop.wav; sourceTree = "<group>"; };
 		EDD53E431AB861A2004888C2 /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		EF637D18D5FF909A2362183E /* Pods-Solar Log.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Solar Log.release.xcconfig"; path = "Pods/Target Support Files/Pods-Solar Log/Pods-Solar Log.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -121,6 +135,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ED97F1981AE5217900A75DF3 /* AVFoundation.framework in Frameworks */,
 				ED1AD92E1AD569390069AC9D /* Security.framework in Frameworks */,
 				749870384D90A611C8DD4841 /* libPods-Solar Log.a in Frameworks */,
 			);
@@ -148,6 +163,7 @@
 		366ACC92E28BA80396A10E22 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				ED97F1971AE5217900A75DF3 /* AVFoundation.framework */,
 				ED1AD92D1AD569390069AC9D /* Security.framework */,
 				36E2F8A70458DE83BF3A8CB5 /* libPods-Solar Log.a */,
 			);
@@ -177,6 +193,8 @@
 		ED13800F1AB68BD100462057 /* Solar Log */ = {
 			isa = PBXGroup;
 			children = (
+				ED3BE69C1AE618C000281735 /* coindrop.mp3 */,
+				ED97F1991AE5221D00A75DF3 /* coindrop.wav */,
 				ED1AD9291AD50B2A0069AC9D /* solarlog200.png */,
 				ED14F7A01AB9BCD00061C2CB /* Model */,
 				ED30AF061AB811D400E4C1B3 /* SWRevealViewController */,
@@ -192,16 +210,19 @@
 				ED1380141AB68BD100462057 /* Solar_Log.xcdatamodeld */,
 				ED1380101AB68BD100462057 /* Supporting Files */,
 				ED17FA061AB6B11300208391 /* LogManager.swift */,
-				ED17FA081AB6B34900208391 /* summary.json */,
-				ED17FA0A1AB6B88C00208391 /* day.json */,
 				ED30AEF41AB8077C00E4C1B3 /* LoginViewController.swift */,
 				ED30AEF61AB8078D00E4C1B3 /* SummaryViewController.swift */,
-				ED30AEF81AB8079800E4C1B3 /* RevenueViewController.swift */,
+				ED2E88381AE0E34D0077826A /* PowerGaugeViewController.swift */,
 				ED30AEFA1AB807AB00E4C1B3 /* EnergyViewController.swift */,
+				ED30AEF81AB8079800E4C1B3 /* RevenueViewController.swift */,
 				ED97221C1AC13A5800342410 /* EnergyDayViewController.swift */,
 				ED9722201AC147C900342410 /* EnergyMonthViewController.swift */,
+				ED2E883A1AE0FFE00077826A /* RevenueDayViewController.swift */,
+				ED2E883C1AE0FFEC0077826A /* RevenueMonthViewController.swift */,
+				ED3979F11AE09915007572A5 /* PowerViewController.swift */,
 				ED30AEFC1AB807B500E4C1B3 /* SettingViewController.swift */,
 				ED30AF0F1AB85C4C00E4C1B3 /* MainTabBarController.swift */,
+				ED38FD001ADFB225008677A5 /* ReportTabBarController.swift */,
 				EDD53E431AB861A2004888C2 /* MenuViewController.swift */,
 				ED14F79A1AB914410061C2CB /* ProjectTableViewController.swift */,
 				ED9722121AC1151500342410 /* ProjectTableViewCell.swift */,
@@ -251,6 +272,7 @@
 				ED1139211ABE61FF007ED3F3 /* Meteorology.swift */,
 				ED9722181AC12B2C00342410 /* Project.swift */,
 				ED97221A1AC12CF300342410 /* User.swift */,
+				ED3979F31AE0C010007572A5 /* GraphData.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -354,13 +376,13 @@
 				ED17FA111AB6F76D00208391 /* sun.png in Resources */,
 				ED13801B1AB68BD100462057 /* Main.storyboard in Resources */,
 				ED1380201AB68BD100462057 /* LaunchScreen.xib in Resources */,
-				ED17FA091AB6B34900208391 /* summary.json in Resources */,
 				ED14F79D1AB9697A0061C2CB /* bg-p.jpg in Resources */,
-				ED17FA0B1AB6B88C00208391 /* day.json in Resources */,
 				ED1139261ABEFD2D007ED3F3 /* InverterCell.xib in Resources */,
 				ED1AD92A1AD50B2A0069AC9D /* solarlog200.png in Resources */,
 				ED1139281ABF04EA007ED3F3 /* MpptCell.xib in Resources */,
 				ED13801D1AB68BD100462057 /* Images.xcassets in Resources */,
+				ED3BE69D1AE618C000281735 /* coindrop.mp3 in Resources */,
+				ED97F19A1AE5221D00A75DF3 /* coindrop.wav in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -416,18 +438,24 @@
 				ED17FA071AB6B11300208391 /* LogManager.swift in Sources */,
 				ED30AF101AB85C4C00E4C1B3 /* MainTabBarController.swift in Sources */,
 				ED1380161AB68BD100462057 /* Solar_Log.xcdatamodeld in Sources */,
+				ED3979F21AE09915007572A5 /* PowerViewController.swift in Sources */,
 				EDD53E441AB861A2004888C2 /* MenuViewController.swift in Sources */,
+				ED2E88391AE0E34D0077826A /* PowerGaugeViewController.swift in Sources */,
 				ED9722191AC12B2C00342410 /* Project.swift in Sources */,
 				ED97221D1AC13A5900342410 /* EnergyDayViewController.swift in Sources */,
 				ED1139221ABE61FF007ED3F3 /* Meteorology.swift in Sources */,
+				ED3979F41AE0C010007572A5 /* GraphData.swift in Sources */,
 				ED9722211AC147C900342410 /* EnergyMonthViewController.swift in Sources */,
 				ED1380131AB68BD100462057 /* AppDelegate.swift in Sources */,
 				ED11391E1ABE4907007ED3F3 /* Inverter.swift in Sources */,
 				ED14F7A51ABA5E7C0061C2CB /* Summary.swift in Sources */,
 				ED14F79F1AB974B80061C2CB /* NewsViewController.swift in Sources */,
 				ED30AEF71AB8078D00E4C1B3 /* SummaryViewController.swift in Sources */,
+				ED2E883B1AE0FFE00077826A /* RevenueDayViewController.swift in Sources */,
+				ED2E883D1AE0FFEC0077826A /* RevenueMonthViewController.swift in Sources */,
 				ED30AF0A1AB811E000E4C1B3 /* SWRevealViewController.m in Sources */,
 				ED30AEFB1AB807AB00E4C1B3 /* EnergyViewController.swift in Sources */,
+				ED38FD011ADFB225008677A5 /* ReportTabBarController.swift in Sources */,
 				ED1AD92C1AD568F40069AC9D /* Keychain.swift in Sources */,
 				ED97221F1AC1434C00342410 /* ProjectInfoViewController.swift in Sources */,
 				ED1139201ABE5E9F007ED3F3 /* InverterCell.swift in Sources */,

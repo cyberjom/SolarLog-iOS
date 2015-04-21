@@ -109,7 +109,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 */
     
     func resetAppToFirstController(){
-        self.window?.rootViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("LoginPage") as LoginViewController
+        self.window?.rootViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("LoginPage") as! LoginViewController
     }
 }
 

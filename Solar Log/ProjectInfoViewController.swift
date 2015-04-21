@@ -18,6 +18,8 @@ class ProjectInfoViewController: UIViewController {
 
     @IBOutlet var province: UILabel!
     
+    @IBOutlet var capacity: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         var project = MANAGER.CUR_PROJECT
@@ -35,6 +37,7 @@ class ProjectInfoViewController: UIViewController {
         projectname.text = project.name
         location.text = "\(project.location)"
         province.text = "\(project.province)"
+        capacity.text = "\(project.capacity) w"
     }
 
     override func didReceiveMemoryWarning() {

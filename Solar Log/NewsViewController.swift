@@ -21,7 +21,7 @@ class NewsViewController: UIViewController {
             menuButton.action = "revealToggle:"
             self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
         }
-        let url = NSURL(string: "http://apple.com")
+        let url = NSURL(string: "http://feeds.sciencedaily.com/sciencedaily/matter_energy/solar_energy")
         let request = NSURLRequest(URL: url!)
         webView.loadRequest(request)
     }

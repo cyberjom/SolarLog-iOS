@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AVFoundation
 
 class SummaryViewController: UIViewController ,UICollectionViewDelegate, UICollectionViewDataSource{
     var refreshControl:UIRefreshControl!
@@ -72,11 +73,12 @@ class SummaryViewController: UIViewController ,UICollectionViewDelegate, UIColle
     @IBOutlet var totalUnit2: UILabel!
     
     var summary:Summary! = Summary()
-    
+    var lastRevenue:Int = 0
+    var coinSound  = AVAudioPlayer()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        coinSound = self.setupAudioPlayerWithFile("coindrop", type:"mp3")
         self.inverterCollection?.registerNib(UINib(nibName: "InverterCell", bundle: nil), forCellWithReuseIdentifier: "cell")
         self.inverterCollection1?.registerNib(UINib(nibName: "InverterCell", bundle: nil), forCellWithReuseIdentifier: "cell")
         self.inverterCollection2?.registerNib(UINib(nibName: "InverterCelliPad", bundle: nil), forCellWithReuseIdentifier: "cell")
@@ -96,7 +98,24 @@ class SummaryViewController: UIViewController ,UICollectionViewDelegate, UIColle
         // Dispose of any resources that can be recreated.
     }
     
+    func setupAudioPlayerWithFile(file:NSString, type:NSString) -> AVAudioPlayer  {
+        //1
+        var path = NSBundle.mainBundle().pathForResource(file as String, ofType:type as String)
+        var url = NSURL.fileURLWithPath(path!)
+        
+        //2
+        var error: NSError?
+        
+        //3
+        var audioPlayer:AVAudioPlayer?
+        audioPlayer = AVAudioPlayer(contentsOfURL: url, error: &error)
+        
+        //4
+        return audioPlayer!
+    }
+ 
     func updateData(){
+   
        // println("updateData")
         let fmt1 = NSDateFormatter()
         fmt1.dateFormat = "d MMM yyyy"
@@ -141,7 +160,10 @@ class SummaryViewController: UIViewController ,UICollectionViewDelegate, UIColle
                     yearUnit="kWh"
                 }
      
-                
+                if Int(result.energy.revenuetoday) - self.lastRevenue >= 1 {
+                    self.lastRevenue = Int(result.energy.revenuetoday)
+                    self.coinSound.play()
+                }
                 
             //iphone portrait
             self.inverterCollection.reloadData()
@@ -235,7 +257,7 @@ class SummaryViewController: UIViewController ,UICollectionViewDelegate, UIColle
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         var inverter = summary.inverters[indexPath.row]
         
-        let cell = collectionView.dequeueReusableCellWithReuseIdentifier("cell", forIndexPath: indexPath) as InverterCell
+        let cell = collectionView.dequeueReusableCellWithReuseIdentifier("cell", forIndexPath: indexPath) as! InverterCell
         cell.collectView!.registerNib(UINib(nibName: "MpptCell", bundle: nil), forCellWithReuseIdentifier: "cell")
         cell.inverter = inverter
         //iphone portrait

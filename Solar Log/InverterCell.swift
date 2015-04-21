@@ -33,9 +33,24 @@ class InverterCell: UICollectionViewCell ,UICollectionViewDelegate, UICollection
     
     //Cell
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCellWithReuseIdentifier("cell", forIndexPath: indexPath) as MpptCell
+        let cell = collectionView.dequeueReusableCellWithReuseIdentifier("cell", forIndexPath: indexPath) as! MpptCell
         var mppt = inverter.mppts[indexPath.row]
         cell.V.text  =  String(format: "%.0f V", mppt.V)
+        
+        if inverter.status == 0 {
+            inverterImage.image = UIImage(named: "inverter0")
+        }else if inverter.status == 1 {
+            inverterImage.image = UIImage(named: "inverter1")
+        }else if inverter.status == 2 {
+            inverterImage.image = UIImage(named: "inverter2")
+        }else if inverter.status == 3 {
+            inverterImage.image = UIImage(named: "inverter3")
+        }else if inverter.status == 4 {
+            inverterImage.image = UIImage(named: "inverter4")
+        }else{
+            inverterImage.image = UIImage(named: "inverter")
+            
+        }
         return cell
     }
 }
