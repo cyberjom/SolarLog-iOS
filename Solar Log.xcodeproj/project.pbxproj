@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		749870384D90A611C8DD4841 /* libPods-Solar Log.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 36E2F8A70458DE83BF3A8CB5 /* libPods-Solar Log.a */; };
-		E76BE4051AE9095D00674C08 /* WMGaugeView.m in Sources */ = {isa = PBXBuildFile; fileRef = E76BE4041AE9095D00674C08 /* WMGaugeView.m */; };
 		ED11391E1ABE4907007ED3F3 /* Inverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED11391D1ABE4907007ED3F3 /* Inverter.swift */; };
 		ED1139201ABE5E9F007ED3F3 /* InverterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED11391F1ABE5E9F007ED3F3 /* InverterCell.swift */; };
 		ED1139221ABE61FF007ED3F3 /* Meteorology.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED1139211ABE61FF007ED3F3 /* Meteorology.swift */; };
@@ -71,8 +70,6 @@
 /* Begin PBXFileReference section */
 		36E2F8A70458DE83BF3A8CB5 /* libPods-Solar Log.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Solar Log.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D6646E22AB0EAA9C56695908 /* Pods-Solar Log.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Solar Log.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Solar Log/Pods-Solar Log.debug.xcconfig"; sourceTree = "<group>"; };
-		E76BE4031AE9095D00674C08 /* WMGaugeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WMGaugeView.h; sourceTree = "<group>"; };
-		E76BE4041AE9095D00674C08 /* WMGaugeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WMGaugeView.m; sourceTree = "<group>"; };
 		ED11391D1ABE4907007ED3F3 /* Inverter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Inverter.swift; sourceTree = "<group>"; };
 		ED11391F1ABE5E9F007ED3F3 /* InverterCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InverterCell.swift; sourceTree = "<group>"; };
 		ED1139211ABE61FF007ED3F3 /* Meteorology.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Meteorology.swift; sourceTree = "<group>"; };
@@ -171,15 +168,6 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		E76BE4021AE9095D00674C08 /* WMGaugeView */ = {
-			isa = PBXGroup;
-			children = (
-				E76BE4031AE9095D00674C08 /* WMGaugeView.h */,
-				E76BE4041AE9095D00674C08 /* WMGaugeView.m */,
-			);
-			path = WMGaugeView;
-			sourceTree = "<group>";
-		};
 		ED1380041AB68BD100462057 = {
 			isa = PBXGroup;
 			children = (
@@ -203,7 +191,6 @@
 		ED13800F1AB68BD100462057 /* Solar Log */ = {
 			isa = PBXGroup;
 			children = (
-				E76BE4021AE9095D00674C08 /* WMGaugeView */,
 				ED3BE69C1AE618C000281735 /* coindrop.mp3 */,
 				ED1AD9291AD50B2A0069AC9D /* solarlog200.png */,
 				ED14F7A01AB9BCD00061C2CB /* Model */,
@@ -347,7 +334,7 @@
 				TargetAttributes = {
 					ED13800C1AB68BD100462057 = {
 						CreatedOnToolsVersion = 6.2;
-						DevelopmentTeam = 923CLR6L5Z;
+						DevelopmentTeam = SW2Z663FS9;
 					};
 					ED1380241AB68BD100462057 = {
 						CreatedOnToolsVersion = 6.2;
@@ -458,7 +445,6 @@
 				ED1380131AB68BD100462057 /* AppDelegate.swift in Sources */,
 				ED11391E1ABE4907007ED3F3 /* Inverter.swift in Sources */,
 				ED14F7A51ABA5E7C0061C2CB /* Summary.swift in Sources */,
-				E76BE4051AE9095D00674C08 /* WMGaugeView.m in Sources */,
 				ED14F79F1AB974B80061C2CB /* NewsViewController.swift in Sources */,
 				ED30AEF71AB8078D00E4C1B3 /* SummaryViewController.swift in Sources */,
 				ED2E883B1AE0FFE00077826A /* RevenueDayViewController.swift in Sources */,
@@ -605,11 +591,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				HEADER_SEARCH_PATHS = (
-					"\"${PODS_ROOT}/Headers/Public\"",
-					"\"${PODS_ROOT}/Headers/Public/CorePlot\"",
-					"\"${PODS_ROOT}/Headers/Public/CorePlot/ios\"",
-				);
+				HEADER_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = "Solar Log/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -621,10 +603,12 @@
 					"\"${PODS_ROOT}/Headers/Public/CorePlot\"",
 					"-isystem",
 					"\"${PODS_ROOT}/Headers/Public/CorePlot/ios\"",
+					"-isystem",
+					"\"${PODS_ROOT}/Headers/Public/WMGaugeView\"",
 				);
 				OTHER_LDFLAGS = (
 					"-ObjC",
-					"-l\"Pods-Solar Log-CorePlot\"",
+					"$(inherited)",
 					"-framework",
 					"\"Accelerate\"",
 					"-framework",
@@ -650,11 +634,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				HEADER_SEARCH_PATHS = (
-					"\"${PODS_ROOT}/Headers/Public\"",
-					"\"${PODS_ROOT}/Headers/Public/CorePlot\"",
-					"\"${PODS_ROOT}/Headers/Public/CorePlot/ios\"",
-				);
+				HEADER_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = "Solar Log/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -666,10 +646,12 @@
 					"\"${PODS_ROOT}/Headers/Public/CorePlot\"",
 					"-isystem",
 					"\"${PODS_ROOT}/Headers/Public/CorePlot/ios\"",
+					"-isystem",
+					"\"${PODS_ROOT}/Headers/Public/WMGaugeView\"",
 				);
 				OTHER_LDFLAGS = (
 					"-ObjC",
-					"-l\"Pods-Solar Log-CorePlot\"",
+					"$(inherited)",
 					"-framework",
 					"\"Accelerate\"",
 					"-framework",

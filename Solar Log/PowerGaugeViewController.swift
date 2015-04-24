@@ -33,7 +33,7 @@ class PowerGaugeViewController: UIViewController {
             return
         }
         var max = Float(round(Float(MANAGER.CUR_PROJECT.capacity) / 1000.0))
-        println("capacity= \(MANAGER.CUR_PROJECT.capacity) max= \(max)")
+        //println("capacity= \(MANAGER.CUR_PROJECT.capacity) max= \(max)")
 
         gaugeView.scaleDivisionColor = UIColor.whiteColor()
         gaugeView.rangeLabelsFontColor  = UIColor.redColor()
@@ -62,6 +62,9 @@ class PowerGaugeViewController: UIViewController {
         _gaugeView.rangeColors = @[ RGB(232, 111, 33),    RGB(232, 231, 33),  RGB(27, 202, 33),   RGB(231, 32, 43)    ];
         _gaugeView.rangeLabels = @[ @"VERY LOW",          @"LOW",             @"OK",              @"OVER FILL"        ];
 */
+        gaugeView.rangeValues = [ 40*max/100,60*max/100,80*max/100,100*max/100]
+        gaugeView.rangeColors = [ UIColor.greenColor(),   UIColor.yellowColor(),  UIColor.orangeColor(),   UIColor.redColor()   ]
+       // gaugeView.rangeLabels = [ "LOW", "OK",  "GOOD", "EXCELLENT" ]
         gaugeView.maxValue = max
     
         gaugeView.showUnitOfMeasurement = true;

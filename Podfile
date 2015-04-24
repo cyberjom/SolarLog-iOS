@@ -4,7 +4,7 @@
 
 target 'Solar Log' do
 pod 'CorePlot', :git => 'https://github.com/core-plot/core-plot.git', :branch => 'release-2.0'
-#pod 'WMGaugeView', '~> 0.0.3'
+pod 'WMGaugeView', '~> 0.0.3'
 #pod 'SSKeychain'
 end
 
