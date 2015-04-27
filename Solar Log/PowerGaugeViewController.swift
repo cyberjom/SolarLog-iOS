@@ -69,9 +69,11 @@ class PowerGaugeViewController: UIViewController {
     
         gaugeView.showUnitOfMeasurement = true;
         gaugeView.unitOfMeasurement = "kW";
+        if !MANAGER.powers.isEmpty {
         var data = MANAGER.powers[MANAGER.powers.count - 1]
         
         gaugeView.setValue( data.y as! Float, animated: true)
+        }
     }
     
     func roundUp(value: Int, divisor: Int) -> Int {

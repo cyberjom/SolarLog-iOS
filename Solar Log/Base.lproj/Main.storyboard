@@ -4212,10 +4212,10 @@
             </objects>
             <point key="canvasLocation" x="-515" y="-1579"/>
         </scene>
-        <!--Power-->
+        <!--Power Gauge-->
         <scene sceneID="9Mo-S1-cMb">
             <objects>
-                <viewController id="dSD-eK-4bf" customClass="PowerGaugeViewController" customModule="Solar_Log" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Power Gauge" id="dSD-eK-4bf" customClass="PowerGaugeViewController" customModule="Solar_Log" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="JNh-Qi-IMb"/>
                         <viewControllerLayoutGuide type="bottom" id="MgD-y9-Y3U"/>
@@ -4225,14 +4225,14 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KTg-EM-7vq" customClass="WMGaugeView">
-                                <rect key="frame" x="120" y="120" width="360" height="360"/>
+                                <rect key="frame" x="150" y="150" width="300" height="300"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="528" id="2Q2-Hf-iFI"/>
-                                    <constraint firstAttribute="width" constant="360" id="4WJ-Zu-zMY"/>
+                                    <constraint firstAttribute="width" constant="300" id="4WJ-Zu-zMY"/>
                                     <constraint firstAttribute="width" secondItem="KTg-EM-7vq" secondAttribute="height" multiplier="11:9" id="K2W-5w-HhZ"/>
                                     <constraint firstAttribute="width" constant="408" id="RQF-ve-Ygi"/>
-                                    <constraint firstAttribute="height" constant="360" id="iPx-Ht-b2H"/>
+                                    <constraint firstAttribute="height" constant="300" id="iPx-Ht-b2H"/>
                                     <constraint firstAttribute="height" constant="432" id="zve-Z6-nsf"/>
                                 </constraints>
                                 <variation key="default">

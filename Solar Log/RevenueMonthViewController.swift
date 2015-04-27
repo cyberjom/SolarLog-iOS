@@ -124,12 +124,13 @@ class RevenueMonthViewController: UIViewController ,CPTBarPlotDataSource,CPTBarP
             var i = 0
             var labelLocation  = 0;
             dispatch_async(dispatch_get_main_queue(), {() in
-                var customLabels:NSMutableSet = NSMutableSet (capacity: self.items.count)
+                var customLabels:NSMutableSet = NSMutableSet (capacity: self.items.count / 3)
                 
                 for  i = 0 ; i < data.count ; i++ {
                     var data = data[i]
                     
                     self.items.append(data.y as! Double)
+                     if i % 3 == 0 {
                     var newLabel = CPTAxisLabel(text: "\(data.x as! String)" , textStyle: x.labelTextStyle)
                     var date:NSDate = fmt.dateFromString(data.x as! String)!
                     let calendar = NSCalendar.currentCalendar()
@@ -139,6 +140,7 @@ class RevenueMonthViewController: UIViewController ,CPTBarPlotDataSource,CPTBarP
                     newLabel.offset = x.labelOffset + x.majorTickLength;
                     newLabel.rotation = CGFloat(M_PI_4)
                     customLabels.addObject(newLabel)
+                    }
                     //println("tickLocation  = \(currentDay) --- \(data.x)")
                 }
                 x.axisLabels = customLabels as Set<NSObject>;

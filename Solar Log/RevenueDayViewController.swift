@@ -102,18 +102,20 @@ class RevenueDayViewController: UIViewController ,CPTBarPlotDataSource,CPTBarPlo
             self.items = []
             dispatch_async(dispatch_get_main_queue(), {() in
                 var labelLocation     = 0;
-                var customLabels:NSMutableSet = NSMutableSet (capacity: self.items.count)
+                var customLabels:NSMutableSet = NSMutableSet (capacity: self.items.count / 3)
                 
                
                 for  i = 0 ; i < data.count ; i++ {
                     var data = data[i]
                     
                     self.items.append(data.y as! Double)
+                    if i % 3 == 0 {
                     var newLabel = CPTAxisLabel(text: "\(data.x as! Int)" , textStyle: x.labelTextStyle)
                     newLabel.tickLocation = data.x as! Int
                     newLabel.offset = x.labelOffset + x.majorTickLength;
                     newLabel.rotation = CGFloat(M_PI_4)
                     customLabels.addObject(newLabel)
+                    }
                 }
                 x.titleLocation = self.items.count/2
                 x.axisLabels = customLabels as Set<NSObject>;
