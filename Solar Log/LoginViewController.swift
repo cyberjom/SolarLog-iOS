@@ -8,7 +8,7 @@
 
 import UIKit
 
-class LoginViewController: UIViewController {
+class LoginViewController: UIViewController ,UITextFieldDelegate{
 
     @IBOutlet var user: UITextField!
     
@@ -16,8 +16,18 @@ class LoginViewController: UIViewController {
     
     @IBOutlet var message: UILabel!
     
+    var kbHeight: CGFloat!
+    var curField : Int! = 0
+   
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        //user.delegate = self
+        passwd.delegate = self
+        
+
+
+        
         var indicator:UIActivityIndicatorView = UIActivityIndicatorView(activityIndicatorStyle: UIActivityIndicatorViewStyle.Gray)
         indicator.frame = CGRectMake(0.0, 0.0, 40.0, 40.0);
         indicator.center = self.view.center;
@@ -58,13 +68,49 @@ class LoginViewController: UIViewController {
 
         // Do any additional setup after loading the view.
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        curField = textField.tag
+        return true
+    }
+    override func viewWillAppear(animated:Bool) {
+        super.viewWillAppear(animated)
+        
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("keyboardWillShow:"), name: UIKeyboardWillShowNotification, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("keyboardWillHide:"), name: UIKeyboardWillHideNotification, object: nil)
+    }
+    override func viewWillDisappear(animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        NSNotificationCenter.defaultCenter().removeObserver(self)
     }
     
 
+    
+    func keyboardWillShow(notification: NSNotification) {
+        if let userInfo = notification.userInfo {
+            if let keyboardSize =  (userInfo[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.CGRectValue() {
+                kbHeight = keyboardSize.height
+                self.animateTextField(true)
+            }
+        }
+    }
+    func keyboardWillHide(notification: NSNotification) {
+        self.animateTextField(false)
+    }
+    
+    func animateTextField(up: Bool) {
+        var movement = (up ? -kbHeight : kbHeight)
+        
+        UIView.animateWithDuration(0.3, animations: {
+            if self.curField == 0 {
+                self.view.frame.origin.y = movement
+            }
+            //self.view.frame = CGRectOffset(self.view.frame, 0, movement)
+        })
+    }
+    
+    
     /*
     // MARK: - Navigation
 

@@ -7,6 +7,19 @@
 //
 
 import Foundation
+/*
+Status Code
+0 = No Data
+1 = Synced (Connected)
+2 = DC Low
+3 = Grid Bad
+4 = Delay
+5 = Connecting
+6 = Fault
+
+
+
+*/
 class Inverter {
     var id:Int = 0
     var mppts:[Mppt] = []

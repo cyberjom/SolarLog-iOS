@@ -55,6 +55,7 @@
 		ED9722211AC147C900342410 /* EnergyMonthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED9722201AC147C900342410 /* EnergyMonthViewController.swift */; };
 		ED97F1981AE5217900A75DF3 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED97F1971AE5217900A75DF3 /* AVFoundation.framework */; };
 		EDD53E441AB861A2004888C2 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDD53E431AB861A2004888C2 /* MenuViewController.swift */; };
+		EDFDF4DC1B9597510038E71B /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDFDF4DB1B9597510038E71B /* SettingsTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -125,6 +126,7 @@
 		ED9722201AC147C900342410 /* EnergyMonthViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EnergyMonthViewController.swift; sourceTree = "<group>"; };
 		ED97F1971AE5217900A75DF3 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		EDD53E431AB861A2004888C2 /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
+		EDFDF4DB1B9597510038E71B /* SettingsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
 		EF637D18D5FF909A2362183E /* Pods-Solar Log.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Solar Log.release.xcconfig"; path = "Pods/Target Support Files/Pods-Solar Log/Pods-Solar Log.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -232,6 +234,7 @@
 				ED1139251ABEFD2D007ED3F3 /* InverterCell.xib */,
 				ED1139271ABF04EA007ED3F3 /* MpptCell.xib */,
 				ED9722141AC11F9300342410 /* Localizable.strings */,
+				EDFDF4DB1B9597510038E71B /* SettingsTableViewController.swift */,
 			);
 			path = "Solar Log";
 			sourceTree = "<group>";
@@ -334,7 +337,7 @@
 				TargetAttributes = {
 					ED13800C1AB68BD100462057 = {
 						CreatedOnToolsVersion = 6.2;
-						DevelopmentTeam = 923CLR6L5Z;
+						DevelopmentTeam = SW2Z663FS9;
 					};
 					ED1380241AB68BD100462057 = {
 						CreatedOnToolsVersion = 6.2;
@@ -443,6 +446,7 @@
 				ED3979F41AE0C010007572A5 /* GraphData.swift in Sources */,
 				ED9722211AC147C900342410 /* EnergyMonthViewController.swift in Sources */,
 				ED1380131AB68BD100462057 /* AppDelegate.swift in Sources */,
+				EDFDF4DC1B9597510038E71B /* SettingsTableViewController.swift in Sources */,
 				ED11391E1ABE4907007ED3F3 /* Inverter.swift in Sources */,
 				ED14F7A51ABA5E7C0061C2CB /* Summary.swift in Sources */,
 				ED14F79F1AB974B80061C2CB /* NewsViewController.swift in Sources */,
@@ -593,7 +597,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				HEADER_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = "Solar Log/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_CFLAGS = (
 					"$(inherited)",
@@ -636,7 +640,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				HEADER_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = "Solar Log/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_CFLAGS = (
 					"$(inherited)",

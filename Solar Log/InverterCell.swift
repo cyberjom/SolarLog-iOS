@@ -46,9 +46,13 @@ class InverterCell: UICollectionViewCell ,UICollectionViewDelegate, UICollection
         }else if inverter.status == 3 {
             inverterImage.image = UIImage(named: "inverter3")
         }else if inverter.status == 4 {
-            inverterImage.image = UIImage(named: "inverter4")
+            inverterImage.image = UIImage(named: "inverter5")
+        }else if inverter.status == 5 {
+            inverterImage.image = UIImage(named: "inverter5")
+        }else if inverter.status == 6 {
+            inverterImage.image = UIImage(named: "inverter6")
         }else{
-            inverterImage.image = UIImage(named: "inverter")
+            inverterImage.image = UIImage(named: "inverter0")
             
         }
         return cell

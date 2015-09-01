@@ -35,7 +35,7 @@ class PowerViewController: UIViewController , CPTPlotDataSource {
         var CPDBarInitialX:CGFloat = 0.25
         
         var graph = CPTXYGraph(frame: CGRectZero)
-        graph.plotAreaFrame.masksToBorder = false
+        graph.plotAreaFrame!.masksToBorder = false
         graph.paddingBottom = 50.0
         graph.paddingLeft  = 50.0
         graph.paddingTop    = 50.0
@@ -73,7 +73,7 @@ class PowerViewController: UIViewController , CPTPlotDataSource {
         graph.addPlot(linePlot, toPlotSpace: plotSpace)
         
         // 4 - Create styles and symbols
-        var lineStyle:CPTMutableLineStyle = linePlot.dataLineStyle.mutableCopy() as! CPTMutableLineStyle
+        var lineStyle:CPTMutableLineStyle = linePlot.dataLineStyle!.mutableCopy() as! CPTMutableLineStyle
         
         lineStyle.lineWidth = 2.5;
         lineStyle.lineColor = CPTColor.redColor();
@@ -87,14 +87,14 @@ class PowerViewController: UIViewController , CPTPlotDataSource {
         var axisSet = graph.axisSet as! CPTXYAxisSet
         var x = axisSet.xAxis
         
-        x.majorTickLineStyle  = nil
-        x.minorTickLineStyle = nil
-        x.majorIntervalLength  = 5.0
-        x.orthogonalPosition = 0.0
-        x.title  = "Time";
+        x!.majorTickLineStyle  = nil
+        x!.minorTickLineStyle = nil
+        x!.majorIntervalLength  = 5.0
+        x!.orthogonalPosition = 0.0
+        x!.title  = "Time";
         // x.titleLocation  = kMaxDataPoints / 2
-        x.titleOffset  = 25.0
-        x.labelingPolicy    = .Automatic
+        x!.titleOffset  = 25.0
+        x!.labelingPolicy    = .Automatic
         
         var axisTitleStyle = CPTMutableTextStyle()
         axisTitleStyle.color = CPTColor.blackColor()
@@ -105,22 +105,22 @@ class PowerViewController: UIViewController , CPTPlotDataSource {
         // Define some custom labels for the data elements
         //x.labelRotation  = CGFloat(M_PI_4)
         
-        x.axisLineStyle  = axisLineStyle
+        x!.axisLineStyle  = axisLineStyle
         
         
         var y = axisSet.yAxis
         
-        y.majorTickLineStyle  = nil;
-        y.minorTickLineStyle  = nil;
-        y.majorIntervalLength   = 10.0
-        y.orthogonalPosition = 0.0
-        y.title = "POWER (kW)"
-        y.titleLocation = yMax/2
-        y.titleOffset   = 35.0
-        y.axisConstraints = CPTConstraints.constraintWithLowerOffset(0)
+        y!.majorTickLineStyle  = nil;
+        y!.minorTickLineStyle  = nil;
+        y!.majorIntervalLength   = 10.0
+        y!.orthogonalPosition = 0.0
+        y!.title = "POWER (kW)"
+        y!.titleLocation = yMax/2
+        y!.titleOffset   = 35.0
+        y!.axisConstraints = CPTConstraints.constraintWithLowerOffset(0)
         
-        y.axisLineStyle  = axisLineStyle
-        y.labelingPolicy = .Automatic
+        y!.axisLineStyle  = axisLineStyle
+        y!.labelingPolicy = .Automatic
         
         
         
@@ -152,8 +152,8 @@ class PowerViewController: UIViewController , CPTPlotDataSource {
             return
         }
         dispatch_async(dispatch_get_main_queue(), {() in
-            var graph:CPTGraph = self.graphView.hostedGraph
-            var plot:CPTPlot = graph.plotWithIdentifier("Power")
+            var graph:CPTGraph = self.graphView.hostedGraph!
+            var plot:CPTPlot = graph.plotWithIdentifier("Power")!
             var i = 0
             while (self.items.count >= self.kMaxDataPoints ) {
                 self.items.removeAtIndex(0)
@@ -192,10 +192,10 @@ class PowerViewController: UIViewController , CPTPlotDataSource {
         // Pass the selected object to the new view controller.
     }
     */
-    func numberOfRecordsForPlot(plot: CPTPlot!) -> UInt {
+    func numberOfRecordsForPlot(plot: CPTPlot) -> UInt {
         return UInt(items.count)
     }
-    func numberForPlot(plot: CPTPlot!, field fieldEnum: UInt, recordIndex index: UInt) -> AnyObject! {
+    func numberForPlot(plot: CPTPlot, field fieldEnum: UInt, recordIndex index: UInt) -> AnyObject? {
         switch (fieldEnum) {
         case 0:
            // println("index=\(index)")

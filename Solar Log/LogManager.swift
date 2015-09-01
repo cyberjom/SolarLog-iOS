@@ -23,6 +23,8 @@ class LogManager{
     var cookies:NSArray = NSArray()
     var projects:[Project] = []
     var powers:[GraphData] = []
+    var processingSummary : Bool = false
+    var lastSummary : Summary = Summary()
     //Default demo user
 
     var user : User = demoUser
@@ -32,6 +34,17 @@ class LogManager{
             projects = []
         }
         CUR_PROJECT = project
+        
+        let defaults = NSUserDefaults.standardUserDefaults()
+        var threshold = defaults.integerForKey("\(project.id)")
+        if threshold == 0 {
+            threshold = (project.capacity / 10000) + 1
+        }
+        defaults.setInteger(threshold, forKey: "\(project.id)")
+        defaults.synchronize()
+        
+
+        
     }
     func sso(completion: (success:Bool,message:String,user : User) ->()){
         let defaults = NSUserDefaults.standardUserDefaults()
@@ -73,15 +86,15 @@ class LogManager{
                 return
             }
             if (jsonResult != nil) {
-                println(jsonResult)
+               // println(jsonResult)
                 var result = jsonResult as! NSDictionary
                 if let status =  result["status"] as? String {
                     if status == "success" {
                         if user != "demo" {
                         let defaults = NSUserDefaults.standardUserDefaults()
-                        defaults.setObject(user, forKey: "user")
-                        defaults.synchronize()
-                        Keychain.save(passwd, forKey: user)
+                            defaults.setObject(user, forKey: "user")
+                            defaults.synchronize()
+                            Keychain.save(passwd, forKey: user)
                         }
                         //Extract token from Session id maintain in cookie
                         var httpResp:NSHTTPURLResponse = response as! NSHTTPURLResponse
@@ -248,7 +261,12 @@ class LogManager{
 
     }
     
-    func summary(completion: (summary : Summary) ->()){
+    func summary(completion: (summary : Summary , hasUpdate : Bool) ->()){
+        if processingSummary {
+            completion(summary: lastSummary , hasUpdate: false)
+            return
+        }
+        processingSummary = true
         var ts = NSDate().timeIntervalSince1970
         if CUR_PROJECT.id == 0 {
             return
@@ -269,7 +287,9 @@ class LogManager{
                 options: NSJSONReadingOptions.AllowFragments,
                 error:&parseError)
             if(parseError != nil){
-                println("summary \(parseError?.localizedDescription)")
+                println("summary error \(parseError?.localizedDescription)")
+                completion(summary: self.lastSummary , hasUpdate: false)
+                self.processingSummary = false
                 return
             }
             if (jsonResult != nil) {
@@ -391,9 +411,12 @@ class LogManager{
                         summary.inverters.append(inverter)
                     }
                 }
-                completion(summary: summary)
+                self.lastSummary = summary
+                self.processingSummary = false
+                completion(summary: summary , hasUpdate: true)
             } else {
                 // couldn't load JSON, look at error
+                self.processingSummary = false
             }
             }.resume()
         
@@ -418,6 +441,7 @@ class LogManager{
                 error:&parseError)
             if(parseError != nil){
                 println("energyDay \(parseError?.localizedDescription)")
+                
                 return
             }
             if (jsonResult != nil) {

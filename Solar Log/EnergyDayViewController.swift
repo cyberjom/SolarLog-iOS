@@ -25,7 +25,7 @@ class EnergyDayViewController: UIViewController ,CPTBarPlotDataSource,CPTBarPlot
         var CPDBarInitialX:CGFloat = 0.25
         
         var graph = CPTXYGraph(frame: CGRectZero)
-        graph.plotAreaFrame.masksToBorder = false
+        graph.plotAreaFrame!.masksToBorder = false
         graph.paddingBottom = 50.0
         graph.paddingLeft  = 50.0
         graph.paddingTop    = 50.0
@@ -76,26 +76,26 @@ class EnergyDayViewController: UIViewController ,CPTBarPlotDataSource,CPTBarPlot
         // Define some custom labels for the data elements
         //x.labelRotation  = M_PI_4
        
-        x.labelingPolicy = .None;
-        x.axisLineStyle  = axisLineStyle
-        x.majorTickLineStyle  = nil
-        x.minorTickLineStyle  = nil
-        x.majorIntervalLength = 2
-        x.orthogonalPosition = 0.0
-        x.title   = "Hour of Day";
-        x.titleOffset   = 25.0
-        x.labelRotation  =  CGFloat(M_PI_4)
+        x!.labelingPolicy = .None;
+        x!.axisLineStyle  = axisLineStyle
+        x!.majorTickLineStyle  = nil
+        x!.minorTickLineStyle  = nil
+        x!.majorIntervalLength = 2
+        x!.orthogonalPosition = 0.0
+        x!.title   = "Hour of Day";
+        x!.titleOffset   = 25.0
+        x!.labelRotation  =  CGFloat(M_PI_4)
         
         var y = axisSet.yAxis
-        y.majorTickLineStyle  = nil;
-        y.minorTickLineStyle  = nil;
+        y!.majorTickLineStyle  = nil;
+        y!.minorTickLineStyle  = nil;
         // y.majorIntervalLength = 1
-        y.orthogonalPosition = 0.0
-        y.title  = "Energy (kWh)"
-        y.titleOffset = 35.0
-        y.axisConstraints = CPTConstraints.constraintWithLowerOffset(0)
-        y.axisLineStyle  = axisLineStyle
-        y.labelingPolicy    = .Automatic
+        y!.orthogonalPosition = 0.0
+        y!.title  = "Energy (kWh)"
+        y!.titleOffset = 35.0
+        y!.axisConstraints = CPTConstraints.constraintWithLowerOffset(0)
+        y!.axisLineStyle  = axisLineStyle
+        y!.labelingPolicy    = .Automatic
         
         self.graphView.hostedGraph = graph
         
@@ -112,15 +112,15 @@ class EnergyDayViewController: UIViewController ,CPTBarPlotDataSource,CPTBarPlot
                     
                     self.items.append(data.y as! Double)
                     if i % 3 == 0 {
-                    var newLabel = CPTAxisLabel(text: "\(data.x as! Int)" , textStyle: x.labelTextStyle)
+                    var newLabel = CPTAxisLabel(text: "\(data.x as! Int)" , textStyle: x!.labelTextStyle)
                     newLabel.tickLocation = data.x as! Int
-                    newLabel.offset = x.labelOffset + x.majorTickLength;
+                    newLabel.offset = x!.labelOffset + x!.majorTickLength;
                     newLabel.rotation = CGFloat(M_PI_4)
                     customLabels.addObject(newLabel)
                     }
                 }
                // x.titleLocation = self.items.count/2
-                x.axisLabels = customLabels as Set<NSObject>;
+                x!.axisLabels = customLabels as Set<NSObject>;
                 
                 var xMin : Double = -1
                 var xMax : Double = Double(self.items.count + 1)
@@ -137,13 +137,13 @@ class EnergyDayViewController: UIViewController ,CPTBarPlotDataSource,CPTBarPlot
                 
                 
                 
-                y.titleLocation = yMax/2
+                y!.titleLocation = yMax/2
                 
                 
                 plotSpace.scaleToFitPlots(graph.allPlots())
                 
                 var plot   = graph.plotWithIdentifier("Bar")
-                plot.reloadData()
+                plot!.reloadData()
             })
             
             
@@ -166,12 +166,12 @@ class EnergyDayViewController: UIViewController ,CPTBarPlotDataSource,CPTBarPlot
         return max
     }
     
-    func numberOfRecordsForPlot(plot: CPTPlot!) -> UInt {
+    func numberOfRecordsForPlot(plot: CPTPlot) -> UInt {
         return UInt(items.count)
     }
     
 
-    func numberForPlot(plot: CPTPlot!, field fieldEnum: UInt, recordIndex index: UInt) -> AnyObject! {
+    func numberForPlot(plot: CPTPlot, field fieldEnum: UInt, recordIndex index: UInt) -> AnyObject? {
 
         switch (fieldEnum) {
         case 0:
@@ -196,7 +196,7 @@ class EnergyDayViewController: UIViewController ,CPTBarPlotDataSource,CPTBarPlot
     }
     
     
-    func barFillForBarPlot(barPlot: CPTBarPlot!, recordIndex idx: UInt) -> CPTFill! {
+    func barFillForBarPlot(barPlot: CPTBarPlot, recordIndex idx: UInt) -> CPTFill? {
         var areaColor:CPTColor!;
 /*
         switch (idx)
@@ -229,7 +229,7 @@ class EnergyDayViewController: UIViewController ,CPTBarPlotDataSource,CPTBarPlot
     }
 
    
-    func legendTitleForBarPlot(barPlot:CPTBarPlot!,recordIndex index:UInt) -> String!{
+    func legendTitleForBarPlot(barPlot:CPTBarPlot,recordIndex index:UInt) -> String?{
         return "bar \(index)"
     }
     

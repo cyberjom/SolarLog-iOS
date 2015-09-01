@@ -75,9 +75,16 @@ class SummaryViewController: UIViewController ,UICollectionViewDelegate, UIColle
     var summary:Summary! = Summary()
     var lastRevenue:Int = 0
     var coinSound  = AVAudioPlayer()
+    var coinSoundThreshold : Int = 1
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        NSNotificationCenter.defaultCenter().addObserver(self, selector:"updateSetting:", name: "updateSetting", object: nil)
+        
+        let defaults = NSUserDefaults.standardUserDefaults()
+        coinSoundThreshold = defaults.integerForKey("\(MANAGER.CUR_PROJECT.id)")
+        
+        
         coinSound = self.setupAudioPlayerWithFile("coindrop", type:"mp3")
         self.inverterCollection?.registerNib(UINib(nibName: "InverterCell", bundle: nil), forCellWithReuseIdentifier: "cell")
         self.inverterCollection1?.registerNib(UINib(nibName: "InverterCell", bundle: nil), forCellWithReuseIdentifier: "cell")
@@ -88,6 +95,14 @@ class SummaryViewController: UIViewController ,UICollectionViewDelegate, UIColle
         timer = NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: "ScheduleCheck", userInfo: nil, repeats: true)
         updateData()
 
+    }
+    
+    func updateSetting(notification:NSNotification){
+        
+        let defaults = NSUserDefaults.standardUserDefaults()
+        coinSoundThreshold = defaults.integerForKey("\(MANAGER.CUR_PROJECT.id)")
+        println("updateSetting \(coinSoundThreshold)")
+  
     }
     func refresh(sender:AnyObject){
         //TODO refresh data
@@ -130,110 +145,120 @@ class SummaryViewController: UIViewController ,UICollectionViewDelegate, UIColle
         formatter.maximumFractionDigits = 2
 
         
-        MANAGER.summary(){ result in
+        MANAGER.summary(){ result,hasUpdate in
             self.summary = result
-            dispatch_async(dispatch_get_main_queue(), {() in
-            
-            var monthValue:String! = ""
-            var monthUnit:String = ""
-                if result.energy.month > 1000000000 {
-                    monthValue = formatter.stringFromNumber(result.energy.month/1000000)
-                    monthUnit="GWh"
-                }else if result.energy.month > 1000000 {
+            if(hasUpdate){
+                dispatch_async(dispatch_get_main_queue(), {() in
                     
-                    monthValue = formatter.stringFromNumber(result.energy.month/1000)
-                    monthUnit="MWh"
-                }else {
-                    monthValue = formatter.stringFromNumber(result.energy.month)
-                    monthUnit="kWh"
-                }
-            var yearValue:String! = ""
-            var yearUnit:String = ""
-                if result.energy.year > 1000000000 {
-                   yearValue = formatter.stringFromNumber(result.energy.year/1000000)
-                    yearUnit="GWh"
-                }else if result.energy.year > 1000000 {
-                    yearValue = formatter.stringFromNumber(result.energy.year/1000)
-                    yearUnit="MWh"
-                }else {
-                    yearValue = formatter.stringFromNumber(result.energy.year)
-                    yearUnit="kWh"
-                }
-     
-                if Int(result.energy.revenuetoday) - self.lastRevenue >= 1 {
-                    self.lastRevenue = Int(result.energy.revenuetoday)
-                    self.coinSound.play()
-                }
-                
-            //iphone portrait
-            self.inverterCollection.reloadData()
-            self.date.text = fmt1.stringFromDate(result.datetime)
-            self.time.text = fmt2.stringFromDate(result.datetime)
-                
-            self.power.text = formatter.stringFromNumber(result.power)
-            self.energytoday.text = formatter.stringFromNumber(result.energy.today)
-            self.revenuetoday.text = formatter.stringFromNumber(result.energy.revenuetoday)
-            self.energytotal.text = formatter.stringFromNumber(result.energy.total)
-            self.energythismonth.text = monthValue
-            self.monthUnit.text = monthUnit
-            self.energythisyear.text = yearValue
-            self.yearUnit.text = yearUnit
-                
-            //iphone landscape
-            self.inverterCollection1?.reloadData()
-            self.date1?.text = fmt1.stringFromDate(result.datetime)
-            self.time1?.text = fmt2.stringFromDate(result.datetime)
-                
-            self.power1?.text = formatter.stringFromNumber(result.power)
-            self.energytoday1?.text = formatter.stringFromNumber(result.energy.today)
-            self.revenuetoday1?.text = formatter.stringFromNumber(result.energy.revenuetoday)
-            self.energytotal1?.text = formatter.stringFromNumber(result.energy.total)
-            self.energythismonth1?.text = monthValue
-            self.monthUnit1?.text = monthUnit
-            self.energythisyear1?.text = yearValue
-            self.yearUnit1?.text = yearUnit
-               
-                
-                //ipad
-                self.inverterCollection2?.reloadData()
-                self.date2?.text = fmt1.stringFromDate(result.datetime)
-                self.time2?.text = fmt2.stringFromDate(result.datetime)
-                
-                self.power2?.text = formatter.stringFromNumber(result.power)
-                self.energytoday2?.text = formatter.stringFromNumber(result.energy.today)
-                self.revenuetoday2?.text = formatter.stringFromNumber(result.energy.revenuetoday)
-                self.energytotal2?.text = formatter.stringFromNumber(result.energy.total)
-                self.energythismonth2?.text = monthValue
-                self.monthUnit2?.text = monthUnit
-                self.energythisyear2?.text = yearValue
-                self.yearUnit2?.text = yearUnit
-                
-            if !result.meteorologies.isEmpty {
-                //iphone portrait
-                self.temperature?.text = String(format: "%.0f°C", result.meteorologies[0].temperature)
-                self.humidity?.text = String(format: "%.0f%%", result.meteorologies[0].humidity)
-                self.windspeed?.text = String(format: "%.0fm/s", result.meteorologies[0].windspeed)
-                self.precipitation?.text = String(format: "%.0fmm", result.meteorologies[0].precipitation)
-                self.irradiance?.text = String(format: "%.0fw/m²", result.meteorologies[0].irradiance)
-                //iphone landscape
-                self.temperature1?.text = String(format: "%.0f°C", result.meteorologies[0].temperature)
-                self.humidity1?.text = String(format: "%.0f%%", result.meteorologies[0].humidity)
-                self.windspeed1?.text = String(format: "%.0fm/s", result.meteorologies[0].windspeed)
-                self.precipitation1?.text = String(format: "%.0fmm", result.meteorologies[0].precipitation)
-                self.irradiance1?.text = String(format: "%.0fw/m²", result.meteorologies[0].irradiance)
-                //ipad
-                self.temperature2?.text = String(format: "%.0f°C", result.meteorologies[0].temperature)
-                self.humidity2?.text = String(format: "%.0f%%", result.meteorologies[0].humidity)
-                self.windspeed2?.text = String(format: "%.0fm/s", result.meteorologies[0].windspeed)
-                self.precipitation2?.text = String(format: "%.0fmm", result.meteorologies[0].precipitation)
-                self.irradiance2?.text = String(format: "%.0fw/m²", result.meteorologies[0].irradiance)
-            }else{
-            //should hide component
+                    var monthValue:String! = ""
+                    var monthUnit:String = ""
+                    if result.energy.month > 1000000000 {
+                        monthValue = formatter.stringFromNumber(result.energy.month/1000000)
+                        monthUnit="GWh"
+                    }else if result.energy.month > 1000000 {
+                        
+                        monthValue = formatter.stringFromNumber(result.energy.month/1000)
+                        monthUnit="MWh"
+                    }else {
+                        monthValue = formatter.stringFromNumber(result.energy.month)
+                        monthUnit="kWh"
+                    }
+                    var yearValue:String! = ""
+                    var yearUnit:String = ""
+                    if result.energy.year > 1000000000 {
+                        yearValue = formatter.stringFromNumber(result.energy.year/1000000)
+                        yearUnit="GWh"
+                    }else if result.energy.year > 1000000 {
+                        yearValue = formatter.stringFromNumber(result.energy.year/1000)
+                        yearUnit="MWh"
+                    }else {
+                        yearValue = formatter.stringFromNumber(result.energy.year)
+                        yearUnit="kWh"
+                    }
+                    
+                    if( self.lastRevenue == 0) {
+                        self.lastRevenue = Int(result.energy.revenuetoday)
+                    }
+                    
+                    
+                    //iphone portrait
+                    self.inverterCollection.reloadData()
+                    self.date.text = fmt1.stringFromDate(result.datetime)
+                    self.time.text = fmt2.stringFromDate(result.datetime)
+                    
+                    self.power.text = formatter.stringFromNumber(result.power)
+                    self.energytoday.text = formatter.stringFromNumber(result.energy.today)
+                    self.revenuetoday.text = formatter.stringFromNumber(result.energy.revenuetoday)
+                    self.energytotal.text = formatter.stringFromNumber(result.energy.total)
+                    self.energythismonth.text = monthValue
+                    self.monthUnit.text = monthUnit
+                    self.energythisyear.text = yearValue
+                    self.yearUnit.text = yearUnit
+                    
+                    //iphone landscape
+                    self.inverterCollection1?.reloadData()
+                    self.date1?.text = fmt1.stringFromDate(result.datetime)
+                    self.time1?.text = fmt2.stringFromDate(result.datetime)
+                    
+                    self.power1?.text = formatter.stringFromNumber(result.power)
+                    self.energytoday1?.text = formatter.stringFromNumber(result.energy.today)
+                    self.revenuetoday1?.text = formatter.stringFromNumber(result.energy.revenuetoday)
+                    self.energytotal1?.text = formatter.stringFromNumber(result.energy.total)
+                    self.energythismonth1?.text = monthValue
+                    self.monthUnit1?.text = monthUnit
+                    self.energythisyear1?.text = yearValue
+                    self.yearUnit1?.text = yearUnit
+                    
+                    
+                    //ipad
+                    self.inverterCollection2?.reloadData()
+                    self.date2?.text = fmt1.stringFromDate(result.datetime)
+                    self.time2?.text = fmt2.stringFromDate(result.datetime)
+                    
+                    self.power2?.text = formatter.stringFromNumber(result.power)
+                    self.energytoday2?.text = formatter.stringFromNumber(result.energy.today)
+                    self.revenuetoday2?.text = formatter.stringFromNumber(result.energy.revenuetoday)
+                    self.energytotal2?.text = formatter.stringFromNumber(result.energy.total)
+                    self.energythismonth2?.text = monthValue
+                    self.monthUnit2?.text = monthUnit
+                    self.energythisyear2?.text = yearValue
+                    self.yearUnit2?.text = yearUnit
+                    
+                    if !result.meteorologies.isEmpty {
+                        //iphone portrait
+                        self.temperature?.text = String(format: "%.0f°C", result.meteorologies[0].temperature)
+                        self.humidity?.text = String(format: "%.0f%%", result.meteorologies[0].humidity)
+                        self.windspeed?.text = String(format: "%.0fm/s", result.meteorologies[0].windspeed)
+                        self.precipitation?.text = String(format: "%.0fmm", result.meteorologies[0].precipitation)
+                        self.irradiance?.text = String(format: "%.0fw/m²", result.meteorologies[0].irradiance)
+                        //iphone landscape
+                        self.temperature1?.text = String(format: "%.0f°C", result.meteorologies[0].temperature)
+                        self.humidity1?.text = String(format: "%.0f%%", result.meteorologies[0].humidity)
+                        self.windspeed1?.text = String(format: "%.0fm/s", result.meteorologies[0].windspeed)
+                        self.precipitation1?.text = String(format: "%.0fmm", result.meteorologies[0].precipitation)
+                        self.irradiance1?.text = String(format: "%.0fw/m²", result.meteorologies[0].irradiance)
+                        //ipad
+                        self.temperature2?.text = String(format: "%.0f°C", result.meteorologies[0].temperature)
+                        self.humidity2?.text = String(format: "%.0f%%", result.meteorologies[0].humidity)
+                        self.windspeed2?.text = String(format: "%.0fm/s", result.meteorologies[0].windspeed)
+                        self.precipitation2?.text = String(format: "%.0fmm", result.meteorologies[0].precipitation)
+                        self.irradiance2?.text = String(format: "%.0fw/m²", result.meteorologies[0].irradiance)
+                    }else{
+                        //should hide component
+                        
+                    }
+                    if Int(result.energy.revenuetoday) - self.lastRevenue >= self.coinSoundThreshold &&  self.coinSoundThreshold > 0 {
+                        println("Play sound \(result.energy.revenuetoday) :lastRevenue \(self.lastRevenue)")
+                        if Int(result.energy.revenuetoday) > self.lastRevenue {
+                            self.lastRevenue = Int(result.energy.revenuetoday)
+                            self.coinSound.play()
+                        }
+                    }
+                    
+                })
                 
             }
-
             
-            })
         }
         
     }

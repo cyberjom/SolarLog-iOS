@@ -30,7 +30,7 @@ class EnergyMonthViewController: UIViewController ,CPTBarPlotDataSource,CPTBarPl
         var CPDBarInitialX:CGFloat = 0.25
         
         var graph = CPTXYGraph(frame: CGRectZero)
-        graph.plotAreaFrame.masksToBorder = false
+        graph.plotAreaFrame!.masksToBorder = false
         graph.paddingBottom = 80.0
         graph.paddingLeft  = 50.0
         graph.paddingTop    = 50.0
@@ -85,13 +85,13 @@ class EnergyMonthViewController: UIViewController ,CPTBarPlotDataSource,CPTBarPl
         
         var x  = axisSet.xAxis
         
-        x.majorTickLineStyle  = nil
-        x.minorTickLineStyle  = nil
-        x.majorIntervalLength  = 5.0
-        x.orthogonalPosition = 0.0
-        x.title  = "Date";
+        x!.majorTickLineStyle  = nil
+        x!.minorTickLineStyle  = nil
+        x!.majorIntervalLength  = 5.0
+        x!.orthogonalPosition = 0.0
+        x!.title  = "Date";
         
-        x.titleOffset = 60.0
+        x!.titleOffset = 60.0
         var axisTitleStyle = CPTMutableTextStyle()
         axisTitleStyle.color = CPTColor.blackColor()
         axisTitleStyle.fontName = "Helvetica-Bold"
@@ -103,22 +103,22 @@ class EnergyMonthViewController: UIViewController ,CPTBarPlotDataSource,CPTBarPl
         
         // Define some custom labels for the data elements
         //x.labelRotation  = M_PI_4
-        x.labelingPolicy = CPTAxisLabelingPolicy.None;
-        x.axisLineStyle  = axisLineStyle
+        x!.labelingPolicy = CPTAxisLabelingPolicy.None;
+        x!.axisLineStyle  = axisLineStyle
         
         var y = axisSet.yAxis
         
-        y.majorTickLineStyle  = nil;
-        y.minorTickLineStyle = nil;
-        y.majorIntervalLength = 10.0
-        y.orthogonalPosition = 0.0
-        y.title = "Energy (kWh)"
-        y.axisConstraints = CPTConstraints.constraintWithLowerOffset(0)
+        y!.majorTickLineStyle  = nil;
+        y!.minorTickLineStyle = nil;
+        y!.majorIntervalLength = 10.0
+        y!.orthogonalPosition = 0.0
+        y!.title = "Energy (kWh)"
+        y!.axisConstraints = CPTConstraints.constraintWithLowerOffset(0)
         self.graphView.hostedGraph = graph
-        y.titleOffset  = 35.0
+        y!.titleOffset  = 35.0
         
-        y.axisLineStyle  = axisLineStyle
-        y.labelingPolicy = .Automatic
+        y!.axisLineStyle  = axisLineStyle
+        y!.labelingPolicy = .Automatic
         MANAGER.energyMonth { (data) -> () in
             var i = 0
             var labelLocation  = 0;
@@ -130,19 +130,19 @@ class EnergyMonthViewController: UIViewController ,CPTBarPlotDataSource,CPTBarPl
                     
                     self.items.append(data.y as! Double)
                      if i % 3 == 0 {
-                    var newLabel = CPTAxisLabel(text: "\(data.x as! String)" , textStyle: x.labelTextStyle)
+                    var newLabel = CPTAxisLabel(text: "\(data.x as! String)" , textStyle: x!.labelTextStyle)
                     var date:NSDate = fmt.dateFromString(data.x as! String)!
                     let calendar = NSCalendar.currentCalendar()
                     let components = calendar.components(.CalendarUnitDay , fromDate: date)
                     let currentDay = components.day
                     newLabel.tickLocation = currentDay
-                    newLabel.offset = x.labelOffset + x.majorTickLength;
+                    newLabel.offset = x!.labelOffset + x!.majorTickLength;
                     newLabel.rotation = CGFloat(M_PI_4)
                     customLabels.addObject(newLabel)
                     }
                     //println("tickLocation  = \(currentDay) --- \(data.x)")
                 }
-                x.axisLabels = customLabels as Set<NSObject>;
+                x!.axisLabels = customLabels as Set<NSObject>;
                 
                 var xMin : Double = 0
                 var xMax : Double = Double(self.items.count + 1)
@@ -157,7 +157,7 @@ class EnergyMonthViewController: UIViewController ,CPTBarPlotDataSource,CPTBarPl
                 
                 plotSpace.scaleToFitPlots(graph.allPlots())
                 var plot   = graph.plotWithIdentifier("Bar")
-                plot.reloadData()
+                plot!.reloadData()
             })
             
         }
@@ -178,12 +178,12 @@ class EnergyMonthViewController: UIViewController ,CPTBarPlotDataSource,CPTBarPl
         return max
     }
     
-    func numberOfRecordsForPlot(plot: CPTPlot!) -> UInt {
+    func numberOfRecordsForPlot(plot: CPTPlot) -> UInt {
         return UInt(items.count)
     }
 
     
-    func numberForPlot(plot: CPTPlot!, field fieldEnum: UInt, recordIndex index: UInt) -> AnyObject! {
+    func numberForPlot(plot: CPTPlot, field fieldEnum: UInt, recordIndex index: UInt) -> AnyObject? {
 
         switch (fieldEnum) {
         case 0:
@@ -208,7 +208,7 @@ class EnergyMonthViewController: UIViewController ,CPTBarPlotDataSource,CPTBarPl
     }
     
     
-    func barFillForBarPlot(barPlot: CPTBarPlot!, recordIndex idx: UInt) -> CPTFill! {
+    func barFillForBarPlot(barPlot: CPTBarPlot, recordIndex idx: UInt) -> CPTFill? {
         var areaColor:CPTColor!;
 /*
         switch (idx)
@@ -242,7 +242,7 @@ class EnergyMonthViewController: UIViewController ,CPTBarPlotDataSource,CPTBarPl
     
    
     
-    func legendTitleForBarPlot(barPlot:CPTBarPlot!,recordIndex index:UInt) -> String{
+    func legendTitleForBarPlot(barPlot:CPTBarPlot,recordIndex index:UInt) -> String?{
         return "bar \(index)"
     }
     

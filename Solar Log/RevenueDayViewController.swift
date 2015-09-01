@@ -23,7 +23,7 @@ class RevenueDayViewController: UIViewController ,CPTBarPlotDataSource,CPTBarPlo
         var CPDBarInitialX:CGFloat = 0.25
         
         var graph = CPTXYGraph(frame: CGRectZero)
-        graph.plotAreaFrame.masksToBorder = false
+        graph.plotAreaFrame!.masksToBorder = false
         graph.paddingBottom = 50.0
         graph.paddingLeft  = 50.0
         graph.paddingTop    = 50.0
@@ -71,28 +71,28 @@ class RevenueDayViewController: UIViewController ,CPTBarPlotDataSource,CPTBarPlo
         axisLineStyle.lineColor = CPTColor.blackColor()
         var x = axisSet.xAxis
         // Define some custom labels for the data elements
-        x.labelRotation  =  CGFloat(M_PI_4)
-        x.labelingPolicy = .None
-        x.axisLineStyle  = axisLineStyle
+        x!.labelRotation  =  CGFloat(M_PI_4)
+        x!.labelingPolicy = .None
+        x!.axisLineStyle  = axisLineStyle
 
-        x.majorTickLineStyle  = nil
-        x.minorTickLineStyle = nil
+        x!.majorTickLineStyle  = nil
+        x!.minorTickLineStyle = nil
        // x.majorIntervalLength  = 5.0
-        x.orthogonalPosition = 0.0
-        x.title  = "Hour of Day";
-        x.titleOffset = 25.0
+        x!.orthogonalPosition = 0.0
+        x!.title  = "Hour of Day";
+        x!.titleOffset = 25.0
         
         var y = axisSet.yAxis
 
-        y.majorTickLineStyle  = nil;
-        y.minorTickLineStyle  = nil;
-        y.majorIntervalLength = 10.0
-        y.orthogonalPosition = 0.0
-        y.title  = "Revenue (Baht)"
-        y.titleOffset = 35.0
-         y.axisConstraints = CPTConstraints.constraintWithLowerOffset(0)
-        y.axisLineStyle  = axisLineStyle
-        y.labelingPolicy    = .Automatic
+        y!.majorTickLineStyle  = nil;
+        y!.minorTickLineStyle  = nil;
+        y!.majorIntervalLength = 10.0
+        y!.orthogonalPosition = 0.0
+        y!.title  = "Revenue (Baht)"
+        y!.titleOffset = 35.0
+        y!.axisConstraints = CPTConstraints.constraintWithLowerOffset(0)
+        y!.axisLineStyle  = axisLineStyle
+        y!.labelingPolicy    = .Automatic
         
         
         self.graphView.hostedGraph = graph
@@ -110,15 +110,15 @@ class RevenueDayViewController: UIViewController ,CPTBarPlotDataSource,CPTBarPlo
                     
                     self.items.append(data.y as! Double)
                     if i % 3 == 0 {
-                    var newLabel = CPTAxisLabel(text: "\(data.x as! Int)" , textStyle: x.labelTextStyle)
+                    var newLabel = CPTAxisLabel(text: "\(data.x as! Int)" , textStyle: x!.labelTextStyle)
                     newLabel.tickLocation = data.x as! Int
-                    newLabel.offset = x.labelOffset + x.majorTickLength;
+                    newLabel.offset = x!.labelOffset + x!.majorTickLength;
                     newLabel.rotation = CGFloat(M_PI_4)
                     customLabels.addObject(newLabel)
                     }
                 }
-                x.titleLocation = self.items.count/2
-                x.axisLabels = customLabels as Set<NSObject>;
+                x!.titleLocation = self.items.count/2
+                x!.axisLabels = customLabels as Set<NSObject>;
                 
                 
                 var xMin : Double = -1
@@ -136,13 +136,13 @@ class RevenueDayViewController: UIViewController ,CPTBarPlotDataSource,CPTBarPlo
                 
                 
                 
-                y.titleLocation = yMax/2
+                y!.titleLocation = yMax/2
                 
                 
                 plotSpace.scaleToFitPlots(graph.allPlots())
                 
                 var plot   = graph.plotWithIdentifier("Bar")
-                plot.reloadData()
+                plot!.reloadData()
             })
             
             
@@ -165,12 +165,12 @@ class RevenueDayViewController: UIViewController ,CPTBarPlotDataSource,CPTBarPlo
         return max
     }
     
-    func numberOfRecordsForPlot(plot: CPTPlot!) -> UInt {
+    func numberOfRecordsForPlot(plot: CPTPlot) -> UInt {
         return UInt(items.count)
     }
     
     
-    func numberForPlot(plot: CPTPlot!, field fieldEnum: UInt, recordIndex index: UInt) -> AnyObject! {
+    func numberForPlot(plot: CPTPlot, field fieldEnum: UInt, recordIndex index: UInt) -> AnyObject? {
         
         switch (fieldEnum) {
         case 0:
@@ -195,7 +195,7 @@ class RevenueDayViewController: UIViewController ,CPTBarPlotDataSource,CPTBarPlo
     }
     
     
-    func barFillForBarPlot(barPlot: CPTBarPlot!, recordIndex idx: UInt) -> CPTFill! {
+    func barFillForBarPlot(barPlot: CPTBarPlot!, recordIndex idx: UInt) -> CPTFill!?{
         var areaColor:CPTColor!;
         /*
         switch (idx)
@@ -228,7 +228,7 @@ class RevenueDayViewController: UIViewController ,CPTBarPlotDataSource,CPTBarPlo
     }
     
     
-    func legendTitleForBarPlot(barPlot:CPTBarPlot!,recordIndex index:UInt) -> String!{
+    func legendTitleForBarPlot(barPlot:CPTBarPlot,recordIndex index:UInt) -> String?{
         return "bar \(index)"
     }
     
