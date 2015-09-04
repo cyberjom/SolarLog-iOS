@@ -19,7 +19,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
        
 
-        UIApplication.sharedApplication().registerForRemoteNotifications()
+        let iOS8 = floor(NSFoundationVersionNumber) > floor(NSFoundationVersionNumber_iOS_7_1)
+        if iOS8 {
+            //registering for sending user various kinds of notifications
+            application.registerUserNotificationSettings(UIUserNotificationSettings(forTypes:  UIUserNotificationType.Badge | UIUserNotificationType.Sound | UIUserNotificationType.Alert |
+                UIUserNotificationType.Badge, categories: nil))
+            UIApplication.sharedApplication().registerForRemoteNotifications()
+        } else {
+            // Register for push in iOS 7
+            UIApplication.sharedApplication().registerForRemoteNotificationTypes(UIRemoteNotificationType.Badge | UIRemoteNotificationType.Sound | UIRemoteNotificationType.Alert)
+        }
+
         return true
     }
     func application(application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: NSData) {
@@ -36,8 +46,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         defaults.synchronize()
         updateToken(deviceTokenString)
     }
+    
+    func application(application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: NSError) {
+        println("Couldn't register: \(error)")
+        let defaults = NSUserDefaults.standardUserDefaults()
+        defaults.setObject("\(error)", forKey: "token")
+        defaults.synchronize()
+        
+    }
+
     func updateToken(token:String){
-        var request = NSMutableURLRequest(URL: NSURL(string: "http://mylb-750921322.us-east-1.elb.amazonaws.com/ci/index.php/otd/tokens/format/json")!)
+        var request = NSMutableURLRequest(URL: NSURL(string: "http:yos")!)
         
         request.HTTPMethod = "POST"
         
