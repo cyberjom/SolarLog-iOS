@@ -39,6 +39,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         var deviceTokenString: String = ( deviceToken.description as NSString )
             .stringByTrimmingCharactersInSet( characterSet )
             .stringByReplacingOccurrencesOfString( " ", withString: "" ) as String
+        println("deviceToken \(deviceToken)")
         println("deviceToken \(deviceTokenString)")
         //Keep token
         let defaults = NSUserDefaults.standardUserDefaults()
@@ -56,9 +57,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     func updateToken(token:String){
-        var request = NSMutableURLRequest(URL: NSURL(string: "http:yos")!)
+        var request = NSMutableURLRequest(URL: NSURL(string: "http://Solarlog.intersol.co.th/.../PushRegister")!)
         
         request.HTTPMethod = "POST"
+        
         
         
         var err: NSError?
