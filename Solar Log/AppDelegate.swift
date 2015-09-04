@@ -24,11 +24,53 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     func application(application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: NSData) {
         
-        println("deviceToken \(deviceToken)")
-        //TODO send deviceToken
+        var characterSet: NSCharacterSet = NSCharacterSet( charactersInString: "<>" )
         
-        
+        var deviceTokenString: String = ( deviceToken.description as NSString )
+            .stringByTrimmingCharactersInSet( characterSet )
+            .stringByReplacingOccurrencesOfString( " ", withString: "" ) as String
+        println("deviceToken \(deviceTokenString)")
+        //Keep token
+        let defaults = NSUserDefaults.standardUserDefaults()
+        defaults.setObject(deviceTokenString, forKey: "token")
+        defaults.synchronize()
+        updateToken(deviceTokenString)
     }
+    func updateToken(token:String){
+        var request = NSMutableURLRequest(URL: NSURL(string: "http://mylb-750921322.us-east-1.elb.amazonaws.com/ci/index.php/otd/tokens/format/json")!)
+        
+        request.HTTPMethod = "POST"
+        
+        
+        var err: NSError?
+        
+        var params = "token=\(token)";
+        
+        
+        request.HTTPBody = params.dataUsingEncoding(NSUTF8StringEncoding)
+        
+        
+        NSURLSession.sharedSession().dataTaskWithRequest(request) {
+            data, response, error in
+            var parseError: NSError?
+            let jsonResult: AnyObject? = NSJSONSerialization.JSONObjectWithData(data,
+                options: NSJSONReadingOptions.AllowFragments,
+                error:&parseError)
+            
+            println(response)
+            
+            if parseError != nil {
+                println("add error: \(parseError!.localizedDescription)")
+                
+            }else if (jsonResult != nil) {
+                println(jsonResult)
+                var result = jsonResult as! NSDictionary
+                
+                
+            }
+            }.resume()
+    }
+    
     func applicationWillResignActive(application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
         // Use this method to pause ongoing tasks, disable timers, and throttle down OpenGL ES frame rates. Games should use this method to pause the game.
