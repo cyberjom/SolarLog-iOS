@@ -32,15 +32,21 @@ class PowerGaugeViewController: UIViewController {
         if MANAGER.CUR_PROJECT.capacity == 0 {
             return
         }
-        var max = Float(round(Float(MANAGER.CUR_PROJECT.capacity) / 1000.0))
-        //println("capacity= \(MANAGER.CUR_PROJECT.capacity) max= \(max)")
-
+        
+        var roundVal = Float(roundUp(Int(MANAGER.CUR_PROJECT.capacity) , divisor: 1000))
+      
+        var kw = Float(roundVal/1000)
+        
+        var scale = Float(roundUp(Int(kw) , divisor: 10) / 10)
+        println("capacity= \(MANAGER.CUR_PROJECT.capacity) roundVal= \(roundVal) kw= \(kw) scale = \(scale)")
+        gaugeView.maxValue = kw
         gaugeView.scaleDivisionColor = UIColor.whiteColor()
         gaugeView.rangeLabelsFontColor  = UIColor.redColor()
         gaugeView.scaleSubDivisionColor = UIColor.whiteColor()
         gaugeView.showRangeLabels = true
-        gaugeView.scaleDivisions = CGFloat(max)
-        gaugeView.scaleSubdivisions = 1;
+        
+        gaugeView.scaleDivisions =   CGFloat(kw / scale)  //CGFloat(max)
+        gaugeView.scaleSubdivisions =  1
         
         gaugeView.scaleStartAngle = 30;
         gaugeView.scaleEndAngle = 280;
@@ -62,17 +68,17 @@ class PowerGaugeViewController: UIViewController {
         _gaugeView.rangeColors = @[ RGB(232, 111, 33),    RGB(232, 231, 33),  RGB(27, 202, 33),   RGB(231, 32, 43)    ];
         _gaugeView.rangeLabels = @[ @"VERY LOW",          @"LOW",             @"OK",              @"OVER FILL"        ];
 */
-        gaugeView.rangeValues = [ 40*max/100,60*max/100,80*max/100,100*max/100]
+        gaugeView.rangeValues = [ 40*kw/100,60*kw/100,80*kw/100,100*kw/100]
         gaugeView.rangeColors = [ UIColor.greenColor(),   UIColor.yellowColor(),  UIColor.orangeColor(),   UIColor.redColor()   ]
        // gaugeView.rangeLabels = [ "LOW", "OK",  "GOOD", "EXCELLENT" ]
-        gaugeView.maxValue = max
+     
     
         gaugeView.showUnitOfMeasurement = true;
         gaugeView.unitOfMeasurement = "kW";
         if !MANAGER.powers.isEmpty {
-        var data = MANAGER.powers[MANAGER.powers.count - 1]
+            var data = MANAGER.powers[MANAGER.powers.count - 1]
         
-        gaugeView.setValue( data.y as! Float, animated: true)
+            gaugeView.setValue( data.y as! Float, animated: true)
         }
     }
     
@@ -80,6 +86,7 @@ class PowerGaugeViewController: UIViewController {
         let rem = value % divisor
         return rem == 0 ? value : value + divisor - rem
     }
+    
     func ScheduleCheck(){
 
         if !MANAGER.powers.isEmpty {

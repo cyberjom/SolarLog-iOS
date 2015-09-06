@@ -69,7 +69,7 @@ class LoginViewController: UIViewController ,UITextFieldDelegate{
         // Do any additional setup after loading the view.
     }
     func textFieldShouldReturn(textField: UITextField) -> Bool {
-        textField.resignFirstResponder()
+        //textField.resignFirstResponder()
         curField = textField.tag
         return true
     }
@@ -79,6 +79,7 @@ class LoginViewController: UIViewController ,UITextFieldDelegate{
         NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("keyboardWillShow:"), name: UIKeyboardWillShowNotification, object: nil)
         NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("keyboardWillHide:"), name: UIKeyboardWillHideNotification, object: nil)
     }
+    
     override func viewWillDisappear(animated: Bool) {
         super.viewWillDisappear(animated)
         
@@ -100,7 +101,7 @@ class LoginViewController: UIViewController ,UITextFieldDelegate{
     }
     
     func animateTextField(up: Bool) {
-        var movement = (up ? -kbHeight : kbHeight)
+        var movement = (up ? -kbHeight + user.frame.height  : kbHeight)
         
         UIView.animateWithDuration(0.3, animations: {
             if self.curField == 0 {

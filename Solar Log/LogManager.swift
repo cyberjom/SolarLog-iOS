@@ -42,7 +42,7 @@ class LogManager{
         }
         defaults.setInteger(threshold, forKey: "\(project.id)")
         defaults.synchronize()
-        
+        NSNotificationCenter.defaultCenter().postNotificationName("changedProject", object: nil)
 
         
     }

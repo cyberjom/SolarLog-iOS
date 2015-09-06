@@ -32,12 +32,6 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Location" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cVc-KR-NkA">
-                                <rect key="frame" x="32" y="173" width="66" height="20"/>
-                                <fontDescription key="fontDescription" name="TrebuchetMS" family="Trebuchet MS" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Province" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sqe-rt-sbU">
                                 <rect key="frame" x="32" y="224" width="66" height="20"/>
                                 <fontDescription key="fontDescription" name="TrebuchetMS" family="Trebuchet MS" pointSize="17"/>
@@ -50,7 +44,7 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IDn-RN-as4">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IDn-RN-as4">
                                 <rect key="frame" x="145" y="119" width="44" height="20"/>
                                 <fontDescription key="fontDescription" name="TrebuchetMS" family="Trebuchet MS" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -80,33 +74,79 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Location" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cVc-KR-NkA">
+                                <rect key="frame" x="32" y="173" width="66" height="20"/>
+                                <fontDescription key="fontDescription" name="TrebuchetMS" family="Trebuchet MS" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="IDn-RN-as4" firstAttribute="top" secondItem="wWB-TP-vpZ" secondAttribute="bottom" constant="55" id="2YX-AO-I9Q"/>
-                            <constraint firstItem="NXg-wf-zjn" firstAttribute="top" secondItem="wWB-TP-vpZ" secondAttribute="bottom" constant="109" id="9Vb-Wv-ckg"/>
-                            <constraint firstItem="mn6-N7-WK1" firstAttribute="leading" secondItem="IH9-cC-krT" secondAttribute="leadingMargin" constant="16" id="9yp-GQ-ZGD"/>
-                            <constraint firstItem="Ct0-Fa-5b4" firstAttribute="top" secondItem="wWB-TP-vpZ" secondAttribute="bottom" constant="198" id="Alb-LQ-Hia"/>
+                            <constraint firstItem="IDn-RN-as4" firstAttribute="top" secondItem="wWB-TP-vpZ" secondAttribute="bottom" constant="55" id="2YX-AO-I9Q">
+                                <variation key="heightClass=regular-widthClass=compact" constant="30"/>
+                            </constraint>
+                            <constraint firstItem="NXg-wf-zjn" firstAttribute="top" secondItem="wWB-TP-vpZ" secondAttribute="bottom" constant="109" id="9Vb-Wv-ckg">
+                                <variation key="heightClass=regular-widthClass=compact" constant="60"/>
+                            </constraint>
+                            <constraint firstItem="mn6-N7-WK1" firstAttribute="leading" secondItem="IH9-cC-krT" secondAttribute="leadingMargin" constant="16" id="9yp-GQ-ZGD">
+                                <variation key="heightClass=regular-widthClass=compact" constant="2"/>
+                            </constraint>
+                            <constraint firstItem="Ct0-Fa-5b4" firstAttribute="top" secondItem="wWB-TP-vpZ" secondAttribute="bottom" constant="198" id="Alb-LQ-Hia">
+                                <variation key="heightClass=regular-widthClass=compact" constant="120"/>
+                            </constraint>
                             <constraint firstItem="cVc-KR-NkA" firstAttribute="top" secondItem="wWB-TP-vpZ" secondAttribute="bottom" constant="109" id="B3I-Yo-9qg"/>
-                            <constraint firstItem="Ct0-Fa-5b4" firstAttribute="leading" secondItem="IH9-cC-krT" secondAttribute="leadingMargin" constant="129" id="CXv-qN-mCr"/>
-                            <constraint firstItem="A6j-b8-Vtf" firstAttribute="top" secondItem="wWB-TP-vpZ" secondAttribute="bottom" constant="8" id="FYw-29-5bs"/>
-                            <constraint firstItem="pln-7H-Cqw" firstAttribute="top" secondItem="wWB-TP-vpZ" secondAttribute="bottom" constant="8" id="Kfw-KR-pc9"/>
-                            <constraint firstItem="QEm-cB-Job" firstAttribute="top" secondItem="wWB-TP-vpZ" secondAttribute="bottom" constant="160" id="Qjb-Ji-Zwn"/>
-                            <constraint firstItem="NXg-wf-zjn" firstAttribute="leading" secondItem="IH9-cC-krT" secondAttribute="leadingMargin" constant="129" id="RCi-ng-vAu"/>
-                            <constraint firstItem="cVc-KR-NkA" firstAttribute="top" secondItem="wWB-TP-vpZ" secondAttribute="bottom" constant="109" id="Sed-mp-PlP"/>
+                            <constraint firstItem="Ct0-Fa-5b4" firstAttribute="leading" secondItem="IH9-cC-krT" secondAttribute="leadingMargin" constant="129" id="CXv-qN-mCr">
+                                <variation key="heightClass=regular-widthClass=compact" constant="80"/>
+                            </constraint>
+                            <constraint firstItem="A6j-b8-Vtf" firstAttribute="top" secondItem="wWB-TP-vpZ" secondAttribute="bottom" constant="8" id="FYw-29-5bs">
+                                <variation key="heightClass=regular-widthClass=compact" constant="2"/>
+                            </constraint>
+                            <constraint firstItem="pln-7H-Cqw" firstAttribute="top" secondItem="wWB-TP-vpZ" secondAttribute="bottom" constant="8" id="Kfw-KR-pc9">
+                                <variation key="heightClass=regular-widthClass=compact" constant="2"/>
+                            </constraint>
+                            <constraint firstItem="QEm-cB-Job" firstAttribute="top" secondItem="wWB-TP-vpZ" secondAttribute="bottom" constant="160" id="Qjb-Ji-Zwn">
+                                <variation key="heightClass=regular-widthClass=compact" constant="90"/>
+                            </constraint>
+                            <constraint firstItem="NXg-wf-zjn" firstAttribute="leading" secondItem="IH9-cC-krT" secondAttribute="leadingMargin" constant="129" id="RCi-ng-vAu">
+                                <variation key="heightClass=regular-widthClass=compact" constant="80"/>
+                            </constraint>
+                            <constraint firstItem="cVc-KR-NkA" firstAttribute="top" secondItem="wWB-TP-vpZ" secondAttribute="bottom" constant="109" id="Sed-mp-PlP">
+                                <variation key="heightClass=regular-widthClass=compact" constant="60"/>
+                            </constraint>
                             <constraint firstAttribute="centerX" secondItem="cVc-KR-NkA" secondAttribute="centerX" constant="234.5" id="U40-UP-b11"/>
-                            <constraint firstItem="mn6-N7-WK1" firstAttribute="top" secondItem="wWB-TP-vpZ" secondAttribute="bottom" constant="56" id="Xpb-LB-Ae1"/>
+                            <constraint firstItem="mn6-N7-WK1" firstAttribute="top" secondItem="wWB-TP-vpZ" secondAttribute="bottom" constant="56" id="Xpb-LB-Ae1">
+                                <variation key="heightClass=regular-widthClass=compact" constant="30"/>
+                            </constraint>
                             <constraint firstAttribute="centerX" secondItem="cVc-KR-NkA" secondAttribute="centerX" constant="234.5" id="cU4-6H-Sln"/>
-                            <constraint firstItem="lCb-HG-gE5" firstAttribute="leading" secondItem="IH9-cC-krT" secondAttribute="leadingMargin" constant="16" id="fGd-Ua-FZ5"/>
-                            <constraint firstItem="IDn-RN-as4" firstAttribute="leading" secondItem="IH9-cC-krT" secondAttribute="leadingMargin" constant="129" id="gE9-Bv-FdG"/>
-                            <constraint firstItem="A6j-b8-Vtf" firstAttribute="leading" secondItem="IH9-cC-krT" secondAttribute="leadingMargin" constant="129" id="gKs-v5-RY9"/>
+                            <constraint firstItem="lCb-HG-gE5" firstAttribute="leading" secondItem="IH9-cC-krT" secondAttribute="leadingMargin" constant="16" id="fGd-Ua-FZ5">
+                                <variation key="heightClass=regular-widthClass=compact" constant="2"/>
+                            </constraint>
+                            <constraint firstItem="IDn-RN-as4" firstAttribute="leading" secondItem="IH9-cC-krT" secondAttribute="leadingMargin" constant="129" id="gE9-Bv-FdG">
+                                <variation key="heightClass=regular-widthClass=compact" constant="80"/>
+                            </constraint>
+                            <constraint firstItem="A6j-b8-Vtf" firstAttribute="leading" secondItem="IH9-cC-krT" secondAttribute="leadingMargin" constant="129" id="gKs-v5-RY9">
+                                <variation key="heightClass=regular-widthClass=compact" constant="80"/>
+                            </constraint>
                             <constraint firstItem="lCb-HG-gE5" firstAttribute="width" secondItem="IH9-cC-krT" secondAttribute="width" id="kXC-3I-gro"/>
-                            <constraint firstItem="sqe-rt-sbU" firstAttribute="leading" secondItem="IH9-cC-krT" secondAttribute="leadingMargin" constant="16" id="lLA-36-MeB"/>
-                            <constraint firstItem="sqe-rt-sbU" firstAttribute="top" secondItem="wWB-TP-vpZ" secondAttribute="bottom" constant="160" id="n0f-B2-H5P"/>
-                            <constraint firstItem="QEm-cB-Job" firstAttribute="leading" secondItem="IH9-cC-krT" secondAttribute="leadingMargin" constant="129" id="pW7-ob-DPP"/>
-                            <constraint firstItem="cVc-KR-NkA" firstAttribute="leading" secondItem="IH9-cC-krT" secondAttribute="leadingMargin" constant="16" id="qep-Hj-TOo"/>
-                            <constraint firstItem="lCb-HG-gE5" firstAttribute="top" secondItem="wWB-TP-vpZ" secondAttribute="bottom" constant="199" id="tKU-OW-ooh"/>
-                            <constraint firstItem="pln-7H-Cqw" firstAttribute="leading" secondItem="IH9-cC-krT" secondAttribute="leadingMargin" constant="16" id="zfQ-Bt-6Ti"/>
+                            <constraint firstItem="sqe-rt-sbU" firstAttribute="leading" secondItem="IH9-cC-krT" secondAttribute="leadingMargin" constant="16" id="lLA-36-MeB">
+                                <variation key="heightClass=regular-widthClass=compact" constant="2"/>
+                            </constraint>
+                            <constraint firstItem="sqe-rt-sbU" firstAttribute="top" secondItem="wWB-TP-vpZ" secondAttribute="bottom" constant="160" id="n0f-B2-H5P">
+                                <variation key="heightClass=regular-widthClass=compact" constant="90"/>
+                            </constraint>
+                            <constraint firstItem="QEm-cB-Job" firstAttribute="leading" secondItem="IH9-cC-krT" secondAttribute="leadingMargin" constant="129" id="pW7-ob-DPP">
+                                <variation key="heightClass=regular-widthClass=compact" constant="80"/>
+                            </constraint>
+                            <constraint firstItem="cVc-KR-NkA" firstAttribute="leading" secondItem="IH9-cC-krT" secondAttribute="leadingMargin" constant="16" id="qep-Hj-TOo">
+                                <variation key="heightClass=regular-widthClass=compact" constant="2"/>
+                            </constraint>
+                            <constraint firstItem="lCb-HG-gE5" firstAttribute="top" secondItem="wWB-TP-vpZ" secondAttribute="bottom" constant="199" id="tKU-OW-ooh">
+                                <variation key="heightClass=regular-widthClass=compact" constant="120"/>
+                            </constraint>
+                            <constraint firstItem="pln-7H-Cqw" firstAttribute="leading" secondItem="IH9-cC-krT" secondAttribute="leadingMargin" constant="16" id="zfQ-Bt-6Ti">
+                                <variation key="heightClass=regular-widthClass=compact" constant="2"/>
+                            </constraint>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
@@ -407,7 +447,7 @@
                                                     </connections>
                                                 </button>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name: " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LlE-JB-mTV">
-                                                    <rect key="frame" x="44" y="7" width="55" height="21"/>
+                                                    <rect key="frame" x="28" y="7" width="55" height="21"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="55" id="zza-py-hRQ"/>
                                                     </constraints>
@@ -434,7 +474,7 @@
                                                 <constraint firstItem="xdb-XD-U2W" firstAttribute="leading" secondItem="Gkh-n6-2UI" secondAttribute="leadingMargin" constant="99" id="ckt-pz-lqo"/>
                                                 <constraint firstItem="6Qo-4P-ybw" firstAttribute="baseline" secondItem="LlE-JB-mTV" secondAttribute="baseline" id="djy-ua-lZu"/>
                                                 <constraint firstItem="xdb-XD-U2W" firstAttribute="top" secondItem="Gkh-n6-2UI" secondAttribute="topMargin" constant="-1" id="eHQ-1n-mXr"/>
-                                                <constraint firstItem="LlE-JB-mTV" firstAttribute="leading" secondItem="Gkh-n6-2UI" secondAttribute="leadingMargin" constant="36" id="hWb-8P-5Bk"/>
+                                                <constraint firstItem="LlE-JB-mTV" firstAttribute="leading" secondItem="Gkh-n6-2UI" secondAttribute="leadingMargin" constant="20" id="hWb-8P-5Bk"/>
                                                 <constraint firstItem="xdb-XD-U2W" firstAttribute="trailing" secondItem="LlE-JB-mTV" secondAttribute="trailing" constant="298" id="lTt-Jy-auT"/>
                                                 <constraint firstItem="xdb-XD-U2W" firstAttribute="leading" secondItem="LlE-JB-mTV" secondAttribute="trailing" constant="8" symbolic="YES" id="nkF-UK-0ti"/>
                                                 <constraint firstItem="xdb-XD-U2W" firstAttribute="top" secondItem="Gkh-n6-2UI" secondAttribute="topMargin" constant="-1" id="win-0Y-vZ2"/>
@@ -470,7 +510,7 @@
                                                     </connections>
                                                 </switch>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Earning sound" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wh9-iO-VxE">
-                                                    <rect key="frame" x="42" y="11" width="201" height="21"/>
+                                                    <rect key="frame" x="28" y="11" width="201" height="21"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="201" id="tZP-ja-d0c"/>
                                                     </constraints>
@@ -482,7 +522,7 @@
                                             <constraints>
                                                 <constraint firstItem="wh9-iO-VxE" firstAttribute="centerY" secondItem="AXP-ic-tGb" secondAttribute="centerY" id="Gdc-VH-v9Y"/>
                                                 <constraint firstItem="zm1-6w-sJi" firstAttribute="top" secondItem="AXP-ic-tGb" secondAttribute="topMargin" id="KJV-Vh-bcR"/>
-                                                <constraint firstItem="wh9-iO-VxE" firstAttribute="leading" secondItem="AXP-ic-tGb" secondAttribute="leadingMargin" constant="34" id="TyS-y3-Na2"/>
+                                                <constraint firstItem="wh9-iO-VxE" firstAttribute="leading" secondItem="AXP-ic-tGb" secondAttribute="leadingMargin" constant="20" id="TyS-y3-Na2"/>
                                                 <constraint firstItem="wh9-iO-VxE" firstAttribute="top" secondItem="AXP-ic-tGb" secondAttribute="topMargin" constant="3" id="Uyd-OZ-0b0"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="zm1-6w-sJi" secondAttribute="trailing" constant="12" id="ZIr-4n-dDc"/>
                                             </constraints>
@@ -493,8 +533,13 @@
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="IT9-Ic-t8D" id="Xg5-kn-taK">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
+<<<<<<< Updated upstream
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Play sound every" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GF9-R1-jOY">
                                                     <rect key="frame" x="43" y="8.5" width="43" height="20.5"/>
+=======
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Play every" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GF9-R1-jOY">
+                                                    <rect key="frame" x="28" y="8" width="131.5" height="20.5"/>
+>>>>>>> Stashed changes
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -523,7 +568,9 @@
                                                 <constraint firstItem="CjL-Kn-lER" firstAttribute="top" secondItem="Xg5-kn-taK" secondAttribute="topMargin" constant="3" id="Onx-pL-zGA"/>
                                                 <constraint firstItem="CjL-Kn-lER" firstAttribute="trailing" secondItem="Xg5-kn-taK" secondAttribute="trailingMargin" id="R2s-4M-9Dn"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="fQZ-qC-9fz" secondAttribute="trailing" constant="84" id="Smv-OE-4AR"/>
-                                                <constraint firstItem="GF9-R1-jOY" firstAttribute="leading" secondItem="Xg5-kn-taK" secondAttribute="leadingMargin" constant="35" id="Wix-cM-91O"/>
+                                                <constraint firstItem="GF9-R1-jOY" firstAttribute="leading" secondItem="Xg5-kn-taK" secondAttribute="leadingMargin" constant="20" id="Wix-cM-91O">
+                                                    <variation key="heightClass=regular" constant="20"/>
+                                                </constraint>
                                                 <constraint firstItem="CjL-Kn-lER" firstAttribute="centerY" secondItem="Xg5-kn-taK" secondAttribute="centerY" id="kkE-qO-tJJ"/>
                                                 <constraint firstItem="CjL-Kn-lER" firstAttribute="leading" secondItem="fQZ-qC-9fz" secondAttribute="trailing" constant="19" id="uUA-eJ-F17"/>
                                                 <constraint firstItem="fQZ-qC-9fz" firstAttribute="top" secondItem="Xg5-kn-taK" secondAttribute="topMargin" constant="-3" id="z11-wv-cHr"/>
@@ -549,7 +596,7 @@
                                                     <rect key="frame" x="530" y="11" width="51" height="31"/>
                                                 </switch>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Notification" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4bg-b0-hOn">
-                                                    <rect key="frame" x="50" y="8" width="88" height="21"/>
+                                                    <rect key="frame" x="28" y="8" width="88" height="21"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="88" id="gbo-pw-SUp"/>
                                                     </constraints>
@@ -563,7 +610,7 @@
                                                 <constraint firstItem="RUn-tX-XJu" firstAttribute="top" secondItem="U3E-v6-410" secondAttribute="topMargin" constant="3" id="9l5-TP-oeR"/>
                                                 <constraint firstItem="4bg-b0-hOn" firstAttribute="top" secondItem="U3E-v6-410" secondAttribute="topMargin" id="C7Z-W5-zSp"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="RUn-tX-XJu" secondAttribute="trailing" constant="13" id="HJy-8F-QJL"/>
-                                                <constraint firstItem="4bg-b0-hOn" firstAttribute="leading" secondItem="U3E-v6-410" secondAttribute="leadingMargin" constant="42" id="Osa-g1-pdz"/>
+                                                <constraint firstItem="4bg-b0-hOn" firstAttribute="leading" secondItem="U3E-v6-410" secondAttribute="leadingMargin" constant="20" id="Osa-g1-pdz"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -1511,7 +1558,7 @@
                                     </constraint>
                                     <constraint firstAttribute="width" constant="90" id="oJ0-2Q-JZB"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="TrebuchetMS" family="Trebuchet MS" pointSize="16"/>
+                                <fontDescription key="fontDescription" name="TrebuchetMS" family="Trebuchet MS" pointSize="15"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                                 <variation key="default">
@@ -1554,13 +1601,13 @@
                                     </mask>
                                 </variation>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="212" text="00.00" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pek-lT-1VF">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="212" text="0,000.00" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pek-lT-1VF">
                                 <rect key="frame" x="401" y="207" width="106" height="39"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="160" id="FkK-n0-vqy"/>
                                     <constraint firstAttribute="width" constant="160" id="ugp-aG-uCK"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="TrebuchetMS" family="Trebuchet MS" pointSize="34"/>
+                                <fontDescription key="fontDescription" name="TrebuchetMS" family="Trebuchet MS" pointSize="31"/>
                                 <color key="textColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                                 <variation key="default">
@@ -1609,7 +1656,7 @@
                                     <constraint firstAttribute="width" constant="63" id="SIe-Hs-VsG"/>
                                     <constraint firstAttribute="width" constant="120" id="lh9-qH-W14"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="TrebuchetMS" family="Trebuchet MS" pointSize="20"/>
+                                <fontDescription key="fontDescription" name="TrebuchetMS" family="Trebuchet MS" pointSize="18"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                                 <variation key="default">
@@ -1699,13 +1746,13 @@
                                     </mask>
                                 </variation>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0.000" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kMY-lZ-XnI">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0,000.000" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kMY-lZ-XnI">
                                 <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="160" id="2Jq-pb-kvn"/>
                                     <constraint firstAttribute="width" constant="160" id="VvK-SX-wXe"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="TrebuchetMS" family="Trebuchet MS" pointSize="32"/>
+                                <fontDescription key="fontDescription" name="TrebuchetMS" family="Trebuchet MS" pointSize="28"/>
                                 <color key="textColor" red="1" green="0.89854629870000002" blue="0.061253424819999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                                 <variation key="default">
@@ -1775,13 +1822,13 @@
                                     </mask>
                                 </variation>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0.00" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="crs-nx-eja">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0,000.00" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="crs-nx-eja">
                                 <rect key="frame" x="401" y="162" width="106" height="34"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="160" id="BYQ-3w-Xr9"/>
                                     <constraint firstAttribute="width" constant="160" placeholder="YES" id="w3Q-l8-EFJ"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="TrebuchetMS" family="Trebuchet MS" pointSize="34"/>
+                                <fontDescription key="fontDescription" name="TrebuchetMS" family="Trebuchet MS" pointSize="31"/>
                                 <color key="textColor" red="1" green="0.89854629870000002" blue="0.061253424819999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                                 <variation key="default">
@@ -1809,7 +1856,7 @@
                                     </constraint>
                                     <constraint firstAttribute="width" constant="36" id="pBa-Ha-p66"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="TrebuchetMS" family="Trebuchet MS" pointSize="17"/>
+                                <fontDescription key="fontDescription" name="TrebuchetMS" family="Trebuchet MS" pointSize="16"/>
                                 <color key="textColor" red="1" green="0.89854629870000002" blue="0.061253424819999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                                 <variation key="default">
@@ -1840,7 +1887,7 @@
                                     </constraint>
                                     <constraint firstAttribute="width" constant="120" id="prV-lq-Vwn"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="TrebuchetMS" family="Trebuchet MS" pointSize="17"/>
+                                <fontDescription key="fontDescription" name="TrebuchetMS" family="Trebuchet MS" pointSize="15"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                                 <variation key="default">
@@ -1900,7 +1947,7 @@
                                     </mask>
                                 </variation>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ENERGY This Month" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bnw-3Y-vUf">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ENERGY This Month       " lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bnw-3Y-vUf">
                                 <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="ByP-cG-FV3"/>
@@ -1909,7 +1956,7 @@
                                         <variation key="heightClass=regular-widthClass=compact" constant="80"/>
                                     </constraint>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="TrebuchetMS" family="Trebuchet MS" pointSize="16"/>
+                                <fontDescription key="fontDescription" name="TrebuchetMS" family="Trebuchet MS" pointSize="15"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                                 <variation key="default">
@@ -1944,7 +1991,7 @@
                                         <variation key="heightClass=compact" constant="36"/>
                                     </constraint>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="TrebuchetMS" family="Trebuchet MS" pointSize="17"/>
+                                <fontDescription key="fontDescription" name="TrebuchetMS" family="Trebuchet MS" pointSize="16"/>
                                 <color key="textColor" red="1" green="0.89854629870000002" blue="0.061253424819999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                                 <variation key="default">
@@ -1968,35 +2015,6 @@
                                     <mask key="constraints">
                                         <include reference="1F6-l7-Bb1"/>
                                         <exclude reference="VuL-a1-zdU"/>
-                                    </mask>
-                                </variation>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ENERGY Total" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zfQ-MQ-eND">
-                                <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="90" id="iim-po-E9g">
-                                        <variation key="heightClass=regular-widthClass=compact" constant="80"/>
-                                    </constraint>
-                                    <constraint firstAttribute="width" constant="90" id="yTK-5K-ZD4"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="TrebuchetMS" family="Trebuchet MS" pointSize="16"/>
-                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="iim-po-E9g"/>
-                                        <exclude reference="yTK-5K-ZD4"/>
-                                    </mask>
-                                </variation>
-                                <variation key="heightClass=regular">
-                                    <mask key="constraints">
-                                        <include reference="yTK-5K-ZD4"/>
-                                    </mask>
-                                </variation>
-                                <variation key="heightClass=regular-widthClass=compact">
-                                    <mask key="constraints">
-                                        <include reference="iim-po-E9g"/>
-                                        <exclude reference="yTK-5K-ZD4"/>
                                     </mask>
                                 </variation>
                             </label>
@@ -2188,13 +2206,13 @@
                                     </mask>
                                 </variation>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="239" verticalHuggingPriority="251" text="000.00" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Wm-C9-2Zd">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="239" verticalHuggingPriority="251" text="00,000.00" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Wm-C9-2Zd">
                                 <rect key="frame" x="401" y="259" width="106" height="39"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="160" id="Pzj-Bq-bRe"/>
                                     <constraint firstAttribute="width" constant="160" id="UCr-dz-Lqi"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="TrebuchetMS" family="Trebuchet MS" pointSize="36"/>
+                                <fontDescription key="fontDescription" name="TrebuchetMS" family="Trebuchet MS" pointSize="31"/>
                                 <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                                 <variation key="default">
@@ -2214,13 +2232,13 @@
                                     </mask>
                                 </variation>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="000" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3E7-84-5xB">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00,000" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3E7-84-5xB">
                                 <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="160" id="bVF-pO-Ka5"/>
                                     <constraint firstAttribute="width" constant="160" id="zHf-ai-Qul"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="TrebuchetMS" family="Trebuchet MS" pointSize="32"/>
+                                <fontDescription key="fontDescription" name="TrebuchetMS" family="Trebuchet MS" pointSize="28"/>
                                 <color key="textColor" red="1" green="0.89854629870000002" blue="0.061253424819999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                                 <variation key="default">
@@ -2252,7 +2270,7 @@
                                         <variation key="heightClass=regular-widthClass=compact" constant="70"/>
                                     </constraint>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="TrebuchetMS" family="Trebuchet MS" pointSize="18"/>
+                                <fontDescription key="fontDescription" name="TrebuchetMS" family="Trebuchet MS" pointSize="16"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                                 <variation key="default">
@@ -2279,13 +2297,13 @@
                                     </mask>
                                 </variation>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00,000" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yly-pA-s87">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0,000,000" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yly-pA-s87">
                                 <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="160" id="I2b-QT-JLZ"/>
                                     <constraint firstAttribute="width" constant="160" id="TO1-dt-VxE"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="TrebuchetMS" family="Trebuchet MS" pointSize="32"/>
+                                <fontDescription key="fontDescription" name="TrebuchetMS" family="Trebuchet MS" pointSize="28"/>
                                 <color key="textColor" red="1" green="0.89854629870000002" blue="0.061253424819999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                                 <variation key="default">
@@ -3202,6 +3220,35 @@
                                     </mask>
                                 </variation>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ENERGY Total" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zfQ-MQ-eND">
+                                <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="90" id="iim-po-E9g">
+                                        <variation key="heightClass=regular-widthClass=compact" constant="80"/>
+                                    </constraint>
+                                    <constraint firstAttribute="width" constant="90" id="yTK-5K-ZD4"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="TrebuchetMS" family="Trebuchet MS" pointSize="16"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="iim-po-E9g"/>
+                                        <exclude reference="yTK-5K-ZD4"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=regular">
+                                    <mask key="constraints">
+                                        <include reference="yTK-5K-ZD4"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="iim-po-E9g"/>
+                                        <exclude reference="yTK-5K-ZD4"/>
+                                    </mask>
+                                </variation>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -3266,7 +3313,7 @@
                                 <variation key="heightClass=regular-widthClass=compact" constant="-14"/>
                             </constraint>
                             <constraint firstItem="N7l-QR-hXn" firstAttribute="top" secondItem="IQX-GE-qIb" secondAttribute="bottom" constant="117" id="ALU-Lo-XhY">
-                                <variation key="heightClass=regular-widthClass=compact" constant="165"/>
+                                <variation key="heightClass=regular-widthClass=compact" constant="160"/>
                             </constraint>
                             <constraint firstAttribute="centerX" secondItem="MC4-Fm-jBI" secondAttribute="centerX" constant="-162" id="AVA-iQ-94w"/>
                             <constraint firstAttribute="trailingMargin" secondItem="LZV-66-Ifd" secondAttribute="trailing" constant="248" id="AWW-yP-9D2">
@@ -3330,7 +3377,7 @@
                             <constraint firstAttribute="width" secondItem="wyx-Xw-Utq" secondAttribute="width" id="FGY-zQ-P5l"/>
                             <constraint firstItem="Y2I-9D-DDh" firstAttribute="top" secondItem="yYd-Ya-dH8" secondAttribute="bottom" constant="37" id="FT3-JY-Df7"/>
                             <constraint firstItem="Lyd-2i-LCM" firstAttribute="top" secondItem="IQX-GE-qIb" secondAttribute="bottom" constant="124" id="FkP-tG-kij">
-                                <variation key="heightClass=regular-widthClass=compact" constant="145"/>
+                                <variation key="heightClass=regular-widthClass=compact" constant="140"/>
                             </constraint>
                             <constraint firstItem="sC0-Ph-ypf" firstAttribute="top" secondItem="IQX-GE-qIb" secondAttribute="bottom" constant="13" id="GAx-N2-deO"/>
                             <constraint firstAttribute="trailingMargin" secondItem="lHv-fd-2Gu" secondAttribute="trailing" constant="-1" id="GHU-dp-RVC">
@@ -3385,7 +3432,7 @@
                             </constraint>
                             <constraint firstItem="6wq-qr-mtF" firstAttribute="leading" secondItem="mbV-08-9pX" secondAttribute="leading" id="MDs-pE-A1b"/>
                             <constraint firstAttribute="trailingMargin" secondItem="bnw-3Y-vUf" secondAttribute="trailing" constant="200" id="MYt-4J-qAu">
-                                <variation key="heightClass=regular-widthClass=compact" constant="140"/>
+                                <variation key="heightClass=regular-widthClass=compact" constant="130"/>
                             </constraint>
                             <constraint firstItem="Ifs-6e-LRs" firstAttribute="leading" secondItem="mbV-08-9pX" secondAttribute="leadingMargin" id="MqE-Hk-UaS"/>
                             <constraint firstItem="bv2-ig-xfK" firstAttribute="top" secondItem="IQX-GE-qIb" secondAttribute="bottom" constant="93" id="N4b-Ef-xG4"/>
@@ -3501,13 +3548,13 @@
                             </constraint>
                             <constraint firstItem="gzT-q0-dyN" firstAttribute="leading" secondItem="mbV-08-9pX" secondAttribute="leadingMargin" constant="141" id="cZn-IB-MtJ"/>
                             <constraint firstItem="Pek-lT-1VF" firstAttribute="top" secondItem="IQX-GE-qIb" secondAttribute="bottom" constant="115" id="cnr-iV-bRe">
-                                <variation key="heightClass=regular-widthClass=compact" constant="135"/>
+                                <variation key="heightClass=regular-widthClass=compact" constant="130"/>
                             </constraint>
                             <constraint firstItem="101-ej-NlL" firstAttribute="trailing" secondItem="mbV-08-9pX" secondAttribute="trailingMargin" id="cwc-fT-fht"/>
                             <constraint firstItem="Kib-2F-aKb" firstAttribute="leading" secondItem="mbV-08-9pX" secondAttribute="leadingMargin" constant="-8" id="dLV-t2-FtW"/>
                             <constraint firstItem="hYT-WP-Z6c" firstAttribute="top" secondItem="IQX-GE-qIb" secondAttribute="bottom" constant="37" id="dgV-47-iX5"/>
                             <constraint firstAttribute="trailingMargin" secondItem="zfQ-MQ-eND" secondAttribute="trailing" constant="236" id="dk1-tZ-wjZ">
-                                <variation key="heightClass=regular-widthClass=compact" constant="140"/>
+                                <variation key="heightClass=regular-widthClass=compact" constant="130"/>
                             </constraint>
                             <constraint firstItem="Y2I-9D-DDh" firstAttribute="top" secondItem="BuE-Ay-YdK" secondAttribute="bottom" constant="32" id="dnS-Jy-vEy"/>
                             <constraint firstAttribute="trailingMargin" secondItem="kMY-lZ-XnI" secondAttribute="trailing" constant="49" id="dv4-9X-40T">
@@ -3521,7 +3568,7 @@
                             </constraint>
                             <constraint firstAttribute="centerY" secondItem="bnw-3Y-vUf" secondAttribute="centerY" constant="-248" id="epK-ET-ypn"/>
                             <constraint firstItem="Ck7-j6-Cd1" firstAttribute="top" secondItem="IQX-GE-qIb" secondAttribute="bottom" constant="81" id="eqD-Bz-DvS">
-                                <variation key="heightClass=regular-widthClass=compact" constant="105"/>
+                                <variation key="heightClass=regular-widthClass=compact" constant="100"/>
                             </constraint>
                             <constraint firstItem="crs-nx-eja" firstAttribute="top" secondItem="IQX-GE-qIb" secondAttribute="bottom" constant="65" id="esZ-HZ-Afc">
                                 <variation key="heightClass=regular-widthClass=compact" constant="90"/>
@@ -3589,7 +3636,7 @@
                                 <variation key="heightClass=compact" constant="32"/>
                             </constraint>
                             <constraint firstItem="Y2I-9D-DDh" firstAttribute="top" secondItem="bnw-3Y-vUf" secondAttribute="bottom" constant="78" id="n9G-Tf-lP3">
-                                <variation key="heightClass=regular-widthClass=compact" constant="86"/>
+                                <variation key="heightClass=regular-widthClass=compact" constant="80"/>
                             </constraint>
                             <constraint firstAttribute="trailingMargin" secondItem="N7l-QR-hXn" secondAttribute="trailing" constant="248" id="oPt-ux-J7g">
                                 <variation key="heightClass=regular-widthClass=compact" constant="140"/>
@@ -3673,7 +3720,7 @@
                             <constraint firstAttribute="width" secondItem="6wq-qr-mtF" secondAttribute="width" id="xbj-MW-1Dw"/>
                             <constraint firstItem="hb1-Zs-Yni" firstAttribute="top" secondItem="IQX-GE-qIb" secondAttribute="bottom" constant="8" id="yvC-sF-jpe"/>
                             <constraint firstAttribute="trailingMargin" secondItem="vNP-7w-QmC" secondAttribute="trailing" constant="236" id="zsN-Lh-9Iq">
-                                <variation key="heightClass=regular-widthClass=compact" constant="140"/>
+                                <variation key="heightClass=regular-widthClass=compact" constant="130"/>
                             </constraint>
                             <constraint firstItem="62t-Cu-bP7" firstAttribute="top" secondItem="IQX-GE-qIb" secondAttribute="bottom" constant="273" id="zyh-rI-fYP">
                                 <variation key="heightClass=regular-widthClass=regular" constant="290"/>
@@ -3730,7 +3777,6 @@
                                 <exclude reference="Ifs-6e-LRs"/>
                                 <exclude reference="bnw-3Y-vUf"/>
                                 <exclude reference="Ck7-j6-Cd1"/>
-                                <exclude reference="zfQ-MQ-eND"/>
                                 <exclude reference="amq-0y-Ure"/>
                                 <exclude reference="6bu-SJ-3lg"/>
                                 <exclude reference="EGl-ZS-Ivf"/>
@@ -3777,6 +3823,7 @@
                                 <exclude reference="njt-MZ-tP5"/>
                                 <exclude reference="62t-Cu-bP7"/>
                                 <exclude reference="emj-Bc-XTv"/>
+                                <exclude reference="zfQ-MQ-eND"/>
                             </mask>
                             <mask key="constraints">
                                 <exclude reference="cwc-fT-fht"/>
@@ -4148,7 +4195,6 @@
                                 <include reference="Ifs-6e-LRs"/>
                                 <include reference="bnw-3Y-vUf"/>
                                 <include reference="Ck7-j6-Cd1"/>
-                                <include reference="zfQ-MQ-eND"/>
                                 <include reference="amq-0y-Ure"/>
                                 <include reference="6bu-SJ-3lg"/>
                                 <include reference="EGl-ZS-Ivf"/>
@@ -4164,6 +4210,7 @@
                                 <include reference="N7l-QR-hXn"/>
                                 <include reference="Yly-pA-s87"/>
                                 <include reference="Cun-or-fec"/>
+                                <include reference="zfQ-MQ-eND"/>
                             </mask>
                             <mask key="constraints">
                                 <include reference="J2q-IQ-XuY"/>
@@ -4554,6 +4601,7 @@
                                                 </imageView>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstItem="cdo-ox-CAX" firstAttribute="top" secondItem="XmM-nE-Wad" secondAttribute="top" id="0bc-4j-PDX"/>
                                                 <constraint firstItem="cdo-ox-CAX" firstAttribute="top" secondItem="Cks-Tq-XUM" secondAttribute="topMargin" id="5Aj-e7-6MP"/>
                                                 <constraint firstItem="cdo-ox-CAX" firstAttribute="centerY" secondItem="XmM-nE-Wad" secondAttribute="centerY" id="XR4-l9-ozm">
                                                     <variation key="heightClass=compact" constant="-2"/>
@@ -4562,8 +4610,17 @@
                                                 <constraint firstItem="cdo-ox-CAX" firstAttribute="leading" secondItem="XmM-nE-Wad" secondAttribute="trailing" constant="8" symbolic="YES" id="jqu-Au-zbO">
                                                     <variation key="heightClass=regular-widthClass=regular" constant="11"/>
                                                 </constraint>
+                                                <constraint firstAttribute="bottomMargin" secondItem="cdo-ox-CAX" secondAttribute="bottom" constant="-1" id="sH2-uP-cUa"/>
                                                 <constraint firstItem="cdo-ox-CAX" firstAttribute="leading" secondItem="Cks-Tq-XUM" secondAttribute="leading" constant="61" id="t6I-Oc-zh8"/>
+                                                <constraint firstItem="cdo-ox-CAX" firstAttribute="top" secondItem="Cks-Tq-XUM" secondAttribute="topMargin" constant="-2" id="ymM-MF-toh"/>
                                             </constraints>
+                                            <variation key="default">
+                                                <mask key="constraints">
+                                                    <exclude reference="0bc-4j-PDX"/>
+                                                    <exclude reference="sH2-uP-cUa"/>
+                                                    <exclude reference="ymM-MF-toh"/>
+                                                </mask>
+                                            </variation>
                                             <variation key="heightClass=compact">
                                                 <mask key="constraints">
                                                     <exclude reference="XR4-l9-ozm"/>
@@ -4577,7 +4634,10 @@
                                             </variation>
                                             <variation key="heightClass=regular-widthClass=compact">
                                                 <mask key="constraints">
+                                                    <include reference="0bc-4j-PDX"/>
                                                     <exclude reference="XR4-l9-ozm"/>
+                                                    <include reference="sH2-uP-cUa"/>
+                                                    <include reference="ymM-MF-toh"/>
                                                 </mask>
                                             </variation>
                                         </tableViewCellContentView>
@@ -4650,22 +4710,36 @@
                                                     <fontDescription key="fontDescription" name="TrebuchetMS" family="Trebuchet MS" pointSize="18"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
+                                                    <variation key="heightClass=regular-widthClass=compact" ambiguous="YES">
+                                                        <rect key="frame" x="61" y="0.0" width="100" height="21"/>
+                                                    </variation>
                                                 </label>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="graph" translatesAutoresizingMaskIntoConstraints="NO" id="EEC-Y0-aKg">
                                                     <rect key="frame" x="21" y="6" width="32" height="32"/>
+                                                    <variation key="heightClass=regular-widthClass=compact" ambiguous="YES">
+                                                        <rect key="frame" x="21" y="0.0" width="32" height="32"/>
+                                                    </variation>
                                                 </imageView>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="xvt-75-1Df" firstAttribute="leading" secondItem="EEC-Y0-aKg" secondAttribute="trailing" constant="8" symbolic="YES" id="4yz-Zs-1L7">
                                                     <variation key="heightClass=regular-widthClass=regular" constant="11"/>
                                                 </constraint>
+                                                <constraint firstItem="EEC-Y0-aKg" firstAttribute="leading" secondItem="KqU-2D-dMR" secondAttribute="leadingMargin" constant="6" id="7Vs-7U-9d7"/>
                                                 <constraint firstItem="xvt-75-1Df" firstAttribute="leading" secondItem="KqU-2D-dMR" secondAttribute="leading" constant="61" id="Dqg-o6-8ep"/>
                                                 <constraint firstItem="xvt-75-1Df" firstAttribute="centerY" secondItem="EEC-Y0-aKg" secondAttribute="centerY" id="HHa-ks-biX">
                                                     <variation key="heightClass=compact" constant="-2"/>
                                                     <variation key="heightClass=regular-widthClass=regular" constant="-3.5"/>
                                                 </constraint>
                                                 <constraint firstItem="xvt-75-1Df" firstAttribute="top" secondItem="KqU-2D-dMR" secondAttribute="topMargin" id="LUR-Wh-kvs"/>
+                                                <constraint firstItem="EEC-Y0-aKg" firstAttribute="centerY" secondItem="KqU-2D-dMR" secondAttribute="centerY" id="bvY-pk-ofr"/>
                                             </constraints>
+                                            <variation key="default">
+                                                <mask key="constraints">
+                                                    <exclude reference="7Vs-7U-9d7"/>
+                                                    <exclude reference="bvY-pk-ofr"/>
+                                                </mask>
+                                            </variation>
                                             <variation key="heightClass=compact">
                                                 <mask key="constraints">
                                                     <exclude reference="4yz-Zs-1L7"/>
@@ -4679,6 +4753,8 @@
                                             </variation>
                                             <variation key="heightClass=regular-widthClass=compact">
                                                 <mask key="constraints">
+                                                    <exclude reference="7Vs-7U-9d7"/>
+                                                    <exclude reference="bvY-pk-ofr"/>
                                                     <exclude reference="HHa-ks-biX"/>
                                                 </mask>
                                             </variation>
@@ -4765,12 +4841,12 @@
         <scene sceneID="3eU-qK-o61">
             <objects>
                 <tableViewController id="Vyg-uo-UkJ" customClass="ProjectTableViewController" customModule="Solar_Log" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="132" sectionHeaderHeight="22" sectionFooterHeight="22" id="fRo-sQ-5dg">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="115" sectionHeaderHeight="22" sectionFooterHeight="22" id="fRo-sQ-5dg">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="132" id="ujG-vC-YHZ" customClass="ProjectTableViewCell" customModule="Solar_Log" customModuleProvider="target">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="115" id="ujG-vC-YHZ" customClass="ProjectTableViewCell" customModule="Solar_Log" customModuleProvider="target">
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ujG-vC-YHZ" id="epG-JZ-5pk">
                                     <autoresizingMask key="autoresizingMask"/>
@@ -4778,9 +4854,13 @@
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="solar" translatesAutoresizingMaskIntoConstraints="NO" id="TnQ-ec-cGy">
                                             <rect key="frame" x="8" y="8" width="72" height="72"/>
                                             <constraints>
-                                                <constraint firstAttribute="width" constant="72" id="0GO-9k-Ab5"/>
+                                                <constraint firstAttribute="width" constant="72" id="0GO-9k-Ab5">
+                                                    <variation key="heightClass=regular-widthClass=compact" constant="32"/>
+                                                </constraint>
                                                 <constraint firstAttribute="width" secondItem="TnQ-ec-cGy" secondAttribute="height" multiplier="1:1" id="CKc-xH-VFI"/>
-                                                <constraint firstAttribute="height" constant="72" id="IDl-s2-oIW"/>
+                                                <constraint firstAttribute="height" constant="72" id="IDl-s2-oIW">
+                                                    <variation key="heightClass=regular-widthClass=compact" constant="32"/>
+                                                </constraint>
                                             </constraints>
                                             <variation key="default">
                                                 <mask key="constraints">
@@ -4788,89 +4868,152 @@
                                                 </mask>
                                             </variation>
                                         </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JU9-fE-ASC">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Name" lineBreakMode="characterWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JU9-fE-ASC">
                                             <rect key="frame" x="118" y="19" width="285" height="20"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="285" id="wfA-gp-Xy2"/>
                                             </constraints>
-                                            <fontDescription key="fontDescription" name="TrebuchetMS" family="Trebuchet MS" pointSize="17"/>
+                                            <fontDescription key="fontDescription" name="TrebuchetMS" family="Trebuchet MS" pointSize="16"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
+                                            <variation key="heightClass=regular-widthClass=compact">
+                                                <mask key="constraints">
+                                                    <exclude reference="wfA-gp-Xy2"/>
+                                                </mask>
+                                            </variation>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ID" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jeZ-lR-OLj">
                                             <rect key="frame" x="88" y="19" width="16" height="20"/>
                                             <fontDescription key="fontDescription" name="TrebuchetMS" family="Trebuchet MS" pointSize="17"/>
-                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="textColor" red="0.0" green="0.40524773850000001" blue="0.66832853619999999" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Location" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w2M-Pq-rZv">
-                                            <rect key="frame" x="88" y="53" width="66" height="20"/>
-                                            <fontDescription key="fontDescription" name="TrebuchetMS" family="Trebuchet MS" pointSize="17"/>
-                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="xxxxx" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vgE-qm-OQD">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="xxxxx" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vgE-qm-OQD">
                                             <rect key="frame" x="158" y="53" width="315" height="20"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="315" id="hhg-AH-kIe"/>
                                             </constraints>
-                                            <fontDescription key="fontDescription" name="TrebuchetMS" family="Trebuchet MS" pointSize="17"/>
+                                            <fontDescription key="fontDescription" name="TrebuchetMS" family="Trebuchet MS" pointSize="15"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
+                                            <variation key="heightClass=regular-widthClass=compact">
+                                                <mask key="constraints">
+                                                    <exclude reference="hhg-AH-kIe"/>
+                                                </mask>
+                                            </variation>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Province" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vEP-Jo-Z3f">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Province" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vEP-Jo-Z3f">
                                             <rect key="frame" x="88" y="95" width="66" height="20"/>
-                                            <fontDescription key="fontDescription" name="TrebuchetMS" family="Trebuchet MS" pointSize="17"/>
+                                            <fontDescription key="fontDescription" name="TrebuchetMS" family="Trebuchet MS" pointSize="15"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="xxxxx" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wgZ-Tg-QQF">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="xxxxx" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wgZ-Tg-QQF">
                                             <rect key="frame" x="158" y="95" width="298" height="20"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="298" id="7aA-cq-Pks"/>
                                             </constraints>
-                                            <fontDescription key="fontDescription" name="TrebuchetMS" family="Trebuchet MS" pointSize="17"/>
+                                            <fontDescription key="fontDescription" name="TrebuchetMS" family="Trebuchet MS" pointSize="15"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
+                                            <variation key="heightClass=regular-widthClass=compact">
+                                                <mask key="constraints">
+                                                    <exclude reference="7aA-cq-Pks"/>
+                                                </mask>
+                                            </variation>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="xxxxx" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2S1-wq-Eeo">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00,000kw" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2S1-wq-Eeo">
                                             <rect key="frame" x="393" y="19" width="194" height="20"/>
                                             <constraints>
+                                                <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="74" id="kbL-q9-PoO"/>
                                                 <constraint firstAttribute="width" constant="194" id="sgG-FP-ChF"/>
                                             </constraints>
                                             <fontDescription key="fontDescription" name="TrebuchetMS" family="Trebuchet MS" pointSize="17"/>
+                                            <color key="textColor" red="1" green="0.83520377401504164" blue="0.013335116481961951" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                            <variation key="default">
+                                                <mask key="constraints">
+                                                    <exclude reference="kbL-q9-PoO"/>
+                                                </mask>
+                                            </variation>
+                                            <variation key="heightClass=regular-widthClass=compact">
+                                                <mask key="constraints">
+                                                    <include reference="kbL-q9-PoO"/>
+                                                </mask>
+                                            </variation>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Location" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w2M-Pq-rZv">
+                                            <rect key="frame" x="88" y="53" width="66" height="20"/>
+                                            <fontDescription key="fontDescription" name="TrebuchetMS" family="Trebuchet MS" pointSize="15"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
                                     <constraints>
+                                        <constraint firstAttribute="trailingMargin" secondItem="vgE-qm-OQD" secondAttribute="trailing" constant="-41" id="0fJ-lQ-ehp">
+                                            <variation key="heightClass=regular-widthClass=compact" constant="2"/>
+                                        </constraint>
                                         <constraint firstItem="TnQ-ec-cGy" firstAttribute="leading" secondItem="JU9-fE-ASC" secondAttribute="leading" constant="-122" id="5Ca-9C-aw3"/>
                                         <constraint firstItem="jeZ-lR-OLj" firstAttribute="leading" secondItem="JU9-fE-ASC" secondAttribute="leading" id="5iJ-Xf-Y0P"/>
-                                        <constraint firstItem="2S1-wq-Eeo" firstAttribute="top" secondItem="epG-JZ-5pk" secondAttribute="topMargin" constant="11" id="6Ib-8C-ov2"/>
+                                        <constraint firstItem="2S1-wq-Eeo" firstAttribute="top" secondItem="epG-JZ-5pk" secondAttribute="topMargin" constant="11" id="6Ib-8C-ov2">
+                                            <variation key="heightClass=regular-widthClass=compact" constant="2"/>
+                                        </constraint>
+                                        <constraint firstAttribute="trailingMargin" secondItem="wgZ-Tg-QQF" secondAttribute="trailing" constant="-24" id="8pC-H7-a3k">
+                                            <variation key="heightClass=regular-widthClass=compact" constant="2"/>
+                                        </constraint>
                                         <constraint firstItem="jeZ-lR-OLj" firstAttribute="leading" secondItem="TnQ-ec-cGy" secondAttribute="leading" constant="122" id="Al6-QF-50f"/>
                                         <constraint firstItem="TnQ-ec-cGy" firstAttribute="top" secondItem="epG-JZ-5pk" secondAttribute="topMargin" id="CFj-lM-Jhp"/>
-                                        <constraint firstItem="w2M-Pq-rZv" firstAttribute="top" secondItem="epG-JZ-5pk" secondAttribute="topMargin" constant="45" id="DXa-4W-Wcm"/>
-                                        <constraint firstItem="vEP-Jo-Z3f" firstAttribute="leading" secondItem="epG-JZ-5pk" secondAttribute="leadingMargin" constant="80" id="FAP-V5-sWX"/>
+                                        <constraint firstItem="w2M-Pq-rZv" firstAttribute="top" secondItem="epG-JZ-5pk" secondAttribute="topMargin" constant="45" id="DXa-4W-Wcm">
+                                            <variation key="heightClass=regular-widthClass=compact" constant="50"/>
+                                        </constraint>
+                                        <constraint firstItem="vEP-Jo-Z3f" firstAttribute="leading" secondItem="epG-JZ-5pk" secondAttribute="leadingMargin" constant="80" id="FAP-V5-sWX">
+                                            <variation key="heightClass=regular-widthClass=compact" constant="20"/>
+                                        </constraint>
                                         <constraint firstAttribute="bottomMargin" secondItem="TnQ-ec-cGy" secondAttribute="bottom" constant="31.5" id="IMH-jk-h7S"/>
-                                        <constraint firstItem="jeZ-lR-OLj" firstAttribute="top" secondItem="epG-JZ-5pk" secondAttribute="topMargin" constant="11" id="L2i-N9-bOl"/>
+                                        <constraint firstItem="jeZ-lR-OLj" firstAttribute="top" secondItem="epG-JZ-5pk" secondAttribute="topMargin" constant="11" id="L2i-N9-bOl">
+                                            <variation key="heightClass=regular-widthClass=compact" constant="20"/>
+                                        </constraint>
                                         <constraint firstItem="JU9-fE-ASC" firstAttribute="top" secondItem="jeZ-lR-OLj" secondAttribute="bottom" constant="8" symbolic="YES" id="LkR-Fh-eON"/>
-                                        <constraint firstAttribute="trailingMargin" secondItem="2S1-wq-Eeo" secondAttribute="trailing" constant="5" id="Mvi-kQ-grl"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="2S1-wq-Eeo" secondAttribute="trailing" constant="5" id="Mvi-kQ-grl">
+                                            <variation key="heightClass=regular-widthClass=compact" constant="2"/>
+                                        </constraint>
                                         <constraint firstItem="jeZ-lR-OLj" firstAttribute="top" secondItem="JU9-fE-ASC" secondAttribute="top" constant="-29" id="PBV-xv-dOU"/>
-                                        <constraint firstItem="wgZ-Tg-QQF" firstAttribute="top" secondItem="epG-JZ-5pk" secondAttribute="topMargin" constant="87" id="T75-Th-bZM"/>
+                                        <constraint firstItem="wgZ-Tg-QQF" firstAttribute="top" secondItem="epG-JZ-5pk" secondAttribute="topMargin" constant="87" id="T75-Th-bZM">
+                                            <variation key="heightClass=regular-widthClass=compact" constant="80"/>
+                                        </constraint>
                                         <constraint firstItem="TnQ-ec-cGy" firstAttribute="leading" secondItem="epG-JZ-5pk" secondAttribute="leadingMargin" id="aNS-KG-yE6"/>
-                                        <constraint firstItem="w2M-Pq-rZv" firstAttribute="leading" secondItem="epG-JZ-5pk" secondAttribute="leadingMargin" constant="80" id="c0x-Jv-PDX"/>
-                                        <constraint firstItem="JU9-fE-ASC" firstAttribute="leading" secondItem="epG-JZ-5pk" secondAttribute="leadingMargin" constant="110" id="dGS-cy-gbZ"/>
+                                        <constraint firstItem="w2M-Pq-rZv" firstAttribute="leading" secondItem="epG-JZ-5pk" secondAttribute="leadingMargin" constant="80" id="c0x-Jv-PDX">
+                                            <variation key="heightClass=regular-widthClass=compact" constant="20"/>
+                                        </constraint>
+                                        <constraint firstItem="JU9-fE-ASC" firstAttribute="leading" secondItem="epG-JZ-5pk" secondAttribute="leadingMargin" constant="110" id="dGS-cy-gbZ">
+                                            <variation key="heightClass=regular-widthClass=compact" constant="80"/>
+                                        </constraint>
                                         <constraint firstItem="jeZ-lR-OLj" firstAttribute="leading" secondItem="TnQ-ec-cGy" secondAttribute="trailing" constant="8" symbolic="YES" id="e50-Cn-xxa"/>
-                                        <constraint firstItem="wgZ-Tg-QQF" firstAttribute="leading" secondItem="epG-JZ-5pk" secondAttribute="leadingMargin" constant="150" id="eSd-Os-QFn"/>
+                                        <constraint firstItem="wgZ-Tg-QQF" firstAttribute="leading" secondItem="epG-JZ-5pk" secondAttribute="leadingMargin" constant="150" id="eSd-Os-QFn">
+                                            <variation key="heightClass=regular-widthClass=compact" constant="90"/>
+                                        </constraint>
                                         <constraint firstItem="jeZ-lR-OLj" firstAttribute="baseline" secondItem="w2M-Pq-rZv" secondAttribute="baseline" id="ebe-i9-Hj5"/>
-                                        <constraint firstItem="vEP-Jo-Z3f" firstAttribute="top" secondItem="epG-JZ-5pk" secondAttribute="topMargin" constant="87" id="fOr-Yl-D3t"/>
+                                        <constraint firstItem="vEP-Jo-Z3f" firstAttribute="top" secondItem="epG-JZ-5pk" secondAttribute="topMargin" constant="87" id="fOr-Yl-D3t">
+                                            <variation key="heightClass=regular-widthClass=compact" constant="80"/>
+                                        </constraint>
                                         <constraint firstAttribute="centerX" secondItem="wgZ-Tg-QQF" secondAttribute="centerX" constant="-58" id="hyk-k1-fNb"/>
                                         <constraint firstAttribute="trailingMargin" secondItem="w2M-Pq-rZv" secondAttribute="trailing" constant="-8" id="iQF-ab-Syn"/>
-                                        <constraint firstItem="vgE-qm-OQD" firstAttribute="leading" secondItem="epG-JZ-5pk" secondAttribute="leadingMargin" constant="150" id="jbu-WU-7y7"/>
-                                        <constraint firstItem="JU9-fE-ASC" firstAttribute="top" secondItem="epG-JZ-5pk" secondAttribute="topMargin" constant="11" id="lOS-f1-Am9"/>
-                                        <constraint firstItem="vgE-qm-OQD" firstAttribute="top" secondItem="epG-JZ-5pk" secondAttribute="topMargin" constant="45" id="nZz-i7-ajc"/>
-                                        <constraint firstItem="jeZ-lR-OLj" firstAttribute="leading" secondItem="epG-JZ-5pk" secondAttribute="leadingMargin" constant="80" id="nmV-lE-Gpm"/>
+                                        <constraint firstItem="vgE-qm-OQD" firstAttribute="leading" secondItem="epG-JZ-5pk" secondAttribute="leadingMargin" constant="150" id="jbu-WU-7y7">
+                                            <variation key="heightClass=regular-widthClass=compact" constant="90"/>
+                                        </constraint>
+                                        <constraint firstItem="JU9-fE-ASC" firstAttribute="top" secondItem="epG-JZ-5pk" secondAttribute="topMargin" constant="11" id="lOS-f1-Am9">
+                                            <variation key="heightClass=regular-widthClass=compact" constant="20"/>
+                                        </constraint>
+                                        <constraint firstItem="vgE-qm-OQD" firstAttribute="top" secondItem="epG-JZ-5pk" secondAttribute="topMargin" constant="45" id="nZz-i7-ajc">
+                                            <variation key="heightClass=regular-widthClass=compact" constant="50"/>
+                                        </constraint>
+                                        <constraint firstItem="jeZ-lR-OLj" firstAttribute="leading" secondItem="epG-JZ-5pk" secondAttribute="leadingMargin" constant="80" id="nmV-lE-Gpm">
+                                            <variation key="heightClass=regular-widthClass=compact" constant="40"/>
+                                        </constraint>
                                         <constraint firstAttribute="centerX" secondItem="vgE-qm-OQD" secondAttribute="centerX" constant="-66" id="sfL-0s-7SE"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="JU9-fE-ASC" secondAttribute="trailing" constant="-11" id="t24-Wv-ukF">
+                                            <variation key="heightClass=regular-widthClass=compact" constant="2"/>
+                                        </constraint>
                                         <constraint firstAttribute="centerX" secondItem="vEP-Jo-Z3f" secondAttribute="centerX" constant="123" id="vQa-cL-gQc"/>
                                     </constraints>
                                     <variation key="default">
@@ -4884,9 +5027,19 @@
                                             <exclude reference="ebe-i9-Hj5"/>
                                             <exclude reference="iQF-ab-Syn"/>
                                             <exclude reference="LkR-Fh-eON"/>
+                                            <exclude reference="t24-Wv-ukF"/>
                                             <exclude reference="vQa-cL-gQc"/>
+                                            <exclude reference="0fJ-lQ-ehp"/>
                                             <exclude reference="sfL-0s-7SE"/>
+                                            <exclude reference="8pC-H7-a3k"/>
                                             <exclude reference="hyk-k1-fNb"/>
+                                        </mask>
+                                    </variation>
+                                    <variation key="heightClass=regular-widthClass=compact">
+                                        <mask key="constraints">
+                                            <include reference="t24-Wv-ukF"/>
+                                            <include reference="0fJ-lQ-ehp"/>
+                                            <include reference="8pC-H7-a3k"/>
                                         </mask>
                                     </variation>
                                 </tableViewCellContentView>
@@ -4915,7 +5068,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Afo-Mq-tjY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2044" y="466"/>
+            <point key="canvasLocation" x="-2044.5" y="465.75"/>
         </scene>
         <!--News View Controller-->
         <scene sceneID="jy3-sM-ilN">

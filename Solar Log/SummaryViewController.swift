@@ -13,64 +13,64 @@ class SummaryViewController: UIViewController ,UICollectionViewDelegate, UIColle
     var refreshControl:UIRefreshControl!
     var timer:NSTimer?
     
-    @IBOutlet var inverterCollection: UICollectionView!
-    @IBOutlet var date: UILabel!
-    @IBOutlet var time: UILabel!
-    @IBOutlet var temperature: UILabel!
-    @IBOutlet var humidity: UILabel!
-    @IBOutlet var windspeed: UILabel!
-    @IBOutlet var precipitation: UILabel!
-    @IBOutlet var power: UILabel!
-    @IBOutlet var energytoday: UILabel!
-    @IBOutlet var revenuetoday: UILabel!
-    @IBOutlet var energythismonth: UILabel!
-    @IBOutlet var energythisyear: UILabel!
-    @IBOutlet var energytotal: UILabel!
-    @IBOutlet var irradiance: UILabel!
+    @IBOutlet weak var inverterCollection: UICollectionView!
+    @IBOutlet weak var date: UILabel!
+    @IBOutlet weak var time: UILabel!
+    @IBOutlet weak var temperature: UILabel!
+    @IBOutlet weak var humidity: UILabel!
+    @IBOutlet weak var windspeed: UILabel!
+    @IBOutlet weak var precipitation: UILabel!
+    @IBOutlet weak var power: UILabel!
+    @IBOutlet weak var energytoday: UILabel!
+    @IBOutlet weak var revenuetoday: UILabel!
+    @IBOutlet weak var energythismonth: UILabel!
+    @IBOutlet weak var energythisyear: UILabel!
+    @IBOutlet weak var energytotal: UILabel!
+    @IBOutlet weak var irradiance: UILabel!
 
-    @IBOutlet var todayUnit: UILabel!
-    @IBOutlet var monthUnit: UILabel!
-    @IBOutlet var yearUnit: UILabel!
-    @IBOutlet var totalUnit: UILabel!
+    @IBOutlet weak var todayUnit: UILabel!
+    @IBOutlet weak var monthUnit: UILabel!
+    @IBOutlet weak var yearUnit: UILabel!
+    @IBOutlet weak var totalUnit: UILabel!
     
     
-    @IBOutlet var inverterCollection1: UICollectionView!
-    @IBOutlet var date1: UILabel!
-    @IBOutlet var time1: UILabel!
-    @IBOutlet var temperature1: UILabel!
-    @IBOutlet var humidity1: UILabel!
-    @IBOutlet var windspeed1: UILabel!
-    @IBOutlet var precipitation1: UILabel!
-    @IBOutlet var power1: UILabel!
-    @IBOutlet var energytoday1: UILabel!
-    @IBOutlet var revenuetoday1: UILabel!
-    @IBOutlet var energythismonth1: UILabel!
-    @IBOutlet var energythisyear1: UILabel!
-    @IBOutlet var energytotal1: UILabel!
-    @IBOutlet var irradiance1: UILabel!
-    @IBOutlet var todayUnit1: UILabel!
-    @IBOutlet var monthUnit1: UILabel!
-    @IBOutlet var yearUnit1: UILabel!
-    @IBOutlet var totalUnit1: UILabel!
+    @IBOutlet weak var inverterCollection1: UICollectionView!
+    @IBOutlet weak var date1: UILabel!
+    @IBOutlet weak var time1: UILabel!
+    @IBOutlet weak var temperature1: UILabel!
+    @IBOutlet weak var humidity1: UILabel!
+    @IBOutlet weak var windspeed1: UILabel!
+    @IBOutlet weak var precipitation1: UILabel!
+    @IBOutlet weak var power1: UILabel!
+    @IBOutlet weak var energytoday1: UILabel!
+    @IBOutlet weak var revenuetoday1: UILabel!
+    @IBOutlet weak var energythismonth1: UILabel!
+    @IBOutlet weak var energythisyear1: UILabel!
+    @IBOutlet weak var energytotal1: UILabel!
+    @IBOutlet weak var irradiance1: UILabel!
+    @IBOutlet weak var todayUnit1: UILabel!
+    @IBOutlet weak var monthUnit1: UILabel!
+    @IBOutlet weak var yearUnit1: UILabel!
+    @IBOutlet weak var totalUnit1: UILabel!
     
-    @IBOutlet var inverterCollection2: UICollectionView!
-    @IBOutlet var date2: UILabel!
-    @IBOutlet var time2: UILabel!
-    @IBOutlet var temperature2: UILabel!
-    @IBOutlet var humidity2: UILabel!
-    @IBOutlet var windspeed2: UILabel!
-    @IBOutlet var precipitation2: UILabel!
-    @IBOutlet var power2: UILabel!
-    @IBOutlet var energytoday2: UILabel!
-    @IBOutlet var revenuetoday2: UILabel!
-    @IBOutlet var energythismonth2: UILabel!
-    @IBOutlet var energythisyear2: UILabel!
-    @IBOutlet var energytotal2: UILabel!
-    @IBOutlet var irradiance2: UILabel!
-    @IBOutlet var todayUnit2: UILabel!
-    @IBOutlet var monthUnit2: UILabel!
-    @IBOutlet var yearUnit2: UILabel!
-    @IBOutlet var totalUnit2: UILabel!
+    @IBOutlet weak var inverterCollection2: UICollectionView!
+    @IBOutlet weak var date2: UILabel!
+    @IBOutlet weak var time2: UILabel!
+    @IBOutlet weak var temperature2: UILabel!
+    @IBOutlet weak var humidity2: UILabel!
+    @IBOutlet weak var windspeed2: UILabel!
+    @IBOutlet weak var precipitation2: UILabel!
+    @IBOutlet weak var power2: UILabel!
+    @IBOutlet weak var energytoday2: UILabel!
+    @IBOutlet weak var revenuetoday2: UILabel!
+    @IBOutlet weak var energythismonth2: UILabel!
+    @IBOutlet weak var energythisyear2: UILabel!
+    @IBOutlet weak var energytotal2: UILabel!
+    @IBOutlet weak var irradiance2: UILabel!
+    @IBOutlet weak var todayUnit2: UILabel!
+    @IBOutlet weak var monthUnit2: UILabel!
+    @IBOutlet weak var yearUnit2: UILabel!
+    @IBOutlet weak var totalUnit2: UILabel!
     
     var summary:Summary! = Summary()
     var lastRevenue:Int = 0
@@ -80,7 +80,7 @@ class SummaryViewController: UIViewController ,UICollectionViewDelegate, UIColle
     override func viewDidLoad() {
         super.viewDidLoad()
         NSNotificationCenter.defaultCenter().addObserver(self, selector:"updateSetting:", name: "updateSetting", object: nil)
-        
+        NSNotificationCenter.defaultCenter().addObserver(self, selector:"changedProject:", name: "changedProject", object: nil)
         let defaults = NSUserDefaults.standardUserDefaults()
         coinSoundThreshold = defaults.integerForKey("\(MANAGER.CUR_PROJECT.id)")
         
@@ -93,7 +93,7 @@ class SummaryViewController: UIViewController ,UICollectionViewDelegate, UIColle
         timer?.invalidate()
         
         timer = NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: "ScheduleCheck", userInfo: nil, repeats: true)
-        updateData()
+      //  updateData()
 
     }
     
@@ -103,6 +103,17 @@ class SummaryViewController: UIViewController ,UICollectionViewDelegate, UIColle
         coinSoundThreshold = defaults.integerForKey("\(MANAGER.CUR_PROJECT.id)")
         println("updateSetting \(coinSoundThreshold)")
   
+    }
+    func changedProject(notification:NSNotification){
+        
+        let defaults = NSUserDefaults.standardUserDefaults()
+        coinSoundThreshold = defaults.integerForKey("\(MANAGER.CUR_PROJECT.id)")
+        lastRevenue = 0
+        timer?.invalidate()
+        
+       // timer = NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: "ScheduleCheck", userInfo: nil, repeats: true)
+      //  updateData()
+        
     }
     func refresh(sender:AnyObject){
         //TODO refresh data
@@ -148,47 +159,58 @@ class SummaryViewController: UIViewController ,UICollectionViewDelegate, UIColle
         MANAGER.summary(){ result,hasUpdate in
             self.summary = result
             if(hasUpdate){
+                var monthValue:String! = ""
+                var monthUnit:String = ""
+                if result.energy.month > 1000000000 {
+                    monthValue = formatter.stringFromNumber(result.energy.month/1000000)
+                    monthUnit="GWh"
+                }else if result.energy.month > 1000000 {
+                    
+                    monthValue = formatter.stringFromNumber(result.energy.month/1000)
+                    monthUnit="MWh"
+                }else {
+                    monthValue = formatter.stringFromNumber(result.energy.month)
+                    monthUnit="kWh"
+                }
+                var yearValue:String! = ""
+                var yearUnit:String = ""
+                if result.energy.year > 1000000000 {
+                    yearValue = formatter.stringFromNumber(result.energy.year/1000000)
+                    yearUnit="GWh"
+                }else if result.energy.year > 1000000 {
+                    yearValue = formatter.stringFromNumber(result.energy.year/1000)
+                    yearUnit="MWh"
+                }else {
+                    yearValue = formatter.stringFromNumber(result.energy.year)
+                    yearUnit="kWh"
+                }
+                
+                if( self.lastRevenue == 0 || self.lastRevenue > Int(result.energy.revenuetoday)) {
+                    self.lastRevenue = Int(result.energy.revenuetoday)
+                }
+
                 dispatch_async(dispatch_get_main_queue(), {() in
                     
-                    var monthValue:String! = ""
-                    var monthUnit:String = ""
-                    if result.energy.month > 1000000000 {
-                        monthValue = formatter.stringFromNumber(result.energy.month/1000000)
-                        monthUnit="GWh"
-                    }else if result.energy.month > 1000000 {
+                    if Int(result.energy.revenuetoday) - self.lastRevenue >= self.coinSoundThreshold &&  self.coinSoundThreshold > 0 {
                         
-                        monthValue = formatter.stringFromNumber(result.energy.month/1000)
-                        monthUnit="MWh"
-                    }else {
-                        monthValue = formatter.stringFromNumber(result.energy.month)
-                        monthUnit="kWh"
+                        if Int(result.energy.revenuetoday) > self.lastRevenue {
+                            self.lastRevenue = Int(result.energy.revenuetoday)
+                            self.coinSound.play()
+                        }
                     }
-                    var yearValue:String! = ""
-                    var yearUnit:String = ""
-                    if result.energy.year > 1000000000 {
-                        yearValue = formatter.stringFromNumber(result.energy.year/1000000)
-                        yearUnit="GWh"
-                    }else if result.energy.year > 1000000 {
-                        yearValue = formatter.stringFromNumber(result.energy.year/1000)
-                        yearUnit="MWh"
-                    }else {
-                        yearValue = formatter.stringFromNumber(result.energy.year)
-                        yearUnit="kWh"
-                    }
-                    
-                    if( self.lastRevenue == 0) {
-                        self.lastRevenue = Int(result.energy.revenuetoday)
-                    }
+
+                   
                     
                     
                     //iphone portrait
                     self.inverterCollection.reloadData()
                     self.date.text = fmt1.stringFromDate(result.datetime)
                     self.time.text = fmt2.stringFromDate(result.datetime)
-                    
+                    self.revenuetoday.text = formatter.stringFromNumber(result.energy.revenuetoday)
+               
                     self.power.text = formatter.stringFromNumber(result.power)
                     self.energytoday.text = formatter.stringFromNumber(result.energy.today)
-                    self.revenuetoday.text = formatter.stringFromNumber(result.energy.revenuetoday)
+                    
                     self.energytotal.text = formatter.stringFromNumber(result.energy.total)
                     self.energythismonth.text = monthValue
                     self.monthUnit.text = monthUnit
@@ -243,17 +265,14 @@ class SummaryViewController: UIViewController ,UICollectionViewDelegate, UIColle
                         self.windspeed2?.text = String(format: "%.0fm/s", result.meteorologies[0].windspeed)
                         self.precipitation2?.text = String(format: "%.0fmm", result.meteorologies[0].precipitation)
                         self.irradiance2?.text = String(format: "%.0fw/m²", result.meteorologies[0].irradiance)
+                        
+                        
                     }else{
                         //should hide component
                         
                     }
-                    if Int(result.energy.revenuetoday) - self.lastRevenue >= self.coinSoundThreshold &&  self.coinSoundThreshold > 0 {
-                        println("Play sound \(result.energy.revenuetoday) :lastRevenue \(self.lastRevenue)")
-                        if Int(result.energy.revenuetoday) > self.lastRevenue {
-                            self.lastRevenue = Int(result.energy.revenuetoday)
-                            self.coinSound.play()
-                        }
-                    }
+                    self.view.setNeedsDisplay()
+
                     
                 })
                 

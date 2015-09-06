@@ -2,11 +2,26 @@
 /* Class = "UILabel"; text = "kWh"; ObjectID = "101-ej-NlL"; */
 "101-ej-NlL.text" = "kWh";
 
-/* Class = "UILabel"; text = "1,117"; ObjectID = "3E7-84-5xB"; */
-"3E7-84-5xB.text" = "1,117";
+/* Class = "UILabel"; text = "00,000kw"; ObjectID = "2S1-wq-Eeo"; */
+"2S1-wq-Eeo.text" = "00,000kw";
+
+/* Class = "UITabBarItem"; title = "Energey"; ObjectID = "2ZY-pr-hHR"; */
+"2ZY-pr-hHR.title" = "Energey";
+
+/* Class = "UITabBarItem"; title = "Power"; ObjectID = "2Zj-W2-bbe"; */
+"2Zj-W2-bbe.title" = "Power";
+
+/* Class = "UILabel"; text = "000"; ObjectID = "3E7-84-5xB"; */
+"3E7-84-5xB.text" = "000";
+
+/* Class = "UITableViewController"; title = "Menu"; ObjectID = "3ez-gv-o7P"; */
+"3ez-gv-o7P.title" = "Menu";
 
 /* Class = "UILabel"; text = "Revenue Today"; ObjectID = "44j-yz-VAN"; */
 "44j-yz-VAN.text" = "Revenue Today";
+
+/* Class = "UILabel"; text = "Notification"; ObjectID = "4bg-b0-hOn"; */
+"4bg-b0-hOn.text" = "Notification";
 
 /* Class = "UILabel"; text = "Baht"; ObjectID = "4je-q4-QwS"; */
 "4je-q4-QwS.text" = "Baht";
@@ -15,61 +30,82 @@
 "4qb-kh-DHJ.text" = "MWh";
 
 /* Class = "UILabel"; text = "Baht"; ObjectID = "62t-Cu-bP7"; */
-"62t-Cu-bP7.text" = "บาท";
+"62t-Cu-bP7.text" = "Baht";
+
+/* Class = "UIButton"; normalTitle = "Logout"; ObjectID = "6Qo-4P-ybw"; */
+"6Qo-4P-ybw.normalTitle" = "Logout";
 
 /* Class = "UILabel"; text = "dd MMM yyyy"; ObjectID = "6bu-SJ-3lg"; */
 "6bu-SJ-3lg.text" = "dd MMM yyyy";
 
-/* Class = "UILabel"; text = "75%"; ObjectID = "8Bq-Ds-Vp1"; */
-"8Bq-Ds-Vp1.text" = "75%";
+/* Class = "UILabel"; text = "--"; ObjectID = "8Bq-Ds-Vp1"; */
+"8Bq-Ds-Vp1.text" = "--";
 
-/* Class = "UILabel"; text = "17.25"; ObjectID = "8Cv-MT-NpX"; */
-"8Cv-MT-NpX.text" = "17.25";
+/* Class = "UILabel"; text = "00.00"; ObjectID = "8Cv-MT-NpX"; */
+"8Cv-MT-NpX.text" = "00.00";
 
-/* Class = "UILabel"; text = "13,100"; ObjectID = "8lk-nD-cik"; */
-"8lk-nD-cik.text" = "13,100";
+/* Class = "UILabel"; text = "0,000"; ObjectID = "8lk-nD-cik"; */
+"8lk-nD-cik.text" = "0,000";
 
-/* Class = "UILabel"; text = "300 w/m²"; ObjectID = "8o7-NS-nXa"; */
-"8o7-NS-nXa.text" = "300 w/m²";
+/* Class = "UILabel"; text = "0 w/m²"; ObjectID = "8o7-NS-nXa"; */
+"8o7-NS-nXa.text" = "0 w/m²";
 
-/* Class = "UILabel"; text = "120.06"; ObjectID = "9Wm-C9-2Zd"; */
-"9Wm-C9-2Zd.text" = "120.06";
+/* Class = "UILabel"; text = "00,000.00"; ObjectID = "9Wm-C9-2Zd"; */
+"9Wm-C9-2Zd.text" = "00,000.00";
 
 /* Class = "UILabel"; text = "POWER"; ObjectID = "9yc-2b-uii"; */
 "9yc-2b-uii.text" = "POWER";
 
+/* Class = "UILabel"; text = "Id"; ObjectID = "A6j-b8-Vtf"; */
+"A6j-b8-Vtf.text" = "Id";
+
 /* Class = "UITabBarItem"; title = "Month"; ObjectID = "BEW-5k-Cet"; */
 "BEW-5k-Cet.title" = "Month";
 
-/* Class = "UILabel"; text = "1,117"; ObjectID = "BXQ-9C-lIB"; */
-"BXQ-9C-lIB.text" = "1,117";
+/* Class = "UILabel"; text = "000"; ObjectID = "BXQ-9C-lIB"; */
+"BXQ-9C-lIB.text" = "000";
 
-/* Class = "UILabel"; text = "19,117"; ObjectID = "BuE-Ay-YdK"; */
-"BuE-Ay-YdK.text" = "19,117";
+/* Class = "UILabel"; text = "0,000"; ObjectID = "BuE-Ay-YdK"; */
+"BuE-Ay-YdK.text" = "0,000";
+
+/* Class = "UILabel"; text = "Baht(s)"; ObjectID = "CjL-Kn-lER"; */
+"CjL-Kn-lER.text" = "Baht(s)";
 
 /* Class = "UILabel"; text = "kW"; ObjectID = "Ck7-j6-Cd1"; */
 "Ck7-j6-Cd1.text" = "kW";
 
+/* Class = "UILabel"; text = "xxxx"; ObjectID = "Ct0-Fa-5b4"; */
+"Ct0-Fa-5b4.text" = "xxxx";
+
 /* Class = "UILabel"; text = "MWh"; ObjectID = "EIJ-2W-0Oc"; */
 "EIJ-2W-0Oc.text" = "MWh";
 
-/* Class = "UILabel"; text = "6m/s"; ObjectID = "Ey3-SZ-Jth"; */
-"Ey3-SZ-Jth.text" = "6m/s";
+/* Class = "UILabel"; text = "--"; ObjectID = "Ey3-SZ-Jth"; */
+"Ey3-SZ-Jth.text" = "--";
 
-/* Class = "UILabel"; text = "120.06"; ObjectID = "G0D-CW-3AT"; */
-"G0D-CW-3AT.text" = "120.06";
+/* Class = "UILabel"; text = "000.00"; ObjectID = "G0D-CW-3AT"; */
+"G0D-CW-3AT.text" = "000.00";
 
-/* Class = "UILabel"; text = "Pinit Asavanuchit"; ObjectID = "HLf-39-BRT"; */
-"HLf-39-BRT.text" = "Pinit Asavanuchit";
+/* Class = "UILabel"; text = "Play every"; ObjectID = "GF9-R1-jOY"; */
+"GF9-R1-jOY.text" = "Play every";
 
-/* Class = "UILabel"; text = "300 w/m²"; ObjectID = "Ifs-6e-LRs"; */
-"Ifs-6e-LRs.text" = "300 w/m²";
+/* Class = "UILabel"; text = "Name"; ObjectID = "HLf-39-BRT"; */
+"HLf-39-BRT.text" = "Name";
+
+/* Class = "UILabel"; text = "Name"; ObjectID = "IDn-RN-as4"; */
+"IDn-RN-as4.text" = "Name";
+
+/* Class = "UILabel"; text = "0 w/m²"; ObjectID = "Ifs-6e-LRs"; */
+"Ifs-6e-LRs.text" = "0 w/m²";
 
 /* Class = "UILabel"; text = "ENERGY Today"; ObjectID = "J21-d2-fUg"; */
 "J21-d2-fUg.text" = "ENERGY Today";
 
-/* Class = "UILabel"; text = "Site Name"; ObjectID = "JU9-fE-ASC"; */
-"JU9-fE-ASC.text" = "Site Name";
+/* Class = "UILabel"; text = "Name"; ObjectID = "JU9-fE-ASC"; */
+"JU9-fE-ASC.text" = "Name";
+
+/* Class = "UITabBarItem"; title = "Power"; ObjectID = "Jk2-qs-h9t"; */
+"Jk2-qs-h9t.title" = "Power";
 
 /* Class = "UILabel"; text = "Solar Log"; ObjectID = "Jkr-oe-LvT"; */
 "Jkr-oe-LvT.text" = "Solar Log";
@@ -77,17 +113,17 @@
 /* Class = "UILabel"; text = "ENERGY This Month"; ObjectID = "KAm-w3-Tsn"; */
 "KAm-w3-Tsn.text" = "ENERGY This Month";
 
-/* Class = "UILabel"; text = "Address:"; ObjectID = "KEt-hB-eDD"; */
-"KEt-hB-eDD.text" = "Address:";
-
 /* Class = "UILabel"; text = "d MMM yyyy"; ObjectID = "Kib-2F-aKb"; */
 "Kib-2F-aKb.text" = "d MMM yyyy";
 
-/* Class = "UILabel"; text = "6m/s"; ObjectID = "LPn-tk-pGt"; */
-"LPn-tk-pGt.text" = "6m/s";
+/* Class = "UILabel"; text = "--"; ObjectID = "LPn-tk-pGt"; */
+"LPn-tk-pGt.text" = "--";
 
 /* Class = "UILabel"; text = "ENERGY Today"; ObjectID = "LZV-66-Ifd"; */
 "LZV-66-Ifd.text" = "ENERGY Today";
+
+/* Class = "UILabel"; text = "Name: "; ObjectID = "LlE-JB-mTV"; */
+"LlE-JB-mTV.text" = "Name: ";
 
 /* Class = "UILabel"; text = "kWh"; ObjectID = "Lyd-2i-LCM"; */
 "Lyd-2i-LCM.text" = "kWh";
@@ -101,74 +137,80 @@
 /* Class = "UILabel"; text = "kWh"; ObjectID = "MFh-2W-qsW"; */
 "MFh-2W-qsW.text" = "kWh";
 
-/* Class = "UILabel"; text = "32 °C"; ObjectID = "MGW-QJ-KwV"; */
-"MGW-QJ-KwV.text" = "32 °C";
+/* Class = "UILabel"; text = "--"; ObjectID = "MGW-QJ-KwV"; */
+"MGW-QJ-KwV.text" = "--";
 
-/* Class = "UILabel"; text = "300 w/m²"; ObjectID = "Msd-4w-9qd"; */
-"Msd-4w-9qd.text" = "300 w/m²";
+/* Class = "UIViewController"; title = "Project Info"; ObjectID = "MLS-nY-Cjj"; */
+"MLS-nY-Cjj.title" = "Project Info";
+
+/* Class = "UITabBarItem"; title = "Month"; ObjectID = "MbD-Sg-wuI"; */
+"MbD-Sg-wuI.title" = "Month";
+
+/* Class = "UILabel"; text = "0 w/m²"; ObjectID = "Msd-4w-9qd"; */
+"Msd-4w-9qd.text" = "0 w/m²";
 
 /* Class = "UILabel"; text = "Revenue Today"; ObjectID = "N7l-QR-hXn"; */
 "N7l-QR-hXn.text" = "Revenue Today";
 
+/* Class = "UILabel"; text = "xxxxx"; ObjectID = "NXg-wf-zjn"; */
+"NXg-wf-zjn.text" = "xxxxx";
+
 /* Class = "UILabel"; text = "ENERGY This Month"; ObjectID = "P39-Nx-vb1"; */
 "P39-Nx-vb1.text" = "ENERGY This Month";
 
-/* Class = "UILabel"; text = "17.25"; ObjectID = "Pek-lT-1VF"; */
-"Pek-lT-1VF.text" = "17.25";
+/* Class = "UILabel"; text = "0,000.00"; ObjectID = "Pek-lT-1VF"; */
+"Pek-lT-1VF.text" = "0,000.00";
 
-/* Class = "UILabel"; text = "0.038"; ObjectID = "QUc-YM-H1e"; */
-"QUc-YM-H1e.text" = "0.038";
+/* Class = "UILabel"; text = "xxxx"; ObjectID = "QEm-cB-Job"; */
+"QEm-cB-Job.text" = "xxxx";
 
-/* Class = "UILabel"; text = "32 °C"; ObjectID = "QWp-QE-IPF"; */
-"QWp-QE-IPF.text" = "32 °C";
+/* Class = "UILabel"; text = "0.000"; ObjectID = "QUc-YM-H1e"; */
+"QUc-YM-H1e.text" = "0.000";
+
+/* Class = "UILabel"; text = "--"; ObjectID = "QWp-QE-IPF"; */
+"QWp-QE-IPF.text" = "--";
 
 /* Class = "UITabBarItem"; title = "Day"; ObjectID = "RVS-TE-BbZ"; */
 "RVS-TE-BbZ.title" = "Day";
 
+/* Class = "UITableViewSection"; headerTitle = "Sound"; ObjectID = "Rhd-Y9-atH"; */
+"Rhd-Y9-atH.headerTitle" = "Sound";
+
 /* Class = "UITabBarItem"; title = "My"; ObjectID = "S16-bi-c9H"; */
 "S16-bi-c9H.title" = "My";
 
-/* Class = "UILabel"; text = "081-111-1111"; ObjectID = "TBJ-f9-NKD"; */
-"TBJ-f9-NKD.text" = "081-111-1111";
-
-/* Class = "UILabel"; text = "32 °C"; ObjectID = "TVG-L6-xz3"; */
-"TVG-L6-xz3.text" = "32 °C";
+/* Class = "UILabel"; text = "--"; ObjectID = "TVG-L6-xz3"; */
+"TVG-L6-xz3.text" = "--";
 
 /* Class = "UILabel"; text = "00:00:00"; ObjectID = "Te2-cV-e4u"; */
 "Te2-cV-e4u.text" = "00:00:00";
 
-/* Class = "UILabel"; text = "75%"; ObjectID = "ULm-rN-FsN"; */
-"ULm-rN-FsN.text" = "75%";
+/* Class = "UILabel"; text = "--"; ObjectID = "ULm-rN-FsN"; */
+"ULm-rN-FsN.text" = "--";
 
-/* Class = "UITabBarItem"; title = "Energy"; ObjectID = "Umx-es-kZS"; */
-"Umx-es-kZS.title" = "Energy";
-
-/* Class = "UILabel"; text = "Reports"; ObjectID = "V67-vo-zmw"; */
-"V67-vo-zmw.text" = "Reports";
-
-/* Class = "UILabel"; text = "Setting"; ObjectID = "VDt-fU-3Vk"; */
-"VDt-fU-3Vk.text" = "Setting";
-
-/* Class = "UITextField"; text = "username"; ObjectID = "VGr-p3-b20"; */
-"VGr-p3-b20.text" = "username";
+/* Class = "UITextField"; placeholder = "username"; ObjectID = "VGr-p3-b20"; */
+"VGr-p3-b20.placeholder" = "username";
 
 /* Class = "UIButton"; normalTitle = "Log In"; ObjectID = "VSt-2s-sAr"; */
 "VSt-2s-sAr.normalTitle" = "Log In";
 
-/* Class = "UILabel"; text = "6.50"; ObjectID = "VwA-AP-VbV"; */
-"VwA-AP-VbV.text" = "6.50";
+/* Class = "UILabel"; text = "0.00"; ObjectID = "VwA-AP-VbV"; */
+"VwA-AP-VbV.text" = "0.00";
 
-/* Class = "UITabBarItem"; title = "Revenue"; ObjectID = "XZG-0H-RIp"; */
-"XZG-0H-RIp.title" = "Revenue";
+/* Class = "UITableViewSection"; headerTitle = "Notification"; ObjectID = "Wiw-ho-0yU"; */
+"Wiw-ho-0yU.headerTitle" = "Notification";
+
+/* Class = "UITabBarItem"; title = "Project Info"; ObjectID = "XZG-0H-RIp"; */
+"XZG-0H-RIp.title" = "Project Info";
 
 /* Class = "UILabel"; text = "MWh"; ObjectID = "Xza-5l-Ooo"; */
 "Xza-5l-Ooo.text" = "MWh";
 
-/* Class = "UILabel"; text = "13,100"; ObjectID = "Yly-pA-s87"; */
-"Yly-pA-s87.text" = "13,100";
+/* Class = "UIViewController"; title = "Energy"; ObjectID = "YMG-7d-opK"; */
+"YMG-7d-opK.title" = "Energy";
 
-/* Class = "UILabel"; text = "a@b.com"; ObjectID = "ZAh-Nj-wp6"; */
-"ZAh-Nj-wp6.text" = "a@b.com";
+/* Class = "UILabel"; text = "00,000"; ObjectID = "Yly-pA-s87"; */
+"Yly-pA-s87.text" = "00,000";
 
 /* Class = "UILabel"; text = "Revenue Today"; ObjectID = "aFR-8s-k7A"; */
 "aFR-8s-k7A.text" = "Revenue Today";
@@ -185,14 +227,11 @@
 /* Class = "UILabel"; text = "ENERGY Today"; ObjectID = "bVV-SL-bOr"; */
 "bVV-SL-bOr.text" = "ENERGY Today";
 
-/* Class = "UILabel"; text = "11mm"; ObjectID = "bbw-kR-7ul"; */
-"bbw-kR-7ul.text" = "11mm";
+/* Class = "UILabel"; text = "--"; ObjectID = "bbw-kR-7ul"; */
+"bbw-kR-7ul.text" = "--";
 
-/* Class = "UILabel"; text = "ENERGY This Month"; ObjectID = "bnw-3Y-vUf"; */
-"bnw-3Y-vUf.text" = "ENERGY This Month";
-
-/* Class = "UILabel"; text = "Email"; ObjectID = "bpb-MJ-JhL"; */
-"bpb-MJ-JhL.text" = "Email";
+/* Class = "UILabel"; text = "ENERGY This Month       "; ObjectID = "bnw-3Y-vUf"; */
+"bnw-3Y-vUf.text" = "ENERGY This Month       ";
 
 /* Class = "UIButton"; normalTitle = "Logout"; ObjectID = "buQ-tE-a7o"; */
 "buQ-tE-a7o.normalTitle" = "Logout";
@@ -200,35 +239,47 @@
 /* Class = "UITabBarItem"; title = "Main"; ObjectID = "cAB-6s-TGH"; */
 "cAB-6s-TGH.title" = "Main";
 
-/* Class = "UILabel"; text = "Plants"; ObjectID = "cdo-ox-CAX"; */
-"cdo-ox-CAX.text" = "Plants";
+/* Class = "UILabel"; text = "Location"; ObjectID = "cVc-KR-NkA"; */
+"cVc-KR-NkA.text" = "Location";
 
-/* Class = "UILabel"; text = "6.50"; ObjectID = "crs-nx-eja"; */
-"crs-nx-eja.text" = "6.50";
+/* Class = "UILabel"; text = "Main"; ObjectID = "cdo-ox-CAX"; */
+"cdo-ox-CAX.text" = "Main";
 
-/* Class = "UILabel"; text = "17.25"; ObjectID = "duo-Ye-OcR"; */
-"duo-Ye-OcR.text" = "17.25";
+/* Class = "UILabel"; text = "0,000.00"; ObjectID = "crs-nx-eja"; */
+"crs-nx-eja.text" = "0,000.00";
+
+/* Class = "UIViewController"; title = "Power Gauge"; ObjectID = "dSD-eK-4bf"; */
+"dSD-eK-4bf.title" = "Power Gauge";
+
+/* Class = "UILabel"; text = "0.00"; ObjectID = "duo-Ye-OcR"; */
+"duo-Ye-OcR.text" = "0.00";
 
 /* Class = "UILabel"; text = "ENERGY This Year"; ObjectID = "eBn-St-9HA"; */
 "eBn-St-9HA.text" = "ENERGY This Year";
 
-/* Class = "UITextField"; text = "password"; ObjectID = "eEE-A6-bVf"; */
-"eEE-A6-bVf.text" = "password";
+/* Class = "UITextField"; placeholder = "password"; ObjectID = "eEE-A6-bVf"; */
+"eEE-A6-bVf.placeholder" = "password";
 
-/* Class = "UILabel"; text = "120.06"; ObjectID = "emj-Bc-XTv"; */
-"emj-Bc-XTv.text" = "120.06";
+/* Class = "UILabel"; text = "000.00"; ObjectID = "emj-Bc-XTv"; */
+"emj-Bc-XTv.text" = "000.00";
 
 /* Class = "UILabel"; text = "POWER"; ObjectID = "esc-Zk-FbN"; */
 "esc-Zk-FbN.text" = "POWER";
 
-/* Class = "UILabel"; text = "6.50"; ObjectID = "ftf-WM-JXg"; */
-"ftf-WM-JXg.text" = "6.50";
+/* Class = "UILabel"; text = "0.00"; ObjectID = "ftf-WM-JXg"; */
+"ftf-WM-JXg.text" = "0.00";
 
-/* Class = "UILabel"; text = "1/1 Soi 1"; ObjectID = "gZ2-fb-rJ9"; */
-"gZ2-fb-rJ9.text" = "1/1 Soi 1";
+/* Class = "UIViewController"; title = "Revenue"; ObjectID = "g7p-YW-HzG"; */
+"g7p-YW-HzG.title" = "Revenue";
 
-/* Class = "UILabel"; text = "75%"; ObjectID = "gzT-q0-dyN"; */
-"gzT-q0-dyN.text" = "75%";
+/* Class = "UILabel"; text = "--"; ObjectID = "gzT-q0-dyN"; */
+"gzT-q0-dyN.text" = "--";
+
+/* Class = "UIViewController"; title = "Summary"; ObjectID = "hX3-N5-SKb"; */
+"hX3-N5-SKb.title" = "Summary";
+
+/* Class = "UIViewController"; title = "Power"; ObjectID = "haP-Vo-V2W"; */
+"haP-Vo-V2W.title" = "Power";
 
 /* Class = "UILabel"; text = "kW"; ObjectID = "hb1-Zs-Yni"; */
 "hb1-Zs-Yni.text" = "kW";
@@ -236,14 +287,17 @@
 /* Class = "UILabel"; text = "ENERGY Total"; ObjectID = "hga-4v-TX7"; */
 "hga-4v-TX7.text" = "ENERGY Total";
 
-/* Class = "UILabel"; text = "11mm"; ObjectID = "iq7-NQ-UrU"; */
-"iq7-NQ-UrU.text" = "11mm";
+/* Class = "UITabBarController"; title = "Reports"; ObjectID = "ifo-JX-nj4"; */
+"ifo-JX-nj4.title" = "Reports";
 
-/* Class = "UILabel"; text = "Site ID"; ObjectID = "jeZ-lR-OLj"; */
-"jeZ-lR-OLj.text" = "Site ID";
+/* Class = "UILabel"; text = "--"; ObjectID = "iq7-NQ-UrU"; */
+"iq7-NQ-UrU.text" = "--";
 
-/* Class = "UILabel"; text = "0.038"; ObjectID = "kMY-lZ-XnI"; */
-"kMY-lZ-XnI.text" = "0.038";
+/* Class = "UILabel"; text = "ID"; ObjectID = "jeZ-lR-OLj"; */
+"jeZ-lR-OLj.text" = "ID";
+
+/* Class = "UILabel"; text = "0.000"; ObjectID = "kMY-lZ-XnI"; */
+"kMY-lZ-XnI.text" = "0.000";
 
 /* Class = "UILabel"; text = "00:00:00"; ObjectID = "kj4-zG-MmK"; */
 "kj4-zG-MmK.text" = "00:00:00";
@@ -251,14 +305,23 @@
 /* Class = "UILabel"; text = "Baht"; ObjectID = "kuD-18-8KW"; */
 "kuD-18-8KW.text" = "Baht";
 
+/* Class = "UILabel"; text = "Capacity"; ObjectID = "lCb-HG-gE5"; */
+"lCb-HG-gE5.text" = "Capacity";
+
 /* Class = "UILabel"; text = "kWh"; ObjectID = "lHv-fd-2Gu"; */
 "lHv-fd-2Gu.text" = "kWh";
 
-/* Class = "UILabel"; text = "0.134"; ObjectID = "mPI-Au-IXa"; */
-"mPI-Au-IXa.text" = "0.134";
+/* Class = "UILabel"; text = "0.000"; ObjectID = "mPI-Au-IXa"; */
+"mPI-Au-IXa.text" = "0.000";
 
-/* Class = "UILabel"; text = "1,117"; ObjectID = "mfZ-6v-EqT"; */
-"mfZ-6v-EqT.text" = "1,117";
+/* Class = "UITabBarItem"; title = "Day"; ObjectID = "mcN-JD-bQW"; */
+"mcN-JD-bQW.title" = "Day";
+
+/* Class = "UILabel"; text = "000"; ObjectID = "mfZ-6v-EqT"; */
+"mfZ-6v-EqT.text" = "000";
+
+/* Class = "UILabel"; text = "Name"; ObjectID = "mn6-N7-WK1"; */
+"mn6-N7-WK1.text" = "Name";
 
 /* Class = "UILabel"; text = "kW"; ObjectID = "nGz-kn-o7Y"; */
 "nGz-kn-o7Y.text" = "kW";
@@ -269,41 +332,71 @@
 /* Class = "UILabel"; text = "ENERGY This Year"; ObjectID = "peh-k4-CKv"; */
 "peh-k4-CKv.text" = "ENERGY This Year";
 
+/* Class = "UILabel"; text = "ID"; ObjectID = "pln-7H-Cqw"; */
+"pln-7H-Cqw.text" = "ID";
+
 /* Class = "UILabel"; text = "Name: "; ObjectID = "pvO-WJ-WAw"; */
 "pvO-WJ-WAw.text" = "Name: ";
 
 /* Class = "UILabel"; text = "kWh"; ObjectID = "rAE-TN-wAG"; */
 "rAE-TN-wAG.text" = "kWh";
 
-/* Class = "UILabel"; text = "11mm"; ObjectID = "sgy-N9-zVh"; */
-"sgy-N9-zVh.text" = "11mm";
+/* Class = "UILabel"; text = "--"; ObjectID = "sgy-N9-zVh"; */
+"sgy-N9-zVh.text" = "--";
 
-/* Class = "UILabel"; text = "6m/s"; ObjectID = "swu-9J-d4b"; */
-"swu-9J-d4b.text" = "6m/s";
+/* Class = "UILabel"; text = "Province"; ObjectID = "sqe-rt-sbU"; */
+"sqe-rt-sbU.text" = "Province";
+
+/* Class = "UILabel"; text = "--"; ObjectID = "swu-9J-d4b"; */
+"swu-9J-d4b.text" = "--";
+
+/* Class = "UILabel"; text = "Projects"; ObjectID = "uSS-4o-RQr"; */
+"uSS-4o-RQr.text" = "Projects";
+
+/* Class = "UILabel"; text = "Province"; ObjectID = "vEP-Jo-Z3f"; */
+"vEP-Jo-Z3f.text" = "Province";
 
 /* Class = "UILabel"; text = "00:00:00"; ObjectID = "vHT-k1-UDF"; */
 "vHT-k1-UDF.text" = "00:00:00";
 
-/* Class = "UILabel"; text = "Tel"; ObjectID = "vHd-cX-QAP"; */
-"vHd-cX-QAP.text" = "Tel";
-
 /* Class = "UILabel"; text = "ENERGY This Year"; ObjectID = "vNP-7w-QmC"; */
 "vNP-7w-QmC.text" = "ENERGY This Year";
 
-/* Class = "UILabel"; text = "3 Mwh"; ObjectID = "w2M-Pq-rZv"; */
-"w2M-Pq-rZv.text" = "3 Mwh";
+/* Class = "UILabel"; text = "News"; ObjectID = "vRF-Oc-fML"; */
+"vRF-Oc-fML.text" = "News";
+
+/* Class = "UILabel"; text = "xxxxx"; ObjectID = "vgE-qm-OQD"; */
+"vgE-qm-OQD.text" = "xxxxx";
+
+/* Class = "UILabel"; text = "Location"; ObjectID = "w2M-Pq-rZv"; */
+"w2M-Pq-rZv.text" = "Location";
 
 /* Class = "UILabel"; text = "dd MMM yyyy"; ObjectID = "wKa-7e-BNj"; */
 "wKa-7e-BNj.text" = "dd MMM yyyy";
 
-/* Class = "UINavigationItem"; title = "Plants"; ObjectID = "xQW-6c-3Vn"; */
-"xQW-6c-3Vn.title" = "Plants";
+/* Class = "UITabBarItem"; title = "Revenue"; ObjectID = "wXJ-4A-Ehe"; */
+"wXJ-4A-Ehe.title" = "Revenue";
+
+/* Class = "UILabel"; text = "xxxxx"; ObjectID = "wgZ-Tg-QQF"; */
+"wgZ-Tg-QQF.text" = "xxxxx";
+
+/* Class = "UILabel"; text = "Earning sound"; ObjectID = "wh9-iO-VxE"; */
+"wh9-iO-VxE.text" = "Earning sound";
+
+/* Class = "UINavigationItem"; title = "Projects"; ObjectID = "xQW-6c-3Vn"; */
+"xQW-6c-3Vn.title" = "Projects";
+
+/* Class = "UITableViewSection"; headerTitle = "User"; ObjectID = "xWS-19-J4R"; */
+"xWS-19-J4R.headerTitle" = "User";
+
+/* Class = "UILabel"; text = "Name"; ObjectID = "xdb-XD-U2W"; */
+"xdb-XD-U2W.text" = "Name";
+
+/* Class = "UILabel"; text = "Reports"; ObjectID = "xvt-75-1Df"; */
+"xvt-75-1Df.text" = "Reports";
 
 /* Class = "UILabel"; text = "kWh"; ObjectID = "yYd-Ya-dH8"; */
 "yYd-Ya-dH8.text" = "kWh";
 
-/* Class = "UILabel"; text = "News"; ObjectID = "zJf-yo-jWg"; */
-"zJf-yo-jWg.text" = "News";
-
 /* Class = "UILabel"; text = "ENERGY Total"; ObjectID = "zfQ-MQ-eND"; */
-"zfQ-MQ-eND.text" = "พลังงานรวม";
+"zfQ-MQ-eND.text" = "ENERGY Total";
