@@ -37,6 +37,14 @@ class LoginViewController: UIViewController ,UITextFieldDelegate{
         indicator.startAnimating()
         MANAGER.sso() { success, message, result in
             if success {
+                //TODO  send token
+                let defaults = NSUserDefaults.standardUserDefaults()
+                var token:String = ""
+                if let deviceTokenString = defaults.stringForKey("token") {
+                    token = deviceTokenString
+                }
+                
+                self.updateToken(token)
                 MANAGER.projects(){ projects in
                     
                     if projects.count > 0 {
@@ -156,7 +164,7 @@ class LoginViewController: UIViewController ,UITextFieldDelegate{
         }
     }
     func updateToken(token:String){
-        var request = NSMutableURLRequest(URL: NSURL(string: "http://10.2.1.67:3000/.../PushRegister")!)
+        var request = NSMutableURLRequest(URL: NSURL(string: "http://10.2.1.112:3000/users/regis_token")!)
         
         request.HTTPMethod = "POST"
         
@@ -180,7 +188,7 @@ class LoginViewController: UIViewController ,UITextFieldDelegate{
             println(response)
             
             if parseError != nil {
-                println("add error: \(parseError!.localizedDescription)")
+                println("submir error: \(parseError!.localizedDescription)")
                 
             }else if (jsonResult != nil) {
                 println(jsonResult)

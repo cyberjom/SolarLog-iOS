@@ -40,10 +40,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             .stringByTrimmingCharactersInSet( characterSet )
             .stringByReplacingOccurrencesOfString( " ", withString: "" ) as String
         println("deviceToken \(deviceToken)")
-        println("deviceToken \(deviceTokenString)")
+        //println("deviceToken \(deviceTokenString)")
         //Keep token
         let defaults = NSUserDefaults.standardUserDefaults()
-        defaults.setObject(deviceTokenString, forKey: "token")
+        defaults.setObject("\(deviceToken)", forKey: "token")
         defaults.synchronize()
        
     }
