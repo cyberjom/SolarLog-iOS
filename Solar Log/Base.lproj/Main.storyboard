@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="cCZ-nO-8zr">
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
         <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
         <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
@@ -533,13 +534,8 @@
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="IT9-Ic-t8D" id="Xg5-kn-taK">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-<<<<<<< Updated upstream
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Play sound every" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GF9-R1-jOY">
-                                                    <rect key="frame" x="43" y="8.5" width="43" height="20.5"/>
-=======
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Play every" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GF9-R1-jOY">
                                                     <rect key="frame" x="28" y="8" width="131.5" height="20.5"/>
->>>>>>> Stashed changes
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -2232,7 +2228,7 @@
                                     </mask>
                                 </variation>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00,000" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3E7-84-5xB">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0,000,000" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3E7-84-5xB">
                                 <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="160" id="bVF-pO-Ka5"/>
@@ -3611,7 +3607,7 @@
                             <constraint firstItem="Y2I-9D-DDh" firstAttribute="top" secondItem="EIJ-2W-0Oc" secondAttribute="bottom" constant="15.5" id="jIo-uK-Us3"/>
                             <constraint firstAttribute="centerX" secondItem="mPI-Au-IXa" secondAttribute="centerX" constant="-171" id="jPU-A6-V0F"/>
                             <constraint firstItem="Y2I-9D-DDh" firstAttribute="top" secondItem="3E7-84-5xB" secondAttribute="bottom" constant="84.5" id="jb2-JP-Nag">
-                                <variation key="heightClass=regular-widthClass=compact" constant="83"/>
+                                <variation key="heightClass=regular-widthClass=compact" constant="88"/>
                             </constraint>
                             <constraint firstAttribute="trailingMargin" secondItem="aFR-8s-k7A" secondAttribute="trailing" constant="293" id="jgR-dv-ku9">
                                 <variation key="heightClass=compact" constant="180"/>

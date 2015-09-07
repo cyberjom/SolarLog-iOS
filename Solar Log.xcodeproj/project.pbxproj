@@ -46,8 +46,8 @@
 		ED3979F21AE09915007572A5 /* PowerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED3979F11AE09915007572A5 /* PowerViewController.swift */; };
 		ED3979F41AE0C010007572A5 /* GraphData.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED3979F31AE0C010007572A5 /* GraphData.swift */; };
 		ED3BE69D1AE618C000281735 /* coindrop.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = ED3BE69C1AE618C000281735 /* coindrop.mp3 */; };
+		ED7787401B9AEE0C004FC14E /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = ED7787421B9AEE0C004FC14E /* Localizable.strings */; };
 		ED9722131AC1151500342410 /* ProjectTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED9722121AC1151500342410 /* ProjectTableViewCell.swift */; };
-		ED9722151AC11F9300342410 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = ED9722141AC11F9300342410 /* Localizable.strings */; };
 		ED9722191AC12B2C00342410 /* Project.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED9722181AC12B2C00342410 /* Project.swift */; };
 		ED97221B1AC12CF300342410 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED97221A1AC12CF300342410 /* User.swift */; };
 		ED97221D1AC13A5900342410 /* EnergyDayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED97221C1AC13A5800342410 /* EnergyDayViewController.swift */; };
@@ -115,9 +115,10 @@
 		ED3979F11AE09915007572A5 /* PowerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PowerViewController.swift; sourceTree = "<group>"; };
 		ED3979F31AE0C010007572A5 /* GraphData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GraphData.swift; sourceTree = "<group>"; };
 		ED3BE69C1AE618C000281735 /* coindrop.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = coindrop.mp3; sourceTree = "<group>"; };
+		ED7787411B9AEE0C004FC14E /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
+		ED7787431B9AEE0F004FC14E /* th */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = th; path = th.lproj/Localizable.strings; sourceTree = "<group>"; };
+		ED7787471B9AF4FA004FC14E /* th */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = th; path = th.lproj/Main.strings; sourceTree = "<group>"; };
 		ED9722121AC1151500342410 /* ProjectTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectTableViewCell.swift; sourceTree = "<group>"; };
-		ED9722141AC11F9300342410 /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
-		ED9722161AC11FE800342410 /* th */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = th; path = th.lproj/Main.strings; sourceTree = "<group>"; };
 		ED9722171AC11FE800342410 /* th */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = th; path = th.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		ED9722181AC12B2C00342410 /* Project.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Project.swift; sourceTree = "<group>"; };
 		ED97221A1AC12CF300342410 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
@@ -233,7 +234,7 @@
 				ED1139231ABE8426007ED3F3 /* MpptCell.swift */,
 				ED1139251ABEFD2D007ED3F3 /* InverterCell.xib */,
 				ED1139271ABF04EA007ED3F3 /* MpptCell.xib */,
-				ED9722141AC11F9300342410 /* Localizable.strings */,
+				ED7787421B9AEE0C004FC14E /* Localizable.strings */,
 				EDFDF4DB1B9597510038E71B /* SettingsTableViewController.swift */,
 			);
 			path = "Solar Log";
@@ -352,6 +353,7 @@
 			knownRegions = (
 				en,
 				Base,
+				th,
 			);
 			mainGroup = ED1380041AB68BD100462057;
 			productRefGroup = ED13800E1AB68BD100462057 /* Products */;
@@ -371,7 +373,7 @@
 			files = (
 				ED1AD9281AD507610069AC9D /* logo.png in Resources */,
 				ED11392A1ABF118E007ED3F3 /* InverterCelliPad.xib in Resources */,
-				ED9722151AC11F9300342410 /* Localizable.strings in Resources */,
+				ED7787401B9AEE0C004FC14E /* Localizable.strings in Resources */,
 				ED17FA0D1AB6C9AC00208391 /* bg.jpg in Resources */,
 				ED17FA111AB6F76D00208391 /* sun.png in Resources */,
 				ED13801B1AB68BD100462057 /* Main.storyboard in Resources */,
@@ -490,7 +492,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				ED13801A1AB68BD100462057 /* Base */,
-				ED9722161AC11FE800342410 /* th */,
+				ED7787471B9AF4FA004FC14E /* th */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -502,6 +504,15 @@
 				ED9722171AC11FE800342410 /* th */,
 			);
 			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+		ED7787421B9AEE0C004FC14E /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				ED7787411B9AEE0C004FC14E /* Base */,
+				ED7787431B9AEE0F004FC14E /* th */,
+			);
+			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
