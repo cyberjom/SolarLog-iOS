@@ -45,7 +45,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let defaults = NSUserDefaults.standardUserDefaults()
         defaults.setObject(deviceTokenString, forKey: "token")
         defaults.synchronize()
-        updateToken(deviceTokenString)
+       
     }
     
     func application(application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: NSError) {
@@ -56,41 +56,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
     }
 
-    func updateToken(token:String){
-        var request = NSMutableURLRequest(URL: NSURL(string: "http://Solarlog.intersol.co.th/.../PushRegister")!)
-        
-        request.HTTPMethod = "POST"
-        
-        
-        
-        var err: NSError?
-        
-        var params = "token=\(token)";
-        
-        
-        request.HTTPBody = params.dataUsingEncoding(NSUTF8StringEncoding)
-        
-        
-        NSURLSession.sharedSession().dataTaskWithRequest(request) {
-            data, response, error in
-            var parseError: NSError?
-            let jsonResult: AnyObject? = NSJSONSerialization.JSONObjectWithData(data,
-                options: NSJSONReadingOptions.AllowFragments,
-                error:&parseError)
-            
-            println(response)
-            
-            if parseError != nil {
-                println("add error: \(parseError!.localizedDescription)")
-                
-            }else if (jsonResult != nil) {
-                println(jsonResult)
-                var result = jsonResult as! NSDictionary
-                
-                
-            }
-            }.resume()
-    }
+    
     
     func applicationWillResignActive(application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.

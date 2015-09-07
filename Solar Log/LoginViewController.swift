@@ -125,6 +125,16 @@ class LoginViewController: UIViewController ,UITextFieldDelegate{
     @IBAction func login(sender: UIButton) {
         MANAGER.login(user.text, passwd: passwd.text) { success, message, result in
             if success {
+                
+                //TODO  send token
+                let defaults = NSUserDefaults.standardUserDefaults()
+                var token:String = ""
+                if let deviceTokenString = defaults.stringForKey("token") {
+                    token = deviceTokenString
+                }
+
+                self.updateToken(token)
+                
                 MANAGER.projects(){ projects in
                     if projects.count > 0 {
                         MANAGER.CUR_PROJECT = projects[0]
@@ -145,7 +155,41 @@ class LoginViewController: UIViewController ,UITextFieldDelegate{
             }
         }
     }
-    
+    func updateToken(token:String){
+        var request = NSMutableURLRequest(URL: NSURL(string: "http://10.2.1.67:3000/.../PushRegister")!)
+        
+        request.HTTPMethod = "POST"
+        
+        var deviceUUid:String = UIDevice.currentDevice().identifierForVendor.UUIDString;
+        
+        var err: NSError?
+        
+        var params = "token=\(token)&uid=\(MANAGER.user.id)&UUID=\(deviceUUid)";
+        println("params=\(params)")
+        
+        request.HTTPBody = params.dataUsingEncoding(NSUTF8StringEncoding)
+        
+        
+        NSURLSession.sharedSession().dataTaskWithRequest(request) {
+            data, response, error in
+            var parseError: NSError?
+            let jsonResult: AnyObject? = NSJSONSerialization.JSONObjectWithData(data,
+                options: NSJSONReadingOptions.AllowFragments,
+                error:&parseError)
+            
+            println(response)
+            
+            if parseError != nil {
+                println("add error: \(parseError!.localizedDescription)")
+                
+            }else if (jsonResult != nil) {
+                println(jsonResult)
+                var result = jsonResult as! NSDictionary
+                
+                
+            }
+            }.resume()
+    }
     @IBAction func demoLogin(sender: UIButton) {
         MANAGER.login("demo", passwd: "demodemo") { success, message, result in
             if success {
