@@ -164,7 +164,7 @@ class LoginViewController: UIViewController ,UITextFieldDelegate{
         }
     }
     func updateToken(token:String){
-        var request = NSMutableURLRequest(URL: NSURL(string: "http://10.2.1.112:3000/users/regis_token")!)
+        var request = NSMutableURLRequest(URL: NSURL(string: "http://solarlog.intersol.co.th/users/regis_token")!)
         
         request.HTTPMethod = "POST"
         
@@ -172,7 +172,7 @@ class LoginViewController: UIViewController ,UITextFieldDelegate{
         
         var err: NSError?
         
-        var params = "token=\(token)&uid=\(MANAGER.user.id)&UUID=\(deviceUUid)";
+        var params = "token=\(token)&uid=\(MANAGER.user.id)&uuid=\(deviceUUid)";
         println("params=\(params)")
         
         request.HTTPBody = params.dataUsingEncoding(NSUTF8StringEncoding)
